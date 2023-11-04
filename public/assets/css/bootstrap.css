@@ -133,6 +133,11 @@ body {
     font-size: 20px;
     font-weight: 800 !important;
 }
+
+.btn-link {
+    margin-top: 16px;
+}
+
 .submit-box {
     padding-top: 64px;
     display: flex;

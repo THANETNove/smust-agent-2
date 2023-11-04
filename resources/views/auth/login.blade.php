@@ -40,6 +40,9 @@
                     <button type="submit" class="btn btn-register">
                         เข้าสู่ระบบ
                     </button>
+                    <a class="btn btn-link" href="{{ url('/') }}">
+                        {{ __('go back home') }}
+                    </a>
 
                 </div>
 
