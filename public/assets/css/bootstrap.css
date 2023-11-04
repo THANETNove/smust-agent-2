@@ -12,11 +12,16 @@
  */
 :root {
     --primary: #007BA7;
+    --primary_200: #80BDD0;
     --blue: #048ec0;
     --white: #FFFFFF;
+    --white_200: #F4F5F5;
     --black: #000000;
     --attention: #E34234;
     --dark: #030B2F;
+    --dark_100: #424862;
+    --green: #629F8C;
+    --yellow: #FAA631;
 }
 
 
@@ -24,10 +29,26 @@ body {
     font-family: 'Noto Sans Thai', sans-serif !important;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
 @media only screen and (max-width: 576px) {
     .form-login {
         padding-top: 32px;
         width: 350px;
+    }
+
+    .ellipse {
+        margin-top: 32px;
+        margin-left: 16px;
+    }
+
+
+    .nav-link-email {
+        margin-left: 56px !important;
+
     }
 }
 
@@ -36,12 +57,22 @@ body {
         padding-top: 32px;
         width: 500px;
     }
+
+    .ellipse {
+        margin-top: 32px;
+        margin-left: 32px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     .form-login {
         padding-top: 32px;
         width: 500px;
+    }
+
+    .ellipse {
+        margin-top: 32px;
+        margin-left: 32px;
     }
 
 }
@@ -247,4 +278,193 @@ input[autofocus]:focus {
     margin: 0px 4px;
 
 
+}
+
+.ellipse {
+
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 40px;
+    height: auto;
+}
+
+.box-ellipse {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.home-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background-color: var(--white_200);
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+.home-background {
+    background-color: var(--primary_200);
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-content {
+    padding: 32px 16px 0px 16px;
+}
+
+.card-box {
+    position: relative;
+    width: 360px;
+    height: auto;
+    background-color: var(--white);
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.card-box p {
+    line-height: 8px !important;
+}
+
+.img-0831 {
+    width: 105px;
+    padding: 8px;
+    border-radius: 8px;
+    height: auto;
+}
+
+
+.name-content {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.name-details {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--dark_100);
+    text-decoration: underline;
+}
+
+.img-icon {
+    width: 20px;
+    height: auto;
+}
+
+.number-rooms {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.img-icon-left {
+    margin-left: 8px;
+}
+
+.img-icon-right {
+    margin-right: 8px;
+}
+
+.box-new {
+    position: absolute;
+    padding: 3px 9px;
+    background-color: var(--attention);
+    font-size: 12px;
+    font-weight: 700;
+    height: 20px;
+    border-radius: 4px;
+    color: var(--white);
+    margin-left: -8px;
+    margin-top: -4px;
+}
+
+.box-price {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 32px;
+    padding-right: 8px;
+}
+
+.rent-sell-primary {
+    right: 0;
+    top: 0;
+    background-color: var(--primary);
+    position: absolute;
+    margin-top: 16px;
+    margin-right: -8px;
+    padding: 0px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.rent-sell-yellow {
+    right: 0;
+    top: 0;
+    background-color: var(--yellow);
+    position: absolute;
+    margin-top: 16px;
+    margin-right: -8px;
+    padding: 0px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.rent-sell-green {
+    right: 0;
+    top: 0;
+    background-color: var(--green);
+    position: absolute;
+    margin-top: 16px;
+    margin-right: -8px;
+    padding: 0px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--white);
+
+}
+
+.nav-link-email {
+    margin-top: 35px;
+    margin-left: 74px;
+    font-size: 22px;
+}
+
+.dropdown-menu.show {
+    display: block;
+    margin-top: 8px !important;
+    margin-left: -32px !important;
+}
+
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    color: var(--blue);
 }
