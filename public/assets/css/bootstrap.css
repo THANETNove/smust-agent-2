@@ -15,6 +15,8 @@
     --blue: #048ec0;
     --white: #FFFFFF;
     --black: #000000;
+    --attention: #E34234;
+    --dark: #030B2F;
 }
 
 
@@ -143,4 +145,93 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.invalid-feedback {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--attention);
+}
+
+.information {
+    margin-top: 32px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.3) !important;
+    font-size: 16px !important;
+    font-weight: 400px !important;
+}
+
+
+.input_box {
+    position: relative;
+}
+
+.input_box input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.input_box label {
+    position: absolute;
+    left: 25px;
+    font-size: 16px;
+    top: 8px;
+    font-weight: 400px;
+    pointer-events: none;
+    transition: 0.2s;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.input_box label span {
+
+    display: none;
+}
+
+.input_box input:focus+label,
+.input_box input:valid+label {
+    display: flex;
+    flex-direction: row;
+    top: -15px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    background-color: var(--white);
+}
+
+
+
+.input_box label span {
+    position: relative !important;
+    display: none;
+    color: var(--attention);
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.input_box:focus-within label span {
+    position: absolute;
+    display: block;
+    margin-top: 4px;
+    margin: 0px 4px;
+
+
 }
