@@ -12,6 +12,7 @@
  */
 :root {
     --primary: #007BA7;
+    --primary_100: #B8D7E2;
     --primary_200: #80BDD0;
     --blue: #048ec0;
     --white: #FFFFFF;
@@ -48,9 +49,16 @@ p {
 
     .nav-link-email {
         margin-left: 56px !important;
-
     }
+
+    .box-filter_alt {
+        margin-top: 44px;
+    }
+
+
 }
+
+
 
 @media only screen and (min-width: 577px) {
     .form-login {
@@ -61,6 +69,10 @@ p {
     .ellipse {
         margin-top: 32px;
         margin-left: 32px;
+    }
+
+    .box-filter_alt {
+        margin-left: -74px;
     }
 }
 
@@ -295,14 +307,24 @@ input[autofocus]:focus {
     position: absolute;
 }
 
+
+.align-justify-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .home-head {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 120px;
+    height: auto;
+    padding-top: 22px;
     background-color: var(--white_200);
     box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
+    padding-bottom: 44px;
 }
 
 
@@ -467,4 +489,26 @@ input[autofocus]:focus {
     border-bottom: 0;
     border-left: 0.3em solid transparent;
     color: var(--blue);
+}
+
+.box-filter_alt {
+    width: 350px;
+    height: 36px;
+    border: 1px solid var(--primary_100);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    border-radius: 4px;
+    margin-left: 16px;
+}
+
+.filter_alt-img {
+    width: 13px;
+    height: auto;
+    margin-right: 16px;
+}
+
+.mt-wealth {
+    margin-top: 16px;
 }

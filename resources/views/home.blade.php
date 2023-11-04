@@ -4,21 +4,6 @@
     <div class="home-background">
         <div class="home-head">
             <div>
-                {{--   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
-                </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div> --}}
                 <div class="box-ellipse ">
                     <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-email" href="#" role="button"
@@ -38,9 +23,22 @@
                         </form>
                     </div>
                 </div>
+
             </div>
-            <p class="p-login">ทรัพย์ของฉัน (51) </p>
+            <div>
+                <p class="p-login text-center mt-wealth">ทรัพย์ของฉัน (51) </p>
+                <div class="box-filter_alt">
+                    <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                </div>
+            </div>
+            {{-- <div class="align-justify-center">
+                <p class="p-login">ทรัพย์ของฉัน (51) </p>
+                <div class="box-filter_alt">
+                    <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                </div>
+            </div> --}}
         </div>
+
         <div class="card-content">
             <div class="row ">
                 <div class="col-md-6">
