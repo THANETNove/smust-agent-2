@@ -27,9 +27,9 @@
             </div>
             <div>
                 <p class="p-login text-center mt-wealth">ทรัพย์ของฉัน (51) </p>
-                <div class="box-filter_alt">
+                <button class="box-filter_alt">
                     <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
-                </div>
+                </button>
             </div>
             {{-- <div class="align-justify-center">
                 <p class="p-login">ทรัพย์ของฉัน (51) </p>
