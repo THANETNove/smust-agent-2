@@ -49,13 +49,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255','regex:/^[0-9]+$/'],
+            'id_card_number' => ['required', 'string', 'max:255','regex:/^[0-9]+$/'],
+            'provinces' => ['required', 'string', 'max:255'],
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -65,9 +69,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'phone' => $data['phone'],
+            'id_card_number' => $data['id_card_number'],
+            'provinces' => $data['provinces'],
         ]);
     }
 }

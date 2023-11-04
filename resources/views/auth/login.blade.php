@@ -9,11 +9,10 @@
                 @csrf
 
                 <div class="row mb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-12 input_box">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" placeholder="อีเมล" required autocomplete="email"
-                            autofocus>
-
+                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <label>อีเมล</label>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -23,10 +22,10 @@
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-12 input_box">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="current-password" placeholder="รหัสผ่าน">
-
+                            name="password" required autocomplete="current-password">
+                        <label>รหัสผ่าน</label>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

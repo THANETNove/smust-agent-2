@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="{{ URL::asset('/assets/image/home/SMUSTAgentlogo.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>SMUST-Agent</title>
 
     <!-- Fonts -->
 
