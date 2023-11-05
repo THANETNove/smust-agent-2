@@ -52,4 +52,11 @@ class HomeController extends Controller
         return response()->json($data);
 
     }
+    public function detall($id)
+    {
+
+
+        return view('detall.detall');
+
+    }
 }

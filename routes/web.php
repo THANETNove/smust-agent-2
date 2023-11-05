@@ -23,3 +23,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/get-districts/{id}', [App\Http\Controllers\HomeController::class, 'districts'])->name('get-districts');
 Route::get('/get-amphures/{id}', [App\Http\Controllers\HomeController::class, 'amphures'])->name('get-amphures');
+Route::get('/get-detall/{id}', [App\Http\Controllers\HomeController::class, 'detall'])->name('get-detall');
