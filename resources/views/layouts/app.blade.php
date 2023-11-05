@@ -104,7 +104,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ URL::asset('/assets/js/provinces.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/javascript.js') }}"></script>
 </body>
 
 </html>

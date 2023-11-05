@@ -666,6 +666,7 @@ input[autofocus]:focus {
     color: var(--white);
     font-size: 20px;
     font-weight: 700;
+    display: none;
 }
 
 .sava-image {
@@ -695,6 +696,7 @@ input[autofocus]:focus {
     width: 42px;
     height: auto;
     margin-right: 8px;
+    cursor: pointer;
 }
 
 

@@ -6,8 +6,8 @@
             <div class="image-box">
                 <div class="mr-4">
                     <div class="sava-image">
-                        <img class="save-link ml-16" src="{{ URL::asset('/assets/image/home/link.png') }}">
-                        <img class="save-link " src="{{ URL::asset('/assets/image/home/save.png') }}">
+                        <img class="save-link ml-16" id="link-url" src="{{ URL::asset('/assets/image/home/link.png') }}">
+                        <img class="save-link "id="captureButton" src="{{ URL::asset('/assets/image/home/save.png') }}">
                     </div>
                     <img class="image-detall-1" src="{{ URL::asset('/assets/image/home/42.png') }}">
                 </div>
@@ -44,11 +44,11 @@
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                            tabindex="0"> <button id="captureButton">captureButton</button>
+                            tabindex="0"> ....
                             <!-- Button to toggle the frame -->
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                            tabindex="0"> <button id="captureButton">captureButton</button>
+                            tabindex="0"> ....
                             <!-- Button to toggle the frame -->
                         </div>
                     </div>
@@ -57,46 +57,4 @@
         </div>
 
     </div>
-    <script>
-        const captureButton = document.getElementById("captureButton");
-        const captureContainer = document.getElementById("container");
-        const captureBackground = document.getElementById("background-container");
-
-        captureButton.addEventListener("click", () => {
-            captureContainer.style.border = "3px solid var(--primary_200)";
-            captureContainer.style.padding = "16px";
-            captureContainer.style.maxWidth = "700px";
-            html2canvas(document.getElementById("container")).then(canvas => {
-                const dataURL = canvas.toDataURL("image/png");
-
-                const downloadLink = document.createElement("a");
-                downloadLink.href = dataURL;
-                downloadLink.download = "webpage.png";
-                downloadLink.click();
-            });
-            captureContainer.style.border = "none";
-            captureContainer.style.padding = "0px";
-            captureContainer.style.maxWidth = "100%";
-        });
-
-        /*    captureButton.addEventListener("click", () => {
-               html2canvas(document.getElementById("container")).then(canvas => {
-                   const dataURL = canvas.toDataURL("image/png");
-                   // สร้างภาพใน HTML และใส่การเงา
-                     const imgElement = document.createElement("img")  ;
-
-        captureButton.src = dataURL;
-        captureButton.style.border = "3px solid var(--primary_200)";
-        captureButton.style.padding = "16px";
-        captureButton.style.maxWidth = "800px";
-
-        // สร้างลิงก์ดาวน์โหลด
-        const downloadLink = document.createElement("a");
-        downloadLink.href = dataURL;
-        downloadLink.download = "webpage.png";
-        downloadLink.click();
-
-        });
-        });*/
-    </script>
 @endsection
