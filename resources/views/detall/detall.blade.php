@@ -44,8 +44,63 @@
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                            tabindex="0"> ....
-                            <!-- Button to toggle the frame -->
+                            tabindex="0">
+                            <div class="flex-direction-row margin-bottom-8">
+                                <img class="icon-content" src="{{ URL::asset('/assets/image/home/map.png') }}">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.google.com/maps/place/13%C2%B046'42.9%22N+100%C2%B045'34.6%22E/@13.7785833,100.7596111,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.7785833!4d100.7596111?entry=ttu"
+                                    class="text-content-dark_100  text-ellipsis">
+                                    https://www.google.com/maps/place/13%C2%B046'42.9%22N+100%C2%B045'34.6%22E/@13.7785833,100.7596111,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.7785833!4d100.7596111?entry=ttu
+                                </a>
+                            </div>
+
+
+                            <p target="_blank" rel="noopener noreferrer"
+                                class="text-content-dark_100 margin-bottom-8  text-ellipsis">
+                                <img class="icon-content-2"
+                                    src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                5 mins to <span class="text-decoration">BTS หมอชิต MRT พหลโยธิน </span>
+                            </p>
+
+                            <div class="flex-direction-break-word margin-bottom-8 mt-wealth">
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                    <span>3 ห้องนอน</span>
+                                </div>
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/shower.png') }}">
+                                    <span>1 ห้องน้ำ</span>
+                                </div>
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
+                                    <span>33.32 ตร.ม.</span>
+                                </div>
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/countertops.png') }}">
+                                    <span>สตูดิโอ</span>
+                                </div>
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/floor.png') }}">
+                                    <span>ชั้น 12</span>
+                                </div>
+                                <div class="box-content-icon">
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/weekend.png') }}">
+                                    <span>ตกแต่งครบ</span>
+                                </div>
+                            </div>
+
+                            <p target="_blank" rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/location_on.png') }}">
+                                5 ซอย พหลโยธิน 18 จอมพล, จตุจักร, Bangkok 10900
+                            </p>
+
+                            <p class="head-content">รายละเอียด</p>
+                            <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่ อาศัย
+                                ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
+                                <div class="minimum-rent-box"></div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
                             tabindex="0"> ....

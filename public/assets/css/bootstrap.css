@@ -24,6 +24,7 @@
     --green: #629F8C;
     --yellow: #FAA631;
     --tertiary: #EEF1F4;
+    --primary_400: #014158;
 }
 
 
@@ -33,6 +34,14 @@ body {
 
 p {
     margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.text-decoration {
+    text-decoration: underline;
+}
+
+.margin-bottom-8 {
     margin-bottom: 8px;
 }
 
@@ -405,6 +414,8 @@ input[autofocus]:focus {
     color: var(--dark_100);
     text-decoration: underline;
 }
+
+
 
 .img-icon {
     width: 20px;
@@ -781,4 +792,74 @@ input[autofocus]:focus {
     background-color: var(--primary);
     border-radius: 2.5px;
     border: 1px solid var(--primary);
+}
+
+.text-content-black {
+    color: var(--black);
+}
+
+.text-content-dark_100 {
+    color: var(--dark_100);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.icon-content {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.icon-content-2 {
+    width: 20px;
+    height: auto;
+    margin-right: 4px;
+}
+
+.text-ellipsis {
+    /* white-space: nowrap; */
+    overflow: hidden;
+    /* ข้อความที่เกินจะถูกซ่อน */
+    text-overflow: ellipsis;
+    /* เพิ่ม ellipsis (...) หากข้อความเกิน */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* จำกัดให้แสดงได้แค่ 2 บรรทัด */
+    -webkit-box-orient: vertical;
+}
+
+.box-content-icon {
+    background-color: var(--primary_100);
+    padding: 4px 8px;
+    border-radius: 3px;
+    color: var(--primary_400);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+
+
+}
+
+.flex-direction-break-word {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.head-content {
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.text-content {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
 }
