@@ -27,7 +27,7 @@
             </div>
             <div>
                 <p class="p-login text-center mt-wealth">ทรัพย์ของฉัน (51) </p>
-                <button class="box-filter_alt">
+                <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
                 </button>
             </div>
@@ -177,7 +177,73 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title fs-5">
+                        <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="font-size-12-black">ประเภททรัพย์</p>
+                    <div class="flex-direction-row">
+                        <div class="property-box">
+                            <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
+                            <p class="font-size-12-black text-center">บ้าน</p>
+                        </div>
+                        <div class="property-box">
+                            <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
+                            <p class="font-size-12-black text-center">คอนโด</p>
+                        </div>
+                    </div>
+                    <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
+                    <div class="flex-direction-row">
+                        <div class="rent-buy">
+                            <p class="font-size-12-black">เช่า</p>
+                        </div>
+                        <div class="rent-buy">
+                            <p class="font-size-12-black">ซื้อ</p>
+                        </div>
+                    </div>
+                    <p class="font-size-12-black mt-21">พื้นที่</p>
+                    <select class="select-address select-address form-select font-size-12-black" name="provinces"
+                        id="provinces-id" aria-label="Default select example">
+                        <option selected disabled>จังหวัด</option>
+                        @foreach ($data as $provinces)
+                            <option value="{{ $provinces->id }}">{{ $provinces->name_th }}</option>
+                        @endforeach
+                    </select>
+                    <select class="select-address form-select mt-2 font-size-12-black" id="districts"
+                        aria-label="Default select example">
+                        <option selected disabled>แขวง/ อำเภอ</option>
+                    </select>
+                    <select class="select-address form-select mt-2 font-size-12-black" name="amphures" id="amphures"
+                        aria-label="Default select example">
+                        <option selected disabled>เขต/ ตำบล</option>
+                    </select>
+
+                    <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
+                    <img class="property-img" src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
+                    <select class="form-select mt-2 font-size-12-black " aria-label="Default select example">
+                        <option selected disabled> ชื่อสถานี</option>
+                        <option value="ไม่มี">ไม่มี</option>
+                        @foreach ($train_station as $train)
+                            <option value="{{ $train->id }}">{{ $train->station_name_th }}</option>
+                        @endforeach
+
+                    </select>
+                    <div class="box-button">
+                        <button class="btn-search">ค้นหา</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

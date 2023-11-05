@@ -514,3 +514,94 @@ input[autofocus]:focus {
 .mt-wealth {
     margin-top: 16px;
 }
+
+.modal-title {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: var(--dark) !important;
+}
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: none !important;
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+.flex-direction-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-direction-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.property-box {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: var(--white);
+    width: 57px;
+    height: 59px;
+    border-radius: 10px;
+    margin-right: 16px;
+
+}
+
+.font-size-12-black {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.property-img {
+    margin: 8px 0px 0px 16px;
+    width: 20px;
+    height: auto;
+
+}
+
+.mt-21 {
+    margin-top: 21px;
+}
+
+.rent-buy {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: var(--white);
+    width: 80px;
+    height: 24px;
+    border-radius: 10px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.btn-search {
+    margin-top: 30px;
+    margin-bottom: 41px;
+    background-color: var(--primary);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 271px;
+    height: 36px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.btn-search:hover {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.box-button {
+    display: flex;
+    justify-content: center;
+}

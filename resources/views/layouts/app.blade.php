@@ -31,6 +31,10 @@
 
     <link href="{{ URL::asset('/assets/css/bootstrap.css') }}" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 
 </head>
 
@@ -97,6 +101,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ URL::asset('/assets/js/provinces.js') }}"></script>
 </body>
 
 </html>
