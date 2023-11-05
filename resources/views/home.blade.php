@@ -213,32 +213,11 @@
                         </div>
                     </div>
                     <p class="font-size-12-black mt-21">พื้นที่</p>
-                    <select class="select-address select-address form-select font-size-12-black" name="provinces"
-                        id="provinces-id" aria-label="Default select example">
-                        <option selected disabled>จังหวัด</option>
-                        @foreach ($data as $provinces)
-                            <option value="{{ $provinces->id }}">{{ $provinces->name_th }}</option>
-                        @endforeach
-                    </select>
-                    <select class="select-address form-select mt-2 font-size-12-black" id="districts"
-                        aria-label="Default select example">
-                        <option selected disabled>แขวง/ อำเภอ</option>
-                    </select>
-                    <select class="select-address form-select mt-2 font-size-12-black" name="amphures" id="amphures"
-                        aria-label="Default select example">
-                        <option selected disabled>เขต/ ตำบล</option>
-                    </select>
+                    @include('layouts.address')
 
                     <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
                     <img class="property-img" src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
-                    <select class="form-select mt-2 font-size-12-black " aria-label="Default select example">
-                        <option selected disabled> ชื่อสถานี</option>
-                        <option value="ไม่มี">ไม่มี</option>
-                        @foreach ($train_station as $train)
-                            <option value="{{ $train->id }}">{{ $train->station_name_th }}</option>
-                        @endforeach
-
-                    </select>
+                    @include('layouts.train_station')
                     <div class="box-button">
                         <button class="btn-search">ค้นหา</button>
                     </div>
