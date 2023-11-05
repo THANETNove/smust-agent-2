@@ -23,7 +23,7 @@
 
                 <div class="row mb-3">
                     <div class="col-md-12 input_box">
-                        <input id="password" type="text" class="form-control @error('password') is-invalid @enderror"
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password" value="{{ old('password') }}" required autocomplete="password">
                         <label>รหัสผ่าน</label>
                         @error('password')
