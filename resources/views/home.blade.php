@@ -62,7 +62,7 @@
                                         33.32 ตร.ม.
                                     </span>
                                 </p>
-                                <div class="rent-sell-green">เช่า/ขาย</div>
+                                <div class="rent-sell-primary absolute-rent-sell">เช่า</div>
                                 <div class="box-price">
                                     <p>฿15,000/m</p>
                                     <p>฿2.9 ล้าน</p>
@@ -97,7 +97,7 @@
                                         33.32 ตร.ม.
                                     </span>
                                 </p>
-                                <div class="rent-sell-green">เช่า/ขาย</div>
+                                <div class="rent-sell-yellow absolute-rent-sell">ขาย</div>
                                 <div class="box-price">
                                     <p>฿15,000/m</p>
                                     <p>฿2.9 ล้าน</p>
@@ -134,7 +134,7 @@
                                         33.32 ตร.ม.
                                     </span>
                                 </p>
-                                <div class="rent-sell-green">เช่า/ขาย</div>
+                                <div class="rent-sell-green absolute-rent-sell">เช่า/ขาย</div>
                                 <div class="box-price">
                                     <p>฿15,000/m</p>
                                     <p>฿2.9 ล้าน</p>
@@ -169,7 +169,7 @@
                                         33.32 ตร.ม.
                                     </span>
                                 </p>
-                                <div class="rent-sell-green">เช่า/ขาย</div>
+                                <div class="rent-sell-green absolute-rent-sell">เช่า/ขาย</div>
                                 <div class="box-price">
                                     <p>฿15,000/m</p>
                                     <p>฿2.9 ล้าน</p>

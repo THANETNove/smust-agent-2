@@ -55,6 +55,9 @@ p {
         margin-top: 44px;
     }
 
+    .content-box {
+        padding: 0px 8px;
+    }
 
 }
 
@@ -74,6 +77,12 @@ p {
     .box-filter_alt {
         margin-left: -74px;
     }
+
+    .content-box {
+        width: 700px;
+        padding: 0px 64px;
+    }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -85,6 +94,11 @@ p {
     .ellipse {
         margin-top: 32px;
         margin-left: 32px;
+    }
+
+    .box-content {
+        display: flex;
+        justify-content: center;
     }
 
 }
@@ -424,45 +438,39 @@ input[autofocus]:focus {
 }
 
 .rent-sell-primary {
-    right: 0;
-    top: 0;
-    background-color: var(--primary);
-    position: absolute;
-    margin-top: 16px;
-    margin-right: -8px;
     padding: 0px 8px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
     color: var(--white);
+    background-color: var(--primary);
 }
 
 .rent-sell-yellow {
-    right: 0;
-    top: 0;
-    background-color: var(--yellow);
-    position: absolute;
-    margin-top: 16px;
-    margin-right: -8px;
     padding: 0px 8px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
     color: var(--white);
+    background-color: var(--yellow);
 }
 
 .rent-sell-green {
-    right: 0;
-    top: 0;
-    background-color: var(--green);
-    position: absolute;
-    margin-top: 16px;
-    margin-right: -8px;
     padding: 0px 8px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
     color: var(--white);
+    background-color: var(--green);
+
+}
+
+.absolute-rent-sell {
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin-top: 16px;
+    margin-right: -8px;
 
 }
 
@@ -612,14 +620,89 @@ input[autofocus]:focus {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .image-detall-1 {
-    width: 259px;
+    max-width: 265px;
+    width: 100%;
     height: auto;
 }
 
 .image-detall-2 {
-    width: 127px;
+    max-width: 130px;
+    width: 100%;
     height: auto;
+}
+
+.image-opacity {
+    position: relative;
+    max-width: 130px;
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.number-image {
+    position: absolute;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sava-image {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mr-4 {
+    margin-right: 4px;
+}
+
+.mr-8 {
+    margin-right: 8px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.save-link {
+    width: 42px;
+    height: auto;
+    margin-right: 8px;
+}
+
+
+
+.head-text-detall {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.period-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.price-detall {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+
 }
