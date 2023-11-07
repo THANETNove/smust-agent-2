@@ -240,7 +240,7 @@
                                             src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
                                         ถามเพิ่ม
                                     </a>
-                                    <a href="javascript:void(0);" class="box-call" onclick="openPhoneCall('0931760535')">
+                                    <a href="tel:086-899-9089" class="box-call">
                                         <img class="icon-content-2"
                                             src="{{ URL::asset('/assets/image/home/call.png') }}">
                                         โทร
@@ -256,17 +256,4 @@
         </div>
 
     </div>
-
-    <script>
-        function openPhoneCall(number) {
-            console.log("number", number);
-            const phoneNumber = 'tel:086-899-9089';
-
-            if (window.Linking && window.Linking.openURL) {
-                window.Linking.openURL(phoneNumber);
-            } else {
-                alert('Phone call functionality is not supported on this device.');
-            }
-        }
-    </script>
 @endsection
