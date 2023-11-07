@@ -97,38 +97,77 @@
                             </p>
 
                             <p class="head-content">รายละเอียด</p>
-                            <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่ อาศัย
-                                ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
-                            <p class="text-content-black margin-bottom-8">
-                                <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
-                                เช่าขั้นต่ำ <span class="ml-24">6 เดือน</span>
-                            </p>
-
-                            <div class="space-between">
+                            {{-- เช่า  --}}
+                            <div>
+                                <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่
+                                    อาศัย
+                                    ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
                                 <p class="text-content-black margin-bottom-8">
-                                    <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                    เงินประกัน
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                    เช่าขั้นต่ำ <span class="ml-24">6 เดือน</span>
                                 </p>
-                                <span>-</span>
-                                <p class="text-content-black margin-bottom-8">
-                                    <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                    เงินมัดจำ <span class="ml-24">3 เดือน</span>
-                                </p>
+                                <div class="space-between">
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        เงินประกัน
+                                    </p>
+                                    <span>-</span>
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        เงินมัดจำ <span class="ml-24">3 เดือน</span>
+                                    </p>
+                                </div>
+                                <div class="space-between">
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        ค่าเช่าล่วงหน้า
+                                    </p>
+                                    <span>-</span>
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        เงินจอง <span class="ml-24">2,000 บาท</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="space-between">
+                            {{-- ขาย  --}}
+                            <div>
+                                <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่
+                                    อาศัย
+                                    ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
                                 <p class="text-content-black margin-bottom-8">
-                                    <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                    ค่าเช่าล่วงหน้า
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                    ราคาขาย <span class="ml-24">1,200,000 บาท</span>
                                 </p>
-                                <span>-</span>
-                                <p class="text-content-black margin-bottom-8">
-                                    <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                    เงินจอง <span class="ml-24">2,000 บาท</span>
-                                </p>
+                                <div class="space-between">
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        เงินดาวน์ <span class="ml-24">200,000 บาท</span>
+                                    </p>
+                                    <span>-</span>
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        ผ่อนดาวน์ได้ / ไม่ได้
+                                    </p>
+                                </div>
+                                <div class="space-between">
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        ผ่อนได้ <span class="ml-24">6 งวด</span>
+                                    </p>
+                                    <span>-</span>
+                                    <p class="text-content-black margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                        งวดละ <span class="ml-24">2,000 บาท</span>
+                                    </p>
+                                </div>
                             </div>
 
                             <p class="head-content">สิ่งอำนวยความสะดวก</p>
@@ -159,7 +198,7 @@
                                 <div class="col-6">
                                     <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                         <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            src="{{ URL::asset('/assets/image/home/add_comment.png') }}">
                                         ตู้เสื้อผ้า
                                     </p>
                                 </div>
@@ -182,9 +221,34 @@
                             </div>
 
                         </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                            tabindex="0"> ....
-                            <!-- Button to toggle the frame -->
+                        <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            tabindex="0">
+                            <div class="align-items-center">
+                                <a href="" class="box-appointment">
+                                    <img class="icon-content-3"
+                                        src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
+                                    นัดดูสถานที่
+                                </a>
+                                <a href="" class="box-appointment">
+                                    <img class="icon-content-3"
+                                        src="{{ URL::asset('/assets/image/home/person_add.png') }}">
+                                    ส่งลูกค้า
+                                </a>
+                                <div class="flex-direction-row mb-5">
+                                    <a href="" class="box-ask-more">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
+                                        ถามเพิ่ม
+                                    </a>
+                                    <a href="javascript:void(0);" class="box-call" onclick="openPhoneCall('0931760535')">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/call.png') }}">
+                                        โทร
+                                    </a>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -192,4 +256,17 @@
         </div>
 
     </div>
+
+    <script>
+        function openPhoneCall(number) {
+            console.log("number", number);
+            const phoneNumber = 'tel:086-899-9089';
+
+            if (window.Linking && window.Linking.openURL) {
+                window.Linking.openURL(phoneNumber);
+            } else {
+                alert('Phone call functionality is not supported on this device.');
+            }
+        }
+    </script>
 @endsection

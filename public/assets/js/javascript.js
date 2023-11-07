@@ -102,5 +102,6 @@ $(document).ready(function () {
         captureSaveLink.style.display = "block";
     });
 
+ 
     // ตัวอย่างอื่น ๆ ของโค้ด JavaScript
 });
