@@ -55,8 +55,7 @@
                             </div>
 
 
-                            <p target="_blank" rel="noopener noreferrer"
-                                class="text-content-dark_100 margin-bottom-8  text-ellipsis">
+                            <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
                                 <img class="icon-content-2"
                                     src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
                                 5 mins to <span class="text-decoration">BTS หมอชิต MRT พหลโยธิน </span>
@@ -92,7 +91,7 @@
                                 </div>
                             </div>
 
-                            <p target="_blank" rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                            <p class="text-content-dark_100 margin-bottom-8">
                                 <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/location_on.png') }}">
                                 5 ซอย พหลโยธิน 18 จอมพล, จตุจักร, Bangkok 10900
                             </p>
@@ -100,7 +99,88 @@
                             <p class="head-content">รายละเอียด</p>
                             <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่ อาศัย
                                 ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
-                                <div class="minimum-rent-box"></div>
+                            <p class="text-content-black margin-bottom-8">
+                                <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                เช่าขั้นต่ำ <span class="ml-24">6 เดือน</span>
+                            </p>
+
+                            <div class="space-between">
+                                <p class="text-content-black margin-bottom-8">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                    เงินประกัน
+                                </p>
+                                <span>-</span>
+                                <p class="text-content-black margin-bottom-8">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                    เงินมัดจำ <span class="ml-24">3 เดือน</span>
+                                </p>
+                            </div>
+                            <div class="space-between">
+                                <p class="text-content-black margin-bottom-8">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                    ค่าเช่าล่วงหน้า
+                                </p>
+                                <span>-</span>
+                                <p class="text-content-black margin-bottom-8">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                    เงินจอง <span class="ml-24">2,000 บาท</span>
+                                </p>
+                            </div>
+
+                            <p class="head-content">สิ่งอำนวยความสะดวก</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        ห้องครัว
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        เตียง
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        ฟิตเนส
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        ตู้เสื้อผ้า
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        ที่จอดรถ
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        เครื่องปรับอากาศ
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
                             tabindex="0"> ....

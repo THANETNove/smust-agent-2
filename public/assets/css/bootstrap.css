@@ -863,3 +863,13 @@ input[autofocus]:focus {
     font-weight: 400;
     color: var(--black);
 }
+
+.ml-24 {
+    margin-left: 24px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 24px;
+}
