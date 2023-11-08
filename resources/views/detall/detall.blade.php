@@ -19,16 +19,28 @@
                     </div>
                 </div>
             </div>
-            <div class="box-content">
+            <div class="box-content" id="back-home">
                 <div class="content-box">
-                    <p class="head-text-detall">อาคารชุดนอตติ้ง ฮิลล์ จตุจักร</p>
+                    <a href="{{ url('/home') }}" class="box-call">
+                        กลับ
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+
+
+                <div class="content-box">
+                    <p class="head-text-detall">อาคารชุดนอตติ้ง ฮิลล์ จตุจักรอาคารชุดนอตติ้ง ฮิลล์ จตุจักร อาคารชุดนอตติ้ง
+                        ฮิลล์ จตุจักร</p>
                     <p class="period-text">โพสเมื่อ: 3 วันที่แล้ว</p>
                     <p class="price-detall text-center">
                         <span class="rent-sell-green width-rent-sell">
                             เช่า/ขาย
                         </span>15,000/m
                     </p>
+
                     <nav class="mt-wealth">
+
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
@@ -43,6 +55,7 @@
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
+
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                             tabindex="0">
                             <div class="flex-direction-row margin-bottom-8">

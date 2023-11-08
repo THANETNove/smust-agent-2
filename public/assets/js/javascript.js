@@ -78,6 +78,7 @@ $(document).ready(function () {
     const captureContainer = document.getElementById("container");
     const captureSave = document.getElementById("captureButton");
     const captureSaveLink = document.getElementById("link-url");
+    const captureBack = document.getElementById("back-home");
 
     captureButton.addEventListener("click", () => {
         captureContainer.style.border = "3px solid var(--primary_200)";
@@ -85,6 +86,7 @@ $(document).ready(function () {
         captureContainer.style.maxWidth = "700px";
         captureSave.style.display = "none";
         captureSaveLink.style.display = "none";
+        captureBack.style.visibility = "hidden";
 
         /*      captureSaveLink.style.padding = "0" */
         html2canvas(document.getElementById("container")).then((canvas) => {
@@ -100,8 +102,8 @@ $(document).ready(function () {
         captureContainer.style.maxWidth = "100%";
         captureSave.style.display = "block";
         captureSaveLink.style.display = "block";
+        captureBack.style.visibility = "visible";
     });
 
- 
     // ตัวอย่างอื่น ๆ ของโค้ด JavaScript
 });
