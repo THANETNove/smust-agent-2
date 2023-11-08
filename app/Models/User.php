@@ -25,6 +25,7 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'phone',
+        'status',
         'id_card_number',
         'provinces',
 

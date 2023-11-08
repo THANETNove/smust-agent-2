@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'id_card_number' => $data['id_card_number'],
             'provinces' => $data['provinces'],
+            'status' => "0",
         ]);
     }
 }

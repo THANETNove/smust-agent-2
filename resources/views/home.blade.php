@@ -30,11 +30,16 @@
                 <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
                 </button>
+                @if (Auth::user()->status != '0')
+                    <a href="{{ url('/create-content') }}" class="box-call ml-16">
+                        เพิ่ม
+                    </a>
+                @endif
             </div>
-            <a href="{{ url('/create-content') }}" class="box-call">
-                เพิ่ม
-            </a>
+
+
         </div>
+
 
         <div class="card-content">
             <div class="row ">

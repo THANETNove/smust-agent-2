@@ -18,7 +18,7 @@ class RentSellHouseController extends Controller
 
     public function index()
     {
-        //
+
     }
 
     /**
@@ -26,7 +26,7 @@ class RentSellHouseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');//
     }
 
     /**
