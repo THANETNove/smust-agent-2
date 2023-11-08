@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RentSellHouseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// ส่วนของนายหน้า
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/get-districts/{id}', [HomeController::class, 'districts'])->name('get-districts');
+Route::get('/get-amphures/{id}', [HomeController::class, 'amphures'])->name('get-amphures');
+Route::get('/get-detall/{id}', [HomeController::class, 'detall'])->name('get-detall');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/get-districts/{id}', [App\Http\Controllers\HomeController::class, 'districts'])->name('get-districts');
-Route::get('/get-amphures/{id}', [App\Http\Controllers\HomeController::class, 'amphures'])->name('get-amphures');
-Route::get('/get-detall/{id}', [App\Http\Controllers\HomeController::class, 'detall'])->name('get-detall');
+
+//ส่วนของ admin
+Route::group(['middleware' => ['is_admin']], function () {
+    Route::get('/create-content', [HomeController::class, 'create'])->name('create-content');
+});

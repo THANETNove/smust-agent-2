@@ -31,7 +31,9 @@
                     <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
                 </button>
             </div>
-
+            <a href="{{ url('/create-content') }}" class="box-call">
+                เพิ่ม
+            </a>
         </div>
 
         <div class="card-content">
