@@ -27,21 +27,24 @@ class HomeController extends Controller
     public function index()
     {
 
-    /*     $dataHome = DB::table('rent_sell_home_details');
+        $dataHome = DB::table('rent_sell_home_details');
         if( Auth::user()->status < 3){
             $dataHome =  $dataHome
-            ->where('id_user', Auth::user()->id)
-            ->orderBy('post_products.id','DESC')
+            ->where('code_admin', Auth::user()->code_admin)
+            ->orderBy('id','DESC')
             ->get();
         }else {
-
+            $dataHome =  $dataHome
+            ->orderBy('id','DESC')
+            ->get();
         }
- */
+
         $data = DB::table('provinces')->get();
+
         $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')->get();
 
-        $home = DB::table('provinces')->get();
-        return view('home',['train_station' => $train_station,"data" =>  $data ]);
+
+        return view('home',['train_station' => $train_station, "data" =>  $data , 'dataHome' => $dataHome]);
     }
 
     public function districts($id)

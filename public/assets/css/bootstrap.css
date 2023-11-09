@@ -35,6 +35,7 @@ body {
 p {
     margin-top: 0;
     margin-bottom: 8px;
+
 }
 
 .text-decoration {
@@ -393,7 +394,7 @@ input[autofocus]:focus {
 }
 
 .card-box p {
-    line-height: 8px !important;
+    line-height: 1.5 !important;
 }
 
 .img-0831 {
@@ -401,17 +402,21 @@ input[autofocus]:focus {
     padding: 8px;
     border-radius: 8px;
     height: auto;
+    max-height: 105px;
 }
 
 
 .name-content {
+    position: relative;
     margin-top: 16px;
     font-size: 14px;
     font-weight: 700;
     color: var(--black);
+
 }
 
 .name-details {
+    width: 70%;
     font-size: 12px;
     font-weight: 400;
     color: var(--dark_100);
