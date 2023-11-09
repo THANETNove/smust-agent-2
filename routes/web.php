@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/get-districts/{id}', [HomeController::class, 'districts'])->name('get-districts');
 Route::get('/get-amphures/{id}', [HomeController::class, 'amphures'])->name('get-amphures');
-Route::get('/get-detall/{id}', [HomeController::class, 'detall'])->name('get-detall');
+Route::get('/get-detall/{id}', [HomeController::class, 'show'])->name('get-detall');
 
 
 //ส่วนของ admin

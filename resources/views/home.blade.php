@@ -50,7 +50,7 @@
             <div class="row ">
                 @foreach ($dataHome as $home)
                     <div class="col-md-6 col-lg-4 ">
-                        <a href="{{ url('get-detall/12') }}">
+                        <a href="{{ url('get-detall', $home->id) }}">
                             <div class="card-box">
                                 @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
                                     <div class="box-new">NEW</div>
@@ -80,7 +80,20 @@
                                             {{ $home->room_width }} ตร.ม.
                                         </span>
                                     </p>
-                                    <div class="rent-sell-primary absolute-rent-sell">เช่า</div>
+                                    @if ($home->rent_sell == 'เช่า')
+                                        <span class="rent-sell-primary absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @elseif ($home->rent_sell == 'ขาย')
+                                        <span class="rent-sell-yellow absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @else
+                                        <span class="rent-sell-green absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @endif
+                                    {{--    <div class="rent-sell-primary absolute-rent-sell">เช่า</div> --}}
                                     <div class="box-price">
                                         <p>฿15,000/m</p>
                                         <p>฿2.9 ล้าน</p>

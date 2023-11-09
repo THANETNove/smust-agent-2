@@ -81,11 +81,22 @@ class HomeController extends Controller
         return response()->json($data);
 
     }
-    public function detall($id)
+    public function show($id)
     {
+        $dataHome = DB::table('rent_sell_home_details')
+        ->where('rent_sell_home_details.id', $id)
+        ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
+        ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
+        ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+        ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
+        'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
+        ->orderBy('rent_sell_home_details.id','DESC')
+        ->get();
 
-
-        return view('detall.detall');
+        return view('detall.detall', ['dataHome' => $dataHome]);
 
     }
+
+
+
 }
