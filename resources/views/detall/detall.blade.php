@@ -81,10 +81,9 @@
                                 aria-labelledby="nav-home-tab" tabindex="0">
                                 <div class="flex-direction-row margin-bottom-8">
                                     <img class="icon-content" src="{{ URL::asset('/assets/image/home/map.png') }}">
-                                    <a target="_blank" rel="noopener noreferrer"
-                                        href="https://www.google.com/maps/place/13%C2%B046'42.9%22N+100%C2%B045'34.6%22E/@13.7785833,100.7596111,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.7785833!4d100.7596111?entry=ttu"
+                                    <a target="_blank" rel="noopener noreferrer" href="{{ $home->url_gps }}"
                                         class="text-content-dark_100  text-ellipsis">
-                                        https://www.google.com/maps/place/13%C2%B046'42.9%22N+100%C2%B045'34.6%22E/@13.7785833,100.7596111,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.7785833!4d100.7596111?entry=ttu
+                                        {{ $home->url_gps }}
                                     </a>
                                 </div>
 

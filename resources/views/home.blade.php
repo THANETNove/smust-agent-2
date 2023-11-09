@@ -95,8 +95,17 @@
                                     @endif
                                     {{--    <div class="rent-sell-primary absolute-rent-sell">เช่า</div> --}}
                                     <div class="box-price">
-                                        <p>฿15,000/m</p>
-                                        <p>฿2.9 ล้าน</p>
+                                        @if ($home->sell_price)
+                                            <p>
+                                                ฿{{ $home->sell_price }} บาท
+                                            </p>
+                                        @endif
+                                        @if ($home->rental_price)
+                                            <p>
+                                                ฿ {{ $home->rental_price }}/m
+                                            </p>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>
