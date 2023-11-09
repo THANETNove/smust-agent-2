@@ -659,20 +659,20 @@ input[autofocus]:focus {
 .image-detall-1 {
     max-width: 265px;
     width: 100%;
-    height: auto;
+    height: 265px;
 }
 
 .image-detall-2 {
     max-width: 130px;
     width: 100%;
-    height: auto;
+    height: 130px;
 }
 
 .image-opacity {
     position: relative;
     max-width: 130px;
     width: 100%;
-    height: auto;
+    height: 130px;
     background-color: var(--white);
     opacity: 0.5;
     display: flex;

@@ -93,6 +93,8 @@ class HomeController extends Controller
         ->orderBy('rent_sell_home_details.id','DESC')
         ->get();
 
+
+
         return view('detall.detall', ['dataHome' => $dataHome]);
 
     }

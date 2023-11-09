@@ -3,23 +3,31 @@
 @section('content')
     <div class="box-content-background">
         @foreach ($dataHome as $home)
+            @php
+
+                $imgUrl = json_decode(htmlspecialchars_decode($home->image));
+
+            @endphp
             <div id="container">
+                {{ $home->image }}
                 <div class="image-box">
                     <div class="mr-4">
                         <div class="sava-image">
                             <img class="save-link ml-16" id="link-url" src="{{ URL::asset('/assets/image/home/link.png') }}">
                             <img class="save-link "id="captureButton" src="{{ URL::asset('/assets/image/home/save.png') }}">
                         </div>
-                        <img class="image-detall-1" src="{{ URL::asset('/assets/image/home/42.png') }}">
+
+                        <img class="image-detall-1" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
                     </div>
                     <div class="flex-direction-column">
-                        <img class="image-detall-2 " src="{{ URL::asset('/assets/image/home/43.png') }}">
+                        <img class="image-detall-2 " src="{{ URL::asset('/img/product/' . $imgUrl[1]) }}">
                         <div class="image-opacity">
-                            <img class="image-detall-2" src="{{ URL::asset('/assets/image/home/44.png') }}">
+                            <img class="image-detall-2" src="{{ URL::asset('/img/product/' . $imgUrl[2]) }}">
                             <p class="number-image">+7</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="box-content" id="back-home">
                     <div class="content-box">
                         <a href="{{ url('/home') }}" class="box-call">

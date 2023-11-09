@@ -105,7 +105,8 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ความกว้างห้อง (ตร.ม)</label>
                             <input type="number" class="form-control @error('room_width') is-invalid @enderror"
-                                name="room_width" id="exampleFormControlInput1" placeholder="ความกว้างห้อง (ตร.ม)">
+                                name="room_width" id="exampleFormControlInput1" placeholder="ความกว้างห้อง (ตร.ม)"
+                                step="0.1">
                             @error('room_width')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -376,7 +377,7 @@
 
 
                         <button type="submit" id="submitBtn"
-                            class=" btn btn-primary mt-3
+                            class=" btn btn-primary mt-3 mb-5
                     btn-user btn-block">
                             {{ __('บันทึก') }}
                         </button>

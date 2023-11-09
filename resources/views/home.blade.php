@@ -55,8 +55,13 @@
                                 @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
                                     <div class="box-new">NEW</div>
                                 @endif
+                                @php
 
-                                <img class="img-0831" src="{{ URL::asset('/assets/image/home/IMG_0831.png') }}">
+                                    $imgUrl = json_decode(htmlspecialchars_decode($home->image));
+
+                                @endphp
+
+                                <img class="img-0831" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
                                 <div>
                                     <p class="name-content">{{ $home->building_name }}</p>
                                     <p class="name-details">
