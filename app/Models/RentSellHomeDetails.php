@@ -10,6 +10,7 @@ class RentSellHomeDetails extends Model
     use HasFactory;
 
     protected $fillable = [
+        'code_admin',
         'building_name',
         'rent_sell',
         'rental_price',

@@ -40,8 +40,8 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ราคาเช่า (ไม่มีไม่ต้องใส่)</label>
-                            <input type="text" class="form-control @error('rental_price') is-invalid @enderror"
-                                name="rental_price" id="exampleFormControlInput1" placeholder="ชื่ออาคาร/สถานที่">
+                            <input type="number" class="form-control @error('rental_price') is-invalid @enderror"
+                                name="rental_price" id="exampleFormControlInput1" placeholder="ราคาเช่า">
                             @error('rental_price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -50,8 +50,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ราคาขาย (ไม่มีไม่ต้องใส่)</label>
-                            <input type="text" class="form-control @error('sell_price') is-invalid @enderror"
-                                name="sell_price" id="exampleFormControlInput1" placeholder="ชื่ออาคาร/สถานที่">
+                            <input type="number" class="form-control @error('sell_price') is-invalid @enderror"
+                                name="sell_price" id="exampleFormControlInput1" placeholder="ราคาขาย">
                             @error('sell_price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -207,7 +207,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"> เงินจอง  (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label"> เงินจอง (เช่า)</label>
                             <input type="number"
                                 class="form-control mt-2 @error('reservation_money') is-invalid @enderror"
                                 name="reservation_money" id="reservation_money" placeholder="2000">
@@ -219,7 +219,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"> เงินดาวน์  (ขาย)</label>
+                            <label for="exampleFormControlInput1" class="form-label"> เงินดาวน์ (ขาย)</label>
                             <input type="number" class="form-control mt-2 @error('down_payment') is-invalid @enderror"
                                 name="down_payment" id="down_payment" placeholder="2000">
                             @error('down_payment')
@@ -250,7 +250,7 @@
                             <label for="exampleFormControlInput1" class="form-label">งวดละ (ขาย)</label>
                             <input type="number"
                                 class="form-control mt-2 @error('each_installment') is-invalid @enderror"
-                                name="each_installment" id="each_installment" placeholder="3">
+                                name="each_installment" id="each_installment" placeholder="3000">
                             @error('each_installment')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -261,7 +261,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="kitchen" type="checkbox" value=""
+                                        <input class="form-check-input" name="kitchen" type="checkbox"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             ห้องครัว
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="bed" type="checkbox" value=""
+                                        <input class="form-check-input" name="bed" type="checkbox"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             เตียง
@@ -290,7 +290,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="wardrobe" type="checkbox" value=""
+                                        <input class="form-check-input" name="wardrobe" type="checkbox"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             ตู้เสื้อผ้า
@@ -301,7 +301,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="parking" type="checkbox" value=""
+                                        <input class="form-check-input" name="parking" type="checkbox"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             ที่จอดรถ
@@ -311,7 +311,7 @@
                                 <div class="col-6">
                                     <div class="form-check">
                                         <input class="form-check-input" name="air_conditioner" type="checkbox"
-                                            value="" id="flexCheckDefault">
+                                            id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             เครื่องปรับอากาศ
                                         </label>
@@ -323,8 +323,7 @@
                         <div class="mb-3">
                             <input id="file" type="file"
                                 class="form-control @error('image[]') is-invalid @enderror" name="image[]"
-                                value="{{ old('image[]') }}" required autocomplete="image" placeholder="image"
-                                autofocus>
+                                value="{{ old('image[]') }}" multiple required placeholder="image">
 
                             @error('image[]')
                                 <span class="invalid-feedback" role="alert">
@@ -336,7 +335,8 @@
                             <label for="exampleFormControlInput1" class="form-label">นัดดูสถานที่</label>
                             <input type="text"
                                 class="form-control mt-2 @error('make_appointment_location') is-invalid @enderror"
-                                name="make_appointment_location" id="make_appointment_location" placeholder="3">
+                                name="make_appointment_location" id="make_appointment_location"
+                                placeholder="นัดดูสถานที่">
                             @error('make_appointment_location')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -346,7 +346,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ส่งลูกค้า</label>
                             <input type="text" class="form-control mt-2 @error('send_customers') is-invalid @enderror"
-                                name="send_customers" id="send_customers" placeholder="3">
+                                name="send_customers" id="send_customers" placeholder="ส่งลูกค้า">
                             @error('send_customers')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -356,7 +356,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ถามเพิ่มเติม</label>
                             <input type="text" class="form-control mt-2 @error('ask_more') is-invalid @enderror"
-                                name="ask_more" id="ask_more" placeholder="3">
+                                name="ask_more" id="ask_more" placeholder="ถามเพิ่มเติม">
                             @error('ask_more')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -366,7 +366,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">เบอร์ติดต่อ</label>
                             <input type="text" class="form-control mt-2 @error('contact_number') is-invalid @enderror"
-                                name="contact_number" id="contact_number" placeholder="3">
+                                name="contact_number" id="contact_number" placeholder="เบอร์ติดต่อ">
                             @error('contact_number')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

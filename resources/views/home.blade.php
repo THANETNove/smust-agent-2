@@ -35,7 +35,12 @@
                         เพิ่ม
                     </a>
                 @endif
+                @if (session('message'))
+                    <p class="span-message"> {{ session('message') }}</p>
+                @endif
+
             </div>
+
 
 
         </div>

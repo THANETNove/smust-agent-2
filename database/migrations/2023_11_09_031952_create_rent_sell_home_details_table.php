@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rent_sell_home_details', function (Blueprint $table) {
             $table->id();
+            $table->string('code_admin')->nullable()->comment('code Admin');
             $table->string('building_name')->nullable()->comment('ชื่ออาคาร/สถานที่');
             $table->string('rent_sell')->nullable()->comment('เลือก เช่า ขาย เช่า/ขาย');
             $table->string('rental_price')->nullable()->comment('ราคาเช่า');

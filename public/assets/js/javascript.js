@@ -26,7 +26,7 @@ $(document).ready(function () {
 
                         districtsSelect.append(
                             $("<option>", {
-                                value: district.name_th,
+                                value: district.id,
                                 text: district.name_th,
                             })
                         );
@@ -59,7 +59,7 @@ $(document).ready(function () {
                         console.log("data", data.zip_code);
                         amphuresSelect.append(
                             $("<option>", {
-                                value: data.name_th,
+                                value: data.id,
                                 text: data.name_th,
                             })
                         );

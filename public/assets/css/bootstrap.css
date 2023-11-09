@@ -969,3 +969,11 @@ input[autofocus]:focus {
     background-color: var(--white);
     border-radius: 6px;
 }
+
+.span-message {
+    margin-left: 16px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: green;
+}
