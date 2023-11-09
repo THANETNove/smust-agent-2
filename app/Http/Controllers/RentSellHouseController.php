@@ -86,6 +86,7 @@ class RentSellHouseController extends Controller
         $member->send_customers = $request['send_customers'];
         $member->ask_more = $request['ask_more'];
         $member->contact_number = $request['contact_number'];
+        $member->status_home = "on";
 
         $dateImg = [];
         if($request->hasFile('image')){

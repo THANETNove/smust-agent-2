@@ -49,6 +49,7 @@ class RentSellHomeDetails extends Model
         'make_appointment_location',
         'send_customers',
         'ask_more',
-        'contact_number'
+        'contact_number',
+        'status_home'
     ];
 }

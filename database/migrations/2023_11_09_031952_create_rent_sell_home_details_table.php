@@ -53,6 +53,7 @@ return new class extends Migration
             $table->string('send_customers')->nullable()->comment('ส่งลูกค้า');
             $table->string('ask_more')->nullable()->comment('ถามเพิ่มเติม');
             $table->string('contact_number')->nullable()->comment('เบอร์ติดต่อ');
+            $table->string('status_home')->nullable()->comment('on = เปิดขายหรือเช่า / off ปิด ขายหรือเช่า');
             $table->timestamps();
         });
     }
