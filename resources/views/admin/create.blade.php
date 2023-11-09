@@ -332,6 +332,47 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">นัดดูสถานที่</label>
+                            <input type="text"
+                                class="form-control mt-2 @error('make_appointment_ocation') is-invalid @enderror"
+                                name="make_appointment_ocation" id="make_appointment_ocation" placeholder="3">
+                            @error('make_appointment_ocation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ส่งลูกค้า</label>
+                            <input type="text" class="form-control mt-2 @error('send_customers') is-invalid @enderror"
+                                name="send_customers" id="send_customers" placeholder="3">
+                            @error('send_customers')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ถามเพิ่มเติม</label>
+                            <input type="text" class="form-control mt-2 @error('ask_more') is-invalid @enderror"
+                                name="ask_more" id="ask_more" placeholder="3">
+                            @error('ask_more')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">เบอร์ติดต่อ</label>
+                            <input type="text" class="form-control mt-2 @error('contact_number') is-invalid @enderror"
+                                name="contact_number" id="contact_number" placeholder="3">
+                            @error('contact_number')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
 
 
                         <button type="submit" id="submitBtn"
