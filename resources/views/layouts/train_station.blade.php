@@ -2,7 +2,7 @@
     <option selected disabled> ชื่อสถานี</option>
     <option value="ไม่มี">ไม่มี</option>
     @foreach ($train_station as $train)
-        <option value="{{ $train->id }}">{{ $train->station_name_th }}</option>
+        <option value="{{ $train->station_name_th }}">{{ $train->station_name_th }}</option>
     @endforeach
 
 </select>

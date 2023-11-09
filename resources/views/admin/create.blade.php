@@ -60,8 +60,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">url gps</label>
-                            <input type="text" class="form-control @error('url_gps') is-invalid @enderror"
-                                name="sell_price" id="exampleFormControlInput1" placeholder="url gps">
+                            <input type="text" class="form-control @error('url_gps') is-invalid @enderror" name="url_gps"
+                                id="exampleFormControlInput1" placeholder="url gps">
                             @error('url_gps')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">จำนวนห้องน้ำ</label>
                             <input type="number" class="form-control @error('bathroom') is-invalid @enderror"
-                                name="bedroom" id="exampleFormControlInput1" placeholder="จำนวนห้องนอน">
+                                name="bathroom" id="exampleFormControlInput1" placeholder="จำนวนห้องนอน">
                             @error('bathroom')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -170,7 +170,7 @@
                             <label for="exampleFormControlInput1" class="form-label">เช่าขั้นต่ำ (เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('minimum_rent') is-invalid @enderror"
                                 name="minimum_rent" id="minimum_rent" placeholder="เช่าขั้นต่ำ">
-                            @error('details')
+                            @error('minimum_rent')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -180,7 +180,7 @@
                             <label for="exampleFormControlInput1" class="form-label">เงินประกัน (เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('deposit') is-invalid @enderror"
                                 name="deposit" id="deposit" placeholder="เงินประกัน">
-                            @error('details')
+                            @error('deposit')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -199,7 +199,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('advance_rent') is-invalid @enderror"
-                                name="cash_pledge" id="cash_pledge" placeholder="ค่าเช่าล่วงหน้า">
+                                name="advance_rent" id="advance_rent" placeholder="ค่าเช่าล่วงหน้า">
                             @error('advance_rent')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -207,7 +207,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label"> เงินจอง  (เช่า)</label>
                             <input type="number"
                                 class="form-control mt-2 @error('reservation_money') is-invalid @enderror"
                                 name="reservation_money" id="reservation_money" placeholder="2000">
@@ -219,7 +219,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (ขาย)</label>
+                            <label for="exampleFormControlInput1" class="form-label"> เงินดาวน์  (ขาย)</label>
                             <input type="number" class="form-control mt-2 @error('down_payment') is-invalid @enderror"
                                 name="down_payment" id="down_payment" placeholder="2000">
                             @error('down_payment')
@@ -281,7 +281,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
+                                        <input class="form-check-input" type="checkbox" name="fitness"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             ฟิตเนส
@@ -335,9 +335,9 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">นัดดูสถานที่</label>
                             <input type="text"
-                                class="form-control mt-2 @error('make_appointment_ocation') is-invalid @enderror"
-                                name="make_appointment_ocation" id="make_appointment_ocation" placeholder="3">
-                            @error('make_appointment_ocation')
+                                class="form-control mt-2 @error('make_appointment_location') is-invalid @enderror"
+                                name="make_appointment_location" id="make_appointment_location" placeholder="3">
+                            @error('make_appointment_location')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
