@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class RentSellHouseController extends Controller
 {
@@ -26,7 +27,9 @@ class RentSellHouseController extends Controller
      */
     public function create()
     {
-        return view('admin.create');//
+        $data = DB::table('provinces')->get();
+        $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')->get();
+        return view('admin.create',['train_station' => $train_station,'data' => $data]);//
     }
 
     /**
@@ -34,7 +37,7 @@ class RentSellHouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

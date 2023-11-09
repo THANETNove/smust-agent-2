@@ -76,8 +76,7 @@
 
                             <div class="flex-direction-break-word margin-bottom-8 mt-wealth">
                                 <div class="box-content-icon">
-                                    <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/bed_2.png') }}">
                                     <span>3 ห้องนอน</span>
                                 </div>
                                 <div class="box-content-icon">

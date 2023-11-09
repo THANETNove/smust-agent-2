@@ -56,12 +56,17 @@ $(document).ready(function () {
                     );
 
                     $.each(res, function (index, data) {
+                        console.log("data", data.zip_code);
                         amphuresSelect.append(
                             $("<option>", {
                                 value: data.id,
                                 text: data.name_th,
                             })
                         );
+                        if (data.zip_code) {
+                            document.getElementById("zip_code").value =
+                                data.zip_code;
+                        }
                     });
                 },
                 error: function (xhr, status, error) {

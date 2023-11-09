@@ -31,4 +31,5 @@ Route::get('/get-detall/{id}', [HomeController::class, 'detall'])->name('get-det
 //ส่วนของ admin
 Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/create-content', [RentSellHouseController::class, 'create'])->name('create-content');
+    Route::post('/add-content', [RentSellHouseController::class, 'store'])->name('add-content');
 });
