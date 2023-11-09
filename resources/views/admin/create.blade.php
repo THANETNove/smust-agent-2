@@ -15,7 +15,7 @@
 
 
                 <div class="content-box background-white">
-                    <p class="add_head-content text-center">เพิ่ม</p>
+                    <p class="add_head-content text-center mt-3">เพิ่ม</p>
                     <form class="user" id="myForm" method="POST" action="{{ route('add-content') }}"
                         enctype="multipart/form-data">
                         @csrf
@@ -30,6 +30,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">เลือก</label>
                             <select class="form-select" name="rent_sell" aria-label="Default select example">
                                 <option value="เช่า">เช่า</option>
                                 <option value="ขาย">ขาย</option>
@@ -121,7 +122,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">จำนวนชั้น</label>
                             <input type="number" class="form-control @error('number_floors') is-invalid @enderror"
-                                name="number_floors" id="exampleFormControlInput1" placeholder="ความกว้างห้อง (ตร.ม)">
+                                name="number_floors" id="exampleFormControlInput1" placeholder="1">
                             @error('number_floors')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -136,6 +137,16 @@
                             </select>
                         </div>
                         <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">ที่อยู่</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                    name="address" id="exampleFormControlInput1" placeholder="ที่อยู่">
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             @include('layouts.address')
                             <input type="number" class="form-control mt-2 @error('zip_code') is-invalid @enderror"
                                 name="zip_code" id="zip_code" placeholder="รหัสไปรษณีย์">
@@ -146,8 +157,185 @@
                             @enderror
                         </div>
 
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">รายละเอียด</label>
+                            <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            @error('details')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">เช่าขั้นต่ำ (เช่า)</label>
+                            <input type="number" class="form-control mt-2 @error('minimum_rent') is-invalid @enderror"
+                                name="minimum_rent" id="minimum_rent" placeholder="เช่าขั้นต่ำ">
+                            @error('details')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">เงินประกัน (เช่า)</label>
+                            <input type="number" class="form-control mt-2 @error('deposit') is-invalid @enderror"
+                                name="deposit" id="deposit" placeholder="เงินประกัน">
+                            @error('details')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">เงินมัดจำ (กี่เดือน) (เช่า)</label>
+                            <input type="number" class="form-control mt-2 @error('cash_pledge') is-invalid @enderror"
+                                name="cash_pledge" id="cash_pledge" placeholder="3 เดือน">
+                            @error('cash_pledge')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เช่า)</label>
+                            <input type="number" class="form-control mt-2 @error('advance_rent') is-invalid @enderror"
+                                name="cash_pledge" id="cash_pledge" placeholder="ค่าเช่าล่วงหน้า">
+                            @error('advance_rent')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เช่า)</label>
+                            <input type="number"
+                                class="form-control mt-2 @error('reservation_money') is-invalid @enderror"
+                                name="reservation_money" id="reservation_money" placeholder="2000">
+                            @error('reservation_money')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (ขาย)</label>
+                            <input type="number" class="form-control mt-2 @error('down_payment') is-invalid @enderror"
+                                name="down_payment" id="down_payment" placeholder="2000">
+                            @error('down_payment')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ผ่อนดาวน์ (ขาย)</label>
+                            <select class="form-select" name="down_payment_installments"
+                                aria-label="Default select example">
+                                <option value="ได้">ได้</option>
+                                <option value="ไม่ได้">ไม่ได้</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ผ่อนได้ กี่งวด (ขาย)</label>
+                            <input type="number" class="form-control mt-2 @error('installments') is-invalid @enderror"
+                                name="installments" id="installments" placeholder="3">
+                            @error('installments')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">งวดละ (ขาย)</label>
+                            <input type="number"
+                                class="form-control mt-2 @error('each_installment') is-invalid @enderror"
+                                name="each_installment" id="each_installment" placeholder="3">
+                            @error('each_installment')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="kitchen" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ห้องครัว
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="bed" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            เตียง
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ฟิตเนส
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="wardrobe" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ตู้เสื้อผ้า
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="parking" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ที่จอดรถ
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="air_conditioner" type="checkbox"
+                                            value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            เครื่องปรับอากาศ
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input id="file" type="file"
+                                class="form-control @error('image[]') is-invalid @enderror" name="image[]"
+                                value="{{ old('image[]') }}" required autocomplete="image" placeholder="image"
+                                autofocus>
+
+                            @error('image[]')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+
                         <button type="submit" id="submitBtn"
-                            class=" btn btn-primary
+                            class=" btn btn-primary mt-3
                     btn-user btn-block">
                             {{ __('บันทึก') }}
                         </button>
