@@ -682,11 +682,12 @@ input[autofocus]:focus {
 }
 
 .number-image {
+    margin-top: 16px;
     position: absolute;
     color: var(--white);
     font-size: 20px;
     font-weight: 700;
-    display: none;
+    z-index: 10;
 }
 
 .sava-image {

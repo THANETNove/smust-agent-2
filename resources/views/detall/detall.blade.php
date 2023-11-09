@@ -6,10 +6,11 @@
             @php
 
                 $imgUrl = json_decode(htmlspecialchars_decode($home->image));
+                $count = count($imgUrl);
 
             @endphp
             <div id="container">
-                {{ $home->image }}
+
                 <div class="image-box">
                     <div class="mr-4">
                         <div class="sava-image">
@@ -23,7 +24,7 @@
                         <img class="image-detall-2 " src="{{ URL::asset('/img/product/' . $imgUrl[1]) }}">
                         <div class="image-opacity">
                             <img class="image-detall-2" src="{{ URL::asset('/img/product/' . $imgUrl[2]) }}">
-                            <p class="number-image">+7</p>
+                            <p class="number-image">+ 7 </p>
                         </div>
                     </div>
                 </div>
@@ -57,11 +58,11 @@
                                 </span>
                             @endif
                             @if ($home->sell_price)
-                                {{ $home->sell_price }} บาท
+                                {{ number_format($home->sell_price) }} บาท
                             @endif
                             &nbsp; &nbsp;
                             @if ($home->rental_price)
-                                {{ $home->rental_price }}/m
+                                {{ number_format($home->rental_price) }}/m
                             @endif
 
                         </p>
