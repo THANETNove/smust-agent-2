@@ -758,6 +758,7 @@ input[autofocus]:focus {
 
 .tab-content {
     background-color: var(--white);
+    padding-bottom: 32px;
 
 }
 
@@ -968,9 +969,9 @@ input[autofocus]:focus {
 
 .background-white {
     margin-top: 16px;
-    padding-bottom: 32px;
     padding-left: 16px;
     padding-right: 16px;
+
 
     background-color: var(--white);
     border-radius: 6px;
@@ -982,4 +983,8 @@ input[autofocus]:focus {
     font-size: 16px;
     font-weight: 400;
     color: green;
+}
+
+.icon-null {
+    margin-right: 28px;
 }

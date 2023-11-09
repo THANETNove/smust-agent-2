@@ -29,7 +29,6 @@
                 </div>
                 <div class="box-content">
 
-
                     <div class="content-box">
                         <p class="head-text-detall">{{ $home->building_name }}</p>
 
@@ -60,7 +59,6 @@
                         </p>
 
                         <nav class="mt-wealth">
-
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
@@ -158,15 +156,25 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @if ($home->kitchen)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
+
                                             ห้องครัว
                                         </p>
                                     </div>
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @if ($home->bed)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
+
                                             เตียง
                                         </p>
                                     </div>
@@ -174,15 +182,24 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @if ($home->fitness)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
                                             ฟิตเนส
                                         </p>
                                     </div>
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/add_comment.png') }}">
+                                            @if ($home->wardrobe)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
+
                                             ตู้เสื้อผ้า
                                         </p>
                                     </div>
@@ -190,15 +207,24 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @if ($home->parking)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
+
                                             ที่จอดรถ
                                         </p>
                                     </div>
                                     <div class="col-6">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @if ($home->air_conditioner)
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            @else
+                                                <span class="icon-null"></span>
+                                            @endif
                                             เครื่องปรับอากาศ
                                         </p>
                                     </div>
@@ -208,31 +234,29 @@
                             <div class="tab-pane fade " id="nav-profile" role="tabpanel"
                                 aria-labelledby="nav-profile-tab" tabindex="0">
                                 <div class="align-items-center">
-                                    <a href="" class="box-appointment">
+                                    <a href="{{ $home->make_appointment_location }}" class="box-appointment">
                                         <img class="icon-content-3"
                                             src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
                                         นัดดูสถานที่
                                     </a>
-                                    <a href="" class="box-appointment">
+                                    <a href="{{ $home->send_customers }}" class="box-appointment">
                                         <img class="icon-content-3"
                                             src="{{ URL::asset('/assets/image/home/person_add.png') }}">
                                         ส่งลูกค้า
                                     </a>
                                     <div class="flex-direction-row mb-5">
-                                        <a href="" class="box-ask-more">
+                                        <a href="{{ $home->ask_more }}" class="box-ask-more">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
                                             ถามเพิ่ม
                                         </a>
-                                        <a href="tel:086-899-9089" class="box-call">
+                                        <a href="tel:{{ $home->contact_number }}" class="box-call">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/call.png') }}">
                                             โทร
                                         </a>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
