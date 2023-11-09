@@ -37,7 +37,7 @@ class HomeController extends Controller
             ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
             'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
             ->orderBy('rent_sell_home_details.id','DESC')
-            ->get();
+            ->paginate(100);
         }else {
             $dataHome =  $dataHome
             ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
@@ -46,11 +46,11 @@ class HomeController extends Controller
             ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
              'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
              ->orderBy('rent_sell_home_details.id','DESC')
-            ->get();
+            ->paginate(100);
 
 
         }
-        dd($dataHome);
+
 
         $data = DB::table('provinces')->get();
 

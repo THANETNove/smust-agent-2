@@ -52,30 +52,32 @@
                     <div class="col-md-6 col-lg-4 ">
                         <a href="{{ url('get-detall/12') }}">
                             <div class="card-box">
-                                <div class="box-new">NEW</div>
+                                @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
+                                    <div class="box-new">NEW</div>
+                                @endif
+
                                 <img class="img-0831" src="{{ URL::asset('/assets/image/home/IMG_0831.png') }}">
                                 <div>
                                     <p class="name-content">{{ $home->building_name }}</p>
                                     <p class="name-details">
                                         <img class="img-icon "
                                             src="{{ URL::asset('/assets/image/home/location_on.png') }}">
-                                        จตุจักร จอมพล กทม. จตุจักร จอมพล กทม จตุจักร จอมพล กทม จตุจักร จอมพล กทม จตุจักร
-                                        จอมพล กทม
+                                        {{ $home->districts_name_th }} {{ $home->amphures_name_th }}
+                                        {{ $home->provinces_name_th }}
                                     </p>
                                     <p class="name-details"> <img class="img-icon"
                                             src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                        BTS หมอชิต MRT พหลโยธิน BTS หมอชิต MRT พหลโยธิน </p>
-                                    <p class="number-rooms
-                                ">
+                                        {{ $home->train_name }} </p>
+                                    <p class="number-rooms">
                                         <span>
                                             <img class="img-icon img-icon-right"
                                                 src="{{ URL::asset('/assets/image/home/bed.png') }}">
-                                            1 ห้องนอน
+                                            {{ $home->bedroom }} ห้องนอน
                                         </span>
                                         <span class="img-icon-left">
                                             <img class="img-icon img-icon-right"
                                                 src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
-                                            33.32 ตร.ม.
+                                            {{ $home->room_width }} ตร.ม.
                                         </span>
                                     </p>
                                     <div class="rent-sell-primary absolute-rent-sell">เช่า</div>
@@ -89,7 +91,11 @@
                     </div>
                 @endforeach
             </div>
+            <div class="mt-5">
+                {!! $dataHome->links() !!}
+            </div>
         </div>
+
     </div>
 
 

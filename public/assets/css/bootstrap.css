@@ -378,6 +378,7 @@ input[autofocus]:focus {
 }
 
 .card-content {
+    width: 100%;
     padding: 32px 16px 0px 16px;
 }
 
@@ -416,7 +417,7 @@ input[autofocus]:focus {
 }
 
 .name-details {
-    width: 70%;
+    width: 75%;
     font-size: 12px;
     font-weight: 400;
     color: var(--dark_100);
