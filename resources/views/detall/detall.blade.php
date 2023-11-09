@@ -91,122 +91,215 @@
                                 <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
                                     <img class="icon-content-2"
                                         src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                    5 mins to <span class="text-decoration">BTS หมอชิต MRT พหลโยธิน </span>
+                                    {{ $home->time_arrive }} to <span class="text-decoration">{{ $home->train_name }}
+                                    </span>
                                 </p>
 
                                 <div class="flex-direction-break-word margin-bottom-8 mt-wealth">
                                     <div class="box-content-icon">
                                         <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/bed_2.png') }}">
-                                        <span>3 ห้องนอน</span>
+                                        <span>{{ $home->bedroom }} ห้องนอน</span>
                                     </div>
                                     <div class="box-content-icon">
                                         <img class="icon-content-2"
                                             src="{{ URL::asset('/assets/image/home/shower.png') }}">
-                                        <span>1 ห้องน้ำ</span>
+                                        <span>{{ $home->bathroom }} ห้องน้ำ</span>
                                     </div>
                                     <div class="box-content-icon">
                                         <img class="icon-content-2"
                                             src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
-                                        <span>33.32 ตร.ม.</span>
+                                        <span>{{ $home->room_width }} ตร.ม.</span>
                                     </div>
-                                    <div class="box-content-icon">
-                                        <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/countertops.png') }}">
-                                        <span>สตูดิโอ</span>
-                                    </div>
+                                    @if ($home->studio == 'มี')
+                                        <div class="box-content-icon">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/countertops.png') }}">
+                                            <span>สตูดิโอ</span>
+                                        </div>
+                                    @endif
+
                                     <div class="box-content-icon">
                                         <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/floor.png') }}">
-                                        <span>ชั้น 12</span>
+                                        <span>ชั้น {{ $home->number_floors }}</span>
                                     </div>
                                     <div class="box-content-icon">
                                         <img class="icon-content-2"
                                             src="{{ URL::asset('/assets/image/home/weekend.png') }}">
-                                        <span>ตกแต่งครบ</span>
+                                        <span>ตกแต่ง{{ $home->decoration }}</span>
                                     </div>
                                 </div>
 
                                 <p class="text-content-dark_100 margin-bottom-8">
                                     <img class="icon-content-2"
                                         src="{{ URL::asset('/assets/image/home/location_on.png') }}">
-                                    5 ซอย พหลโยธิน 18 จอมพล, จตุจักร, Bangkok 10900
+                                    {{ $home->address }} &nbsp; {{ $home->districts_name_th }}&nbsp;
+                                    {{ $home->amphures_name_th }} &nbsp; {{ $home->provinces_name_th }}
+                                    &nbsp;
+                                    {{ $home->zip_code }}
                                 </p>
 
                                 <p class="head-content">รายละเอียด</p>
-                                {{-- เช่า  --}}
-                                <div>
-                                    <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม น่าอยู่
-                                        อาศัย
-                                        ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
-                                    <p class="text-content-black margin-bottom-8">
-                                        <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/Vector.png') }}">
-                                        เช่าขั้นต่ำ <span class="ml-24">6 เดือน</span>
-                                    </p>
-                                    <div class="space-between">
+
+
+
+                                @if ($home->rent_sell == 'เช่า')
+                                    {{-- เช่า  --}}
+                                    <div>
+                                        <p class="text-content">{{ $home->details }}</p>
                                         <p class="text-content-black margin-bottom-8">
                                             <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            เงินประกัน
+                                                src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                            เช่าขั้นต่ำ <span class="ml-16">{{ $home->minimum_rent }} เดือน</span>
                                         </p>
-                                        <span>-</span>
-                                        <p class="text-content-black margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            เงินมัดจำ <span class="ml-24">3 เดือน</span>
-                                        </p>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินประกัน {{ number_format($home->deposit) }} บาท
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินมัดจำ <span class="ml-16"> {{ $home->cash_pledge }} เดือน</span>
+                                            </p>
+                                        </div>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                ค่าเช่าล่วงหน้า {{ number_format($home->advance_rent) }} บาท
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินจอง <span class="ml-16">{{ number_format($home->advance_rent) }}
+                                                    บาท</span>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="space-between">
+                                @elseif ($home->rent_sell == 'ขาย')
+                                    {{-- ขาย  --}}
+                                    <div class="mt-3">
                                         <p class="text-content-black margin-bottom-8">
                                             <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            ค่าเช่าล่วงหน้า
+                                                src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                            ราคาขาย <span class="ml-16">{{ number_format($home->advance_rent) }}
+                                                บาท</span>
                                         </p>
-                                        <span>-</span>
-                                        <p class="text-content-black margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            เงินจอง <span class="ml-24">2,000 บาท</span>
-                                        </p>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินดาวน์ <span class="ml-16"> {{ number_format($home->sell_price) }}
+                                                    บาท</span>
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                ผ่อนดาวน์ {{ $home->down_payment_installments }}
+
+                                            </p>
+                                        </div>
+                                        @if ($home->down_payment_installments == 'ได้')
+                                            <div class="space-between">
+                                                <p class="text-content-black margin-bottom-8">
+                                                    <img class="icon-content-2"
+                                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                    ผ่อนได้ <span class="ml-16">{{ $home->installments }} งวด</span>
+                                                </p>
+                                                <span>-</span>
+                                                <p class="text-content-black margin-bottom-8">
+                                                    <img class="icon-content-2"
+                                                        src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                    งวดละ <span
+                                                        class="ml-16">{{ number_format($home->each_installment) }}
+                                                        บาท
+                                                </p>
+                                            </div>
+                                        @endif
+
                                     </div>
-                                </div>
-                                {{-- ขาย  --}}
-                                <div>
-                                    <p class="text-content">มีห้องนั่งเล่น มีครัวบิลด์อิน ห้องกว้างมาก สภาพดี สวยงาม
-                                        น่าอยู่
-                                        อาศัย
-                                        ทำเลดี ติดรถไฟฟ้า เข้าออกได้หลายทาง</p>
-                                    <p class="text-content-black margin-bottom-8">
-                                        <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/Vector.png') }}">
-                                        ราคาขาย <span class="ml-24">1,200,000 บาท</span>
-                                    </p>
-                                    <div class="space-between">
+                                @else
+                                    <div>
+                                        <p class="text-content">{{ $home->details }}</p>
                                         <p class="text-content-black margin-bottom-8">
                                             <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            เงินดาวน์ <span class="ml-24">200,000 บาท</span>
+                                                src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                            เช่าขั้นต่ำ <span class="ml-16">{{ $home->minimum_rent }} เดือน</span>
                                         </p>
-                                        <span>-</span>
-                                        <p class="text-content-black margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            ผ่อนดาวน์ได้ / ไม่ได้
-                                        </p>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินประกัน {{ number_format($home->deposit) }} บาท
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินมัดจำ <span class="ml-16"> {{ $home->cash_pledge }} เดือน</span>
+                                            </p>
+                                        </div>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                ค่าเช่าล่วงหน้า {{ number_format($home->advance_rent) }} บาท
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินจอง <span class="ml-16">{{ number_format($home->advance_rent) }}
+                                                    บาท</span>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="space-between">
+                                    {{-- ขาย  --}}
+                                    <div class="mt-3">
                                         <p class="text-content-black margin-bottom-8">
                                             <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            ผ่อนได้ <span class="ml-24">6 งวด</span>
+                                                src="{{ URL::asset('/assets/image/home/Vector.png') }}">
+                                            ราคาขาย <span class="ml-16">{{ number_format($home->advance_rent) }}
+                                                บาท</span>
                                         </p>
-                                        <span>-</span>
-                                        <p class="text-content-black margin-bottom-8">
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                                            งวดละ <span class="ml-24">2,000 บาท</span>
-                                        </p>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                เงินดาวน์ <span class="ml-16"> {{ number_format($home->sell_price) }}
+                                                    บาท</span>
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                ผ่อนดาวน์ {{ $home->down_payment_installments }}
+
+                                            </p>
+                                        </div>
+                                        <div class="space-between">
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                ผ่อนได้ <span class="ml-16">{{ $home->installments }} งวด</span>
+                                            </p>
+                                            <span>-</span>
+                                            <p class="text-content-black margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                                                งวดละ <span class="ml-16">{{ number_format($home->each_installment) }}
+                                                    บาท
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
+
+
+
 
                                 <p class="head-content">สิ่งอำนวยความสะดวก</p>
                                 <div class="row">
