@@ -112,3 +112,5 @@ $(document).ready(function () {
 
     // ตัวอย่างอื่น ๆ ของโค้ด JavaScript
 });
+
+/* ภาพ */
