@@ -31,13 +31,26 @@ class HomeController extends Controller
         if( Auth::user()->status < 3){
             $dataHome =  $dataHome
             ->where('code_admin', Auth::user()->code_admin)
-            ->orderBy('id','DESC')
+            ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
+            ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
+            ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+            ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
+            'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
+            ->orderBy('rent_sell_home_details.id','DESC')
             ->get();
         }else {
             $dataHome =  $dataHome
-            ->orderBy('id','DESC')
+            ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
+            ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
+            ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+            ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
+             'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
+             ->orderBy('rent_sell_home_details.id','DESC')
             ->get();
+
+
         }
+        dd($dataHome);
 
         $data = DB::table('provinces')->get();
 
