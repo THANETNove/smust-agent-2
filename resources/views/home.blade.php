@@ -138,36 +138,63 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    {{--     <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
+                        enctype="multipart/form-data">
+                        @csrf --}}
                     <p class="font-size-12-black">ประเภททรัพย์</p>
                     <div class="flex-direction-row">
                         <div class="form-check">
-
-                            <div class="property-box">
+                            <input class="form-check-input" type="radio" name="property_type" value="คอนโด"
+                                id="property_type1">
+                            <label class="form-check-label check-icon" for="property_type1">
                                 <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
-                                <p class="font-size-12-black text-center">คอนโด</p>
-                            </div>
+                                <p class="font-size-12-black text-lr">คอนโด</p>
+                            </label>
                         </div>
-                        <div class="property-box">
-                            <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
-                            <p class="font-size-12-black text-center">บ้าน</p>
+                        &nbsp; &nbsp;
+                        &nbsp; &nbsp;
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
+                                id="property_type2" checked>
+                            <label class="form-check-label check-icon" for="property_type2">
+                                <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
+                                <p class="font-size-12-black text-lr-2">บ้าน</p>
+                            </label>
                         </div>
-
-
                     </div>
                     <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
                     <div class="flex-direction-row">
-                        <div class="rent-buy">
-                            <p class="font-size-12-black">เช่า</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
+                                id="rent_sell1" checked>
+                            <label class="form-check-label" for="rent_sell1">
+                                เช่า
+                            </label>
                         </div>
-                        <div class="rent-buy">
-                            <p class="font-size-12-black">ขาย</p>
+                        &nbsp; &nbsp;
+                        &nbsp; &nbsp;
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rent_sell" value="ขาย"
+                                id="rent_sell2">
+                            <label class="form-check-label" for="rent_sell2">
+                                ขาย
+                            </label>
                         </div>
-                        <div class="rent-buy">
-                            <p class="font-size-12-black">เช่า/ขาย</p>
+                        &nbsp; &nbsp;
+                        &nbsp; &nbsp;
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rent_sell" value="เช่า/ขาย"
+                                id="rent_sell3">
+                            <label class="form-check-label" for="rent_sell3">
+                                เช่า/ขาย
+                            </label>
                         </div>
+
                     </div>
                     <p class="font-size-12-black mt-21">พื้นที่</p>
                     @include('layouts.address')
+
+
 
                     <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
                     <img class="property-img" src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
@@ -175,15 +202,11 @@
                     <div class="box-button">
                         <button class="btn-search">ค้นหา</button>
                     </div>
+
+                    {{--  </form> --}}
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function toggleCheckbox(checkboxId) {
-            var checkbox = $('#' + checkboxId);
-            checkbox.prop('checked', !checkbox.prop('checked'));
-        }
-    </script>
+    @include('layouts.home_address')
 @endsection
