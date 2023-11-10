@@ -49,6 +49,7 @@ class RentSellHouseController extends Controller
         $member = new RentSellHomeDetails;
         $member->code_admin = Auth::user()->code;
         $member->building_name = $request['building_name'];
+        $member->property_type = $request['property_type'];
         $member->rent_sell = $request['rent_sell'];
         $member->rental_price = $request['rental_price'];
         $member->sell_price = $request['sell_price'];
@@ -143,6 +144,7 @@ class RentSellHouseController extends Controller
         $randomText = Str::random(12);
         $member =  RentSellHomeDetails::find($id);
         $member->building_name = $request['building_name'];
+        $member->property_type = $request['property_type'];
         $member->rent_sell = $request['rent_sell'];
         $member->rental_price = $request['rental_price'];
         $member->sell_price = $request['sell_price'];

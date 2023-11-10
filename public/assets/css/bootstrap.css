@@ -583,6 +583,7 @@ input[autofocus]:focus {
 }
 
 .property-box {
+
     border: 1px solid rgba(0, 0, 0, 0.10);
     background-color: var(--white);
     width: 57px;
@@ -1127,4 +1128,57 @@ input[autofocus]:focus {
 .font-red {
     font-size: 14px !important;
     color: red !important;
+}
+
+
+.clickable {
+    cursor: pointer;
+    user-select: none;
+    /* ไม่เลือกข้อความทั้งหมด */
+}
+
+.clickable.selected {
+    background-color: #ef0f0f;
+    /* เพิ่มสีพื้นหลังเมื่อถูกเลือก */
+}
+
+.form-check-input-2 {
+    --bs-form-check-bg: var(--bs-body-bg);
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-top: 0.25em;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-form-check-bg);
+    background-image: var(--bs-form-check-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+
+}
+.form-check-input-2  {
+    --bs-form-check-bg: var(--bs-body-bg);
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-top: 0.25em;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-form-check-bg);
+    background-image: var(--bs-form-check-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+
 }

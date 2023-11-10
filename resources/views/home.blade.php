@@ -140,14 +140,19 @@
                 <div class="modal-body">
                     <p class="font-size-12-black">ประเภททรัพย์</p>
                     <div class="flex-direction-row">
+                        <div class="form-check">
+
+                            <div class="property-box">
+                                <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
+                                <p class="font-size-12-black text-center">คอนโด</p>
+                            </div>
+                        </div>
                         <div class="property-box">
                             <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
                             <p class="font-size-12-black text-center">บ้าน</p>
                         </div>
-                        <div class="property-box">
-                            <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
-                            <p class="font-size-12-black text-center">คอนโด</p>
-                        </div>
+
+
                     </div>
                     <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
                     <div class="flex-direction-row">
@@ -155,7 +160,10 @@
                             <p class="font-size-12-black">เช่า</p>
                         </div>
                         <div class="rent-buy">
-                            <p class="font-size-12-black">ซื้อ</p>
+                            <p class="font-size-12-black">ขาย</p>
+                        </div>
+                        <div class="rent-buy">
+                            <p class="font-size-12-black">เช่า/ขาย</p>
                         </div>
                     </div>
                     <p class="font-size-12-black mt-21">พื้นที่</p>
@@ -171,4 +179,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleCheckbox(checkboxId) {
+            var checkbox = $('#' + checkboxId);
+            checkbox.prop('checked', !checkbox.prop('checked'));
+        }
+    </script>
 @endsection

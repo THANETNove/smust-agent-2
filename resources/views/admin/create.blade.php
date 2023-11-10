@@ -30,6 +30,13 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">ประเภททรัพย์</label>
+                            <select class="form-select" name="property_type" aria-label="Default select example">
+                                <option value="บ้าน">บ้าน</option>
+                                <option value="คอนโด">คอนโด</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">เลือก</label>
                             <select class="form-select" name="rent_sell" aria-label="Default select example">
                                 <option value="เช่า">เช่า</option>

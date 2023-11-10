@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code_admin')->nullable()->comment('code Admin');
             $table->string('building_name')->nullable()->comment('ชื่ออาคาร/สถานที่');
+            $table->string('property_type')->nullable()->comment('เลือก บ้านหรือคอนโด');
             $table->string('rent_sell')->nullable()->comment('เลือก เช่า ขาย เช่า/ขาย');
             $table->string('rental_price')->nullable()->comment('ราคาเช่า');
             $table->string('sell_price')->nullable()->comment('ราคาขาย');

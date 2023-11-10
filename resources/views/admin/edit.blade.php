@@ -39,6 +39,22 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">ประเภททรัพย์</label>
+                                <select class="form-select" name="property_type" aria-label="Default select example">
+                                    @if ($hod->property_type == 'บ้าน')
+                                        <option value="บ้าน" selected>บ้าน</option>
+                                    @else
+                                        <option value="บ้าน">บ้าน</option>
+                                    @endif
+                                    @if ($hod->property_type == 'คอนโด')
+                                        <option value="คอนโด" selected>คอนโด</option>
+                                    @else
+                                        <option value="คอนโด">คอนโด</option>
+                                    @endif
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">เลือก</label>
                                 <select class="form-select" name="rent_sell" aria-label="Default select example">
                                     @if ($hod->rent_sell == 'เช่า')
