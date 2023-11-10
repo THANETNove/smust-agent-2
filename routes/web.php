@@ -34,4 +34,5 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::post('/add-content', [RentSellHouseController::class, 'store'])->name('add-content');
     Route::get('/edit/{id}', [RentSellHouseController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RentSellHouseController::class, 'update'])->name('update');
+    Route::get('/destroy/{id}', [RentSellHouseController::class, 'destroy'])->name('destroy');
 });

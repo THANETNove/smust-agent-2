@@ -13,6 +13,7 @@
                     <a href="{{ url('get-detall', $id) }}" class="box-call">
                         กลับเดิม
                     </a>
+                
                 </div>
             </div>
             <div class="box-content">

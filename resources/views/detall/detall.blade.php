@@ -43,7 +43,13 @@
                         <a href="{{ url('/edit', $home->id) }}" class="box-call">
                             เเก้ไข
                         </a>
+                        &nbsp; &nbsp;
+                        <a href="{{ url('destroy', $home->id) }}" class="box-call2 ">
+                            ยกเลิก
+                        </a>
                     @endif
+
+
 
 
                 </div>

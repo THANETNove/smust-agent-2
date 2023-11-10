@@ -953,6 +953,23 @@ input[autofocus]:focus {
     margin-top: 24px;
 }
 
+.box-call2 {
+    background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    width: 80px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    text-decoration: none !important;
+    margin-top: 24px;
+}
+
 .box-back-home {
     position: relative;
     max-width: 700px;

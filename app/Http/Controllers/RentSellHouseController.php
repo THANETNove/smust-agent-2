@@ -209,6 +209,9 @@ class RentSellHouseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $member =  RentSellHomeDetails::find($id);
+        $member->status_home = 'off';
+        $member->save();
+        return redirect('home')->with('message', "ยกเลิกสำเร็จ" );
     }
 }
