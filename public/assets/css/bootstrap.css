@@ -25,6 +25,7 @@
     --yellow: #FAA631;
     --tertiary: #EEF1F4;
     --primary_400: #014158;
+    --white_300: #FFFEF9;
 }
 
 
@@ -73,6 +74,10 @@ p {
     .tab-pane {
         padding: 16px;
     }
+
+    .row {
+        display: block;
+    }
 }
 
 
@@ -101,6 +106,14 @@ p {
         padding: 16px;
     }
 
+    .card-new {
+        margin-right: 1.5rem;
+    }
+
+    .row {
+        display: flex;
+    }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -126,6 +139,8 @@ p {
     .box-back-home {
         right: 0 !important;
     }
+
+
 }
 
 .smust-agent {
@@ -462,18 +477,22 @@ input[autofocus]:focus {
 
 .box-new {
     position: absolute;
-    padding: 3px 9px;
+    width: 49px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--attention);
     font-size: 12px;
     font-weight: 700;
-    height: 20px;
-    border-radius: 4px;
-    color: var(--white);
-    margin-left: -8px;
-    margin-top: -4px;
+    border-radius: 6px;
+    color: var(--white_300);
+    margin-left: -9px;
+    margin-top: -5px;
 }
 
 .box-price {
+
     color: var(--primary);
     font-size: 14px;
     font-weight: 700;
@@ -1202,7 +1221,7 @@ input[autofocus]:focus {
 
 .card-new {
     width: 360px;
-    height: 100%;
+    height: auto;
     max-height: 128px;
     background-color: var(--white);
     margin-bottom: 16px;
@@ -1257,4 +1276,14 @@ input[autofocus]:focus {
 
 .img-icon-ri2 {
     margin-right: 4px;
+}
+
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
