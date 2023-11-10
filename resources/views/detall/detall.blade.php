@@ -59,6 +59,8 @@
 
                 <div class="content-box">
                     <p class="head-text-detall">{{ $home->building_name }}</p>
+                    <p class="head-text-detall">ประเภททรัพย์ &nbsp;
+                        {{ $home->property_type }}</p>
 
                     <p class="period-text">โพสเมื่อ: {{ $home->created_at }} แล้ว
                     </p>
