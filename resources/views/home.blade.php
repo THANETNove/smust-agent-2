@@ -47,7 +47,45 @@
 
 
         <div class="card-content">
-            <div class="row ">
+            <div class="card-new">
+                <div class="box-img-new">
+                    <img class="img-0831" src="{{ URL::asset('/assets/image/home/IMG_0831.png') }}">
+                </div>
+                <div class="box-name-new">
+                    <p class="name-content">หมู่บ้านพนาสนธ์การ์เด้น โฮม 3 หมู่บ้านพนาสนธ์การ์เด้น โฮม 3</p>
+                    <p class="name-details">
+                        <img class="img-icon " src="{{ URL::asset('/assets/image/home/location_on.png') }}">
+                        มีนบุรี แสนแสบ กทม. มีนบุรี แสนแสบ กทม. มีนบุรี แสนแสบ กทม.
+                    </p>
+                    <p class="name-details">
+                        <img class="img-icon" src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                        BTS หมอชิต MRT พหลโยธิน
+                    </p>
+                    <p class="number-rooms text-ellipsis">
+                        <span class="img-icon-ri2 ">
+                            <img class="img-icon img-icon-ri" src="{{ URL::asset('/assets/image/home/bed.png') }}">
+                            3 ห้องนอน
+                        </span>
+                        <span>
+                            <img class="img-icon  img-icon-ri"
+                                src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
+                            33.32 ตร.ม.
+                        </span>
+                    </p>
+                </div>
+                <div class="box-price-new">
+                    <p class="price-new price-top  ">
+                        ฿15,000/m
+                    </p>
+                    <p class="price-new ">
+                        ฿2.9 ล้าน
+                    </p>
+                    <span class="rent-sell-yellow absolute-rent-sell">
+                        ขายเช่า
+                    </span>
+                </div>
+            </div>
+            {{--  <div class="row ">
                 @foreach ($dataHome as $home)
                     <div class="col-md-6 col-lg-4 ">
                         <a href="{{ url('get-detall', $home->id) }}">
@@ -98,7 +136,7 @@
                                             {{ $home->rent_sell }}
                                         </span>
                                     @endif
-                                    {{--    <div class="rent-sell-primary absolute-rent-sell">เช่า</div> --}}
+
                                     <div class="box-price">
                                         @if ($home->sell_price)
                                             <p>
@@ -120,7 +158,7 @@
             </div>
             <div class="mt-5">
                 {!! $dataHome->links() !!}
-            </div>
+            </div> --}}
         </div>
 
     </div>
@@ -138,72 +176,73 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                        <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
+                    <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
                         enctype="multipart/form-data">
                         @csrf
-                    <p class="font-size-12-black">ประเภททรัพย์</p>
-                    <div class="flex-direction-row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_type" value="คอนโด"
-                                id="property_type1">
-                            <label class="form-check-label check-icon" for="property_type1">
-                                <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
-                                <p class="font-size-12-black text-lr">คอนโด</p>
-                            </label>
+                        <p class="font-size-12-black">ประเภททรัพย์</p>
+                        <div class="flex-direction-row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property_type" value="คอนโด"
+                                    id="property_type1">
+                                <label class="form-check-label check-icon" for="property_type1">
+                                    <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
+                                    <p class="font-size-12-black text-lr">คอนโด</p>
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
+                                    id="property_type2" checked>
+                                <label class="form-check-label check-icon" for="property_type2">
+                                    <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
+                                    <p class="font-size-12-black text-lr-2">บ้าน</p>
+                                </label>
+                            </div>
                         </div>
-                        &nbsp; &nbsp;
-                        &nbsp; &nbsp;
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
-                                id="property_type2" checked>
-                            <label class="form-check-label check-icon" for="property_type2">
-                                <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
-                                <p class="font-size-12-black text-lr-2">บ้าน</p>
-                            </label>
+                        <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
+                        <div class="flex-direction-row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
+                                    id="rent_sell1" checked>
+                                <label class="form-check-label" for="rent_sell1">
+                                    เช่า
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="ขาย"
+                                    id="rent_sell2">
+                                <label class="form-check-label" for="rent_sell2">
+                                    ขาย
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="เช่า/ขาย"
+                                    id="rent_sell3">
+                                <label class="form-check-label" for="rent_sell3">
+                                    เช่า/ขาย
+                                </label>
+                            </div>
+
                         </div>
-                    </div>
-                    <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
-                    <div class="flex-direction-row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
-                                id="rent_sell1" checked>
-                            <label class="form-check-label" for="rent_sell1">
-                                เช่า
-                            </label>
-                        </div>
-                        &nbsp; &nbsp;
-                        &nbsp; &nbsp;
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rent_sell" value="ขาย"
-                                id="rent_sell2">
-                            <label class="form-check-label" for="rent_sell2">
-                                ขาย
-                            </label>
-                        </div>
-                        &nbsp; &nbsp;
-                        &nbsp; &nbsp;
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rent_sell" value="เช่า/ขาย"
-                                id="rent_sell3">
-                            <label class="form-check-label" for="rent_sell3">
-                                เช่า/ขาย
-                            </label>
+                        <p class="font-size-12-black mt-21">พื้นที่</p>
+                        @include('layouts.address')
+
+
+
+                        <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
+                        <img class="property-img"
+                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
+                        @include('layouts.train_station')
+                        <div class="box-button">
+                            <button class="btn-search">ค้นหา</button>
                         </div>
 
-                    </div>
-                    <p class="font-size-12-black mt-21">พื้นที่</p>
-                    @include('layouts.address')
-
-
-
-                    <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
-                    <img class="property-img" src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
-                    @include('layouts.train_station')
-                    <div class="box-button">
-                        <button class="btn-search">ค้นหา</button>
-                    </div>
-
-                     </form>
+                    </form>
                 </div>
             </div>
         </div>

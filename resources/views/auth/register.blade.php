@@ -134,7 +134,7 @@
                     <button type="submit" class="btn btn-register">
                         ลงทะเบียน
                     </button>
-                    <a class="btn btn-link" href="{{ url('/') }}">
+                    <a class="btn btn-link mb-5" href="{{ url('/') }}">
                         {{ __('go back home') }}
                     </a>
 
