@@ -257,8 +257,9 @@
 
                                 </select>
                                 <input type="number" class="form-control mt-2 @error('zip_code') is-invalid @enderror"
-                                    name="zip_code" value="{{ $dataDistricts[0]->zip_code }}" id="zip_code"
-                                    placeholder="รหัสไปรษณีย์">
+                                    name="zip_code"
+                                    value="{{ isset($dataDistricts[0]) ? $dataDistricts[0]->zip_code : '' }}"
+                                    id="zip_code" placeholder="รหัสไปรษณีย์">
                                 @error('zip_code')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -527,6 +528,6 @@
             </div>
         </div>
     </div>
-
+    @include('admin.address')
 
 @endsection
