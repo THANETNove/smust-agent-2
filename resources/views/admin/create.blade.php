@@ -395,6 +395,6 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @include('admin.address')
 @endsection
