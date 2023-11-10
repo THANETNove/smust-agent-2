@@ -1123,3 +1123,8 @@ input[autofocus]:focus {
 .next-btn:hover {
     color: #ffffff;
 }
+
+.font-red {
+    font-size: 14px !important;
+    color: red !important;
+}

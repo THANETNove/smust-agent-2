@@ -438,6 +438,8 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="exampleFormControlInput1"
+                                    class="form-label font-red">ภาพถูกเก็บเเบบเรียงตามตัวอักษร a-z หรือ 0-9</label>
                                 <input id="file" type="file"
                                     class="form-control @error('image[]') is-invalid @enderror" name="image[]"
                                     value="{{ old('image[]') }}" multiple placeholder="image">

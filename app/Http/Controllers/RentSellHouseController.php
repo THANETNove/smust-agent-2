@@ -91,6 +91,7 @@ class RentSellHouseController extends Controller
         $dateImg = [];
         if($request->hasFile('image')){
             $imagefile = $request->file('image');
+
             foreach ($imagefile as $image) {
               $data =   $image->move(public_path().'/img/product',$randomText."".$image->getClientOriginalName());
               $dateImg[] =  $randomText."".$image->getClientOriginalName();
