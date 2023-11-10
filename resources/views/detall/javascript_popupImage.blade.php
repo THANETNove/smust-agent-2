@@ -70,20 +70,10 @@
 
     function saveImage(imageUrl) {
         var downloadLink = document.createElement('a');
-
-        // Set the href attribute to the image URL
         downloadLink.href = imageUrl;
-
-        // Set the download attribute to specify the default file name
         downloadLink.download = 'image.jpg';
-
-        // Append the anchor element to the document
         document.body.appendChild(downloadLink);
-
-        // Trigger a click event on the anchor element
         downloadLink.click();
-
-        // Remove the anchor element from the document
         document.body.removeChild(downloadLink);
     }
 </script>
