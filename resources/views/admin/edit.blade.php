@@ -225,7 +225,6 @@
                                         </span>
                                     @enderror
                                 </div>
-                                {{-- @include('layouts.address') --}}
                                 <select class="select-address select-address form-select font-size-12-black"
                                     name="provinces" id="provinces-id" aria-label="Default select example">
                                     <option selected disabled>จังหวัด</option>
