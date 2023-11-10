@@ -295,8 +295,11 @@
             </div>
 
             <span class="close-btn" onclick="closePopup()">&times;</span>
-            <button class="prev-btn" onclick="changeMedia(-1)">&#10094;</button>
-            <button class="next-btn" onclick="changeMedia(1)">&#10095;</button>
+            <span class="save-image-btn" id="save-image-btn">
+                <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}">
+            </span>
+            <button class="prev-btn" id="prev-btn" onclick="changeMedia(-1)">&#10094;</button>
+            <button class="next-btn" id="next-btn" onclick="changeMedia(1)">&#10095;</button>
         </div>
     </div>
 
@@ -310,63 +313,5 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
         </div>
     </div>
-    <script>
-        var currentMedia = 0;
-
-        document.querySelectorAll('.popup-trigger').forEach(function(element) {
-            element.addEventListener('click', function() {
-                openPopup(parseInt(element.getAttribute('data-index')));
-            });
-        });
-
-
-
-        function openPopup(index) {
-            console.log("aaa", index);
-            currentMedia = index;
-            showMedia(index);
-
-            var popup = document.getElementById('imagePopup');
-            popup.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePopup() {
-            var popup = document.getElementById('imagePopup');
-            popup.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeMedia(direction) {
-            currentMedia += direction;
-            showMedia(currentMedia);
-        }
-
-        function showMedia(index) {
-            var mediaItems = {!! json_encode($imgUrl) !!};
-            console.log("mediaItems", mediaItems[0]);
-
-            var popup = document.getElementById('imagePopup');
-            var popupImage = document.getElementById('popupImage');
-
-            var popup = document.getElementById('imagePopup');
-            popup.style.display = 'flex';
-            var popupMediaContainer = document.getElementById('popupMediaContainer');
-            popupMediaContainer.innerHTML = '';
-
-            var assetUrl = "{{ asset('img/product') }}";
-
-
-            console.log(assetUrl);
-            var img = document.createElement('img');
-            /* img.src = "/img/product/" + mediaItems[index]; */
-            img.src = assetUrl + '/' + mediaItems[index];
-
-            /*  img.src = assetUrl + mediaItems[index]; */
-
-
-
-            popupMediaContainer.appendChild(img);
-        }
-    </script>
+    @include('detall.javascript_popupImage')
 @endsection
