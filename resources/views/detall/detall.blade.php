@@ -58,10 +58,10 @@
             <div class="box-content">
 
                 <div class="content-box">
-                    <p class="head-text-detall">{{ $home->building_name }}</p>
+                    <p class="head-text-detall ml-24">{{ $home->building_name }}</p>
 
 
-                    <p class="period-text">โพสเมื่อ: {{ $home->created_at }} แล้ว
+                    <p class="period-text ml-24">โพสเมื่อ: {{ $home->created_at }} แล้ว
                     </p>
                     <p class="price-detall text-center">
                         @if ($home->rent_sell == 'เช่า')

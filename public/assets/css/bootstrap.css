@@ -1291,3 +1291,7 @@ input[autofocus]:focus {
 .ml-24 {
     margin-left: 24px;
 }
+
+.row>* {
+    width: inherit;
+}
