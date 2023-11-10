@@ -7,8 +7,9 @@
             // ตรวจสอบว่าเลือก "จังหวัด" ให้ค่าไม่ใช่ค่าเริ่มต้น
             if (selectedProvinceId !== "0") {
                 // ใช้ Ajax เรียกเส้นทางใน Laravel เพื่อดึงข้อมูลแขวง/อำเภอ
+
                 $.ajax({
-                    url: "get-districts/" + selectedProvinceId,
+                    url: "/get-districts/" + selectedProvinceId,
                     type: "GET",
 
                     success: function(res) {
@@ -43,7 +44,7 @@
             // ตรวจสอบว่าเลือก "แขวง/อำเภอ" ให้ค่าไม่ใช่ค่าเริ่มต้น
             if (selectedDistrictId !== "0") {
                 $.ajax({
-                    url: "get-amphures/" + selectedDistrictId,
+                    url: "/get-amphures/" + selectedDistrictId,
                     type: "GET",
                     success: function(res) {
                         // อัปเดตตัวเลือก "เขต/ตำบล"
