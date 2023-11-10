@@ -290,8 +290,10 @@
     @endforeach
     <div class="popup" id="imagePopup">
         <div class="popup-content">
+
             <div id="popupMediaContainer">
             </div>
+
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <button class="prev-btn" onclick="changeMedia(-1)">&#10094;</button>
             <button class="next-btn" onclick="changeMedia(1)">&#10095;</button>

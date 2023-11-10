@@ -1004,16 +1004,24 @@ input[autofocus]:focus {
 }
 
 .popup-content {
-    position: relative;
-    /*     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     text-align: end;
     padding-top: 0;
     padding-right: 0px;
     display: grid;
     grid-template-columns: 1fr;
+    z-index: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* ค่า z-index ที่ต่ำ */
 }
+
 
 #popupMediaContainer img {
     z-index: 0;
@@ -1025,8 +1033,8 @@ input[autofocus]:focus {
     position: fixed;
     color: #fafafa;
     background-color: #000000;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     font-size: 30px;
     cursor: pointer;
     background-color: transparent;
@@ -1034,19 +1042,24 @@ input[autofocus]:focus {
 }
 
 .close-btn {
-    padding-right: 12px;
-    width: 40px;
-    height: 40px;
+    z-index: 1;
+    /* ค่า z-index ที่สูง */
+    position: fixed;
+    /* เปลี่ยนจาก absolute เป็น fixed */
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+    color: #ccc;
+    padding-right: 10px;
+    cursor: pointer;
     border-radius: 100px;
-    background-color: var(--primary)
+    background-color: var(--primary);
 }
 
 .prev-btn {
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
     background-color: var(--primary)
 }
 
@@ -1054,8 +1067,7 @@ input[autofocus]:focus {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+
     background-color: var(--primary);
 }
 
@@ -1065,14 +1077,4 @@ input[autofocus]:focus {
 .prev-btn:hover,
 .next-btn:hover {
     color: #ffffff;
-}
-
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 32px;
-    color: #ccc;
-    cursor: pointer;
 }
