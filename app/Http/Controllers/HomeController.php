@@ -24,21 +24,33 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
 
+         $searchData = count($request->all());
+         $searchProperty_type = $request['property_type'];
+         $searchRent_sell = $request['rent_sell'];
+         $searchProvinces = $request['provinces'];
+         $searchAmphures = $request['amphures'];
+         $searchDistricts = $request['districts'];
         $dataHome = DB::table('rent_sell_home_details');
         if( Auth::user()->status < 3){
-            $dataHome =  $dataHome
-            ->where('code_admin', Auth::user()->code_admin)
-            ->where('rent_sell_home_details.status_home', 'on')
-            ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
-            ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
-            ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
-            ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
-            'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
-            ->orderBy('rent_sell_home_details.id','DESC')
-            ->paginate(100);
+
+            if ($searchData > 0) {
+                # code...
+            }else{
+                $dataHome =  $dataHome
+                ->where('code_admin', Auth::user()->code_admin)
+                ->where('rent_sell_home_details.status_home', 'on')
+                ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
+                ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
+                ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+                ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
+                'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
+                ->orderBy('rent_sell_home_details.id','DESC')
+                ->paginate(100);
+            }
+
         }else {
             $dataHome =  $dataHome
             ->where('rent_sell_home_details.status_home', 'on')
