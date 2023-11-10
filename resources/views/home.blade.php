@@ -3,7 +3,37 @@
 @section('content')
     <div class="home-background">
         <div class="home-head">
-            <div>
+            <div class="row">
+                <div class="col-1">
+                    <div class="box-ellipse ">
+                        <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-email" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <p class="p-login text-center mt-22">ทรัพย์ของฉัน (51) </p>
+                </div>
+                <div class="col-12">
+                    <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                    </button>
+                </div>
+            </div>
+            {{-- <div>
                 <div class="box-ellipse ">
                     <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-email" href="#" role="button"
@@ -23,7 +53,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
             <div>
                 <p class="p-login text-center mt-wealth">ทรัพย์ของฉัน (51) </p>
@@ -39,10 +68,7 @@
                     <p class="span-message"> {{ session('message') }}</p>
                 @endif
 
-            </div>
-
-
-
+            </div> --}}
         </div>
 
 

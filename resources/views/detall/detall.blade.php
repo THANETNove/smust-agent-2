@@ -33,7 +33,7 @@
             </div>
 
             <div class="box-content " id="back-home">
-                <div class="content-box flex-direction-row">
+                <div class="content-box flex-direction-row ml-24">
                     <a href="{{ url('/home') }}" class="box-call">
                         กลับ
                     </a>
@@ -68,11 +68,16 @@
                             <span class="rent-sell-primary width-rent-sell">
                                 {{ $home->rent_sell }}
                             </span>
-                        @elseif ($home->rent_sell == 'ขาย')
+                        @endif
+                        @if ($home->rent_sell == 'ขาย')
                             <span class="rent-sell-yellow width-rent-sell">
                                 {{ $home->rent_sell }}
                             </span>
-                        @else
+                        @endif
+                        @if ($home->rent_sell == 'เช่า/ขาย')
+                            <span class="rent-sell-primary width-rent-sell">
+                                {{ $home->rent_sell }}
+                            </span>
                             <span class="rent-sell-green width-rent-sell">
                                 {{ $home->rent_sell }}
                             </span>
