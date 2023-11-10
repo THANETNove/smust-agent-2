@@ -138,9 +138,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{--     <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
+                        <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
                         enctype="multipart/form-data">
-                        @csrf --}}
+                        @csrf
                     <p class="font-size-12-black">ประเภททรัพย์</p>
                     <div class="flex-direction-row">
                         <div class="form-check">
@@ -203,7 +203,7 @@
                         <button class="btn-search">ค้นหา</button>
                     </div>
 
-                    {{--  </form> --}}
+                     </form>
                 </div>
             </div>
         </div>

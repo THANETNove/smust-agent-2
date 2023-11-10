@@ -26,6 +26,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/get-districts/{id}', [HomeController::class, 'districts'])->name('get-districts');
 Route::get('/get-amphures/{id}', [HomeController::class, 'amphures'])->name('get-amphures');
 Route::get('/get-detall/{id}', [HomeController::class, 'show'])->name('get-detall');
+Route::post('/search', [HomeController::class, 'index'])->name('search');
 
 
 //ส่วนของ admin
