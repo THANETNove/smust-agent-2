@@ -396,6 +396,11 @@ input[autofocus]:focus {
     justify-content: center;
 }
 
+.flex-justify-content {
+    display: flex;
+    justify-content: center;
+}
+
 .card-box {
     position: relative;
     width: 360px;
@@ -499,7 +504,11 @@ input[autofocus]:focus {
 }
 
 .rent-sell-primary {
-    padding: 4px 8px;
+    width: 29px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
@@ -508,7 +517,11 @@ input[autofocus]:focus {
 }
 
 .rent-sell-yellow {
-    padding: 4px 8px;
+    width: 33px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
@@ -517,7 +530,11 @@ input[autofocus]:focus {
 }
 
 .rent-sell-green {
-    padding: 4px 8px;
+    width: 58px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
@@ -834,6 +851,7 @@ input[autofocus]:focus {
     background-color: var(--primary);
     border-radius: 2.5px;
     border: 1px solid var(--primary);
+    margin-left: 22px;
 }
 
 .text-content-black {
@@ -1297,4 +1315,13 @@ input[autofocus]:focus {
 
 .box-filter_alt {
     margin-top: 28px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    width: 195px;
 }

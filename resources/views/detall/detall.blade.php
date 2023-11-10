@@ -56,41 +56,46 @@
 
             </div>
             <div class="box-content">
-
                 <div class="content-box">
                     <p class="head-text-detall ml-24">{{ $home->building_name }}</p>
-
-
                     <p class="period-text ml-24">โพสเมื่อ: {{ $home->created_at }} แล้ว
                     </p>
-                    <p class="price-detall text-center">
+                    <div class="price-detall flex-justify-content mt-8">
                         @if ($home->rent_sell == 'เช่า')
-                            <span class="rent-sell-primary width-rent-sell">
-                                {{ $home->rent_sell }}
-                            </span>
+                            <div class="flex-direction-row">
+                                <span class="rent-sell-primary width-rent-sell">
+                                    {{ $home->rent_sell }}
+                                </span>
+                                <p> {{ number_format($home->rental_price) }}/m</p>
+                            </div>
                         @endif
                         @if ($home->rent_sell == 'ขาย')
-                            <span class="rent-sell-yellow width-rent-sell">
-                                {{ $home->rent_sell }}
-                            </span>
+                            <div class="flex-direction-row">
+                                <span class="rent-sell-yellow width-rent-sell">
+                                    {{ $home->rent_sell }}
+                                </span>
+                                <p> {{ number_format($home->sell_price) }} บาท</p>
+                            </div>
                         @endif
                         @if ($home->rent_sell == 'เช่า/ขาย')
-                            <span class="rent-sell-primary width-rent-sell">
-                                {{ $home->rent_sell }}
-                            </span>
-                            <span class="rent-sell-green width-rent-sell">
-                                {{ $home->rent_sell }}
-                            </span>
-                        @endif
-                        @if ($home->sell_price)
-                            {{ number_format($home->sell_price) }} บาท
-                        @endif
-                        &nbsp; &nbsp;
-                        @if ($home->rental_price)
-                            {{ number_format($home->rental_price) }}/m
+                            <div class="flex-direction-column">
+                                <div class="flex-direction-row ">
+                                    <span class="rent-sell-primary width-rent-sell mb-8">
+                                        เช่า
+                                    </span>
+                                    <p> {{ number_format($home->rental_price) }}/m</p>
+                                </div>
+                                <div class="flex-direction-row ">
+                                    <span class="rent-sell-green width-rent-sell">
+                                        {{ $home->rent_sell }}
+                                    </span>
+                                    <p> {{ number_format($home->sell_price) }} บาท</p>
+                                </div>
+                            </div>
                         @endif
 
-                    </p>
+
+                    </div>
 
                     <nav class="mt-wealth">
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
