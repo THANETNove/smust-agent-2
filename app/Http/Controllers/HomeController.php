@@ -31,6 +31,7 @@ class HomeController extends Controller
         if( Auth::user()->status < 3){
             $dataHome =  $dataHome
             ->where('code_admin', Auth::user()->code_admin)
+            ->where('rent_sell_home_details.status_home', 'on')
             ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
             ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
             ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
@@ -40,6 +41,7 @@ class HomeController extends Controller
             ->paginate(100);
         }else {
             $dataHome =  $dataHome
+            ->where('rent_sell_home_details.status_home', 'on')
             ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
             ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
             ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
