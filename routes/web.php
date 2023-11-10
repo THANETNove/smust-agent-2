@@ -32,4 +32,6 @@ Route::get('/get-detall/{id}', [HomeController::class, 'show'])->name('get-detal
 Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/create-content', [RentSellHouseController::class, 'create'])->name('create-content');
     Route::post('/add-content', [RentSellHouseController::class, 'store'])->name('add-content');
+    Route::get('/edit/{id}', [RentSellHouseController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [RentSellHouseController::class, 'update'])->name('update');
 });
