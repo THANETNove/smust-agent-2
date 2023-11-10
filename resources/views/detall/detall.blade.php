@@ -288,7 +288,7 @@
             </div>
     </div>
     @endforeach
-    {{--    <div class="popup" id="imagePopup">
+    <div class="popup" id="imagePopup">
         <div class="popup-content">
             <div id="popupMediaContainer">
             </div>
@@ -296,7 +296,7 @@
             <button class="prev-btn" onclick="changeMedia(-1)">&#10094;</button>
             <button class="next-btn" onclick="changeMedia(1)">&#10095;</button>
         </div>
-    </div> --}}
+    </div>
 
 
 
@@ -342,19 +342,29 @@
 
         function showMedia(index) {
             var mediaItems = {!! json_encode($imgUrl) !!};
-            console.log("mediaItems", mediaItems);
+            console.log("mediaItems", mediaItems[0]);
 
             var popup = document.getElementById('imagePopup');
             var popupImage = document.getElementById('popupImage');
 
-            /*  var popup = document.getElementById('imagePopup');
-             popup.style.display = 'flex';
-             var popupMediaContainer = document.getElementById('popupMediaContainer');
-             popupMediaContainer.innerHTML = '';
+            var popup = document.getElementById('imagePopup');
+            popup.style.display = 'flex';
+            var popupMediaContainer = document.getElementById('popupMediaContainer');
+            popupMediaContainer.innerHTML = '';
 
-             var img = document.createElement('img');
-             img.src = "{{ URL::asset('/img/product/') }}" + mediaItems[index];
-             popupMediaContainer.appendChild(img); */
+            var assetUrl = "{{ asset('img/product') }}";
+
+
+            console.log(assetUrl);
+            var img = document.createElement('img');
+            /* img.src = "/img/product/" + mediaItems[index]; */
+            img.src = assetUrl + '/' + mediaItems[index];
+
+            /*  img.src = assetUrl + mediaItems[index]; */
+
+
+
+            popupMediaContainer.appendChild(img);
         }
     </script>
 @endsection
