@@ -52,177 +52,251 @@
                     @php
                         $imgUrl = json_decode(htmlspecialchars_decode($home->image));
                     @endphp
-                    <div class="card-new">
-                        @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
-                            <div class="box-new">NEW</div>
-                        @endif
-                        <div class="box-img-new">
-                            <img class="img-0831" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
-                        </div>
-                        <div class="box-name-new">
-                            <p class="name-content">{{ $home->building_name }}</p>
-                            <p class="name-details">
-                                <img class="img-icon " src="{{ URL::asset('/assets/image/home/location_on.png') }}">
-                                {{ $home->districts_name_th }} {{ $home->amphures_name_th }}
-                                {{ $home->provinces_name_th }}
-                            </p>
-                            @if ($home->train_name != 'ไม่มี' && $home->train_name)
+                    <a href="{{ url('get-detall', $home->id) }}">
+                        <div class="card-new">
+                            @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
+                                <div class="box-new">NEW</div>
+                            @endif
+                            <div class="box-img-new">
+                                <img class="img-0831" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
+                            </div>
+                            <div class="box-name-new">
+                                <p class="name-content">{{ $home->building_name }}</p>
                                 <p class="name-details">
-                                    <img class="img-icon"
-                                        src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                    {{ $home->train_name }}
+                                    <img class="img-icon " src="{{ URL::asset('/assets/image/home/location_on.png') }}">
+                                    {{ $home->districts_name_th }} {{ $home->amphures_name_th }}
+                                    {{ $home->provinces_name_th }}
                                 </p>
-                            @endif
+                                @if ($home->train_name != 'ไม่มี' && $home->train_name)
+                                    <p class="name-details">
+                                        <img class="img-icon"
+                                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                        {{ $home->train_name }}
+                                    </p>
+                                @endif
 
-                            <p class="number-rooms text-ellipsis">
-                                <span class="img-icon-ri2 ">
-                                    <img class="img-icon img-icon-ri" src="{{ URL::asset('/assets/image/home/bed.png') }}">
-                                    {{ $home->bedroom }} ห้องนอน
-                                </span>
-                                <span>
-                                    <img class="img-icon  img-icon-ri"
-                                        src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
-                                    {{ $home->room_width }} ตร.ม.
-                                </span>
-                            </p>
-                        </div>
-
-                        @php
-                            $price = $home->sell_price; // Replace this with your actual price value
-                            $priceString = (string) $price;
-
-                            if (strlen($priceString) >= 6) {
-                                $firstDigit = substr($priceString, 0, 1);
-                                $secondDigit = substr($priceString, 1, 1);
-                                $formattedPrice = $firstDigit . '.' . $secondDigit . ' ล้าน';
-                                $price_sell = $formattedPrice;
-                            } else {
-                                $price_sell = number_format($home->sell_price) . ' บาท';
-                            }
-                        @endphp
-
-
-                        <div class="box-price-new">
-                            <p class="price-new price-top  ">
-                                ฿{{ number_format($home->rental_price) }}/m
-                            </p>
-                            @if ($home->sell_price)
-                                <p class="price-new ">
-                                    ฿ {{ $price_sell }}
+                                <p class="number-rooms text-ellipsis">
+                                    <span class="img-icon-ri2 ">
+                                        <img class="img-icon img-icon-ri"
+                                            src="{{ URL::asset('/assets/image/home/bed.png') }}">
+                                        {{ $home->bedroom }} ห้องนอน
+                                    </span>
+                                    <span>
+                                        <img class="img-icon  img-icon-ri"
+                                            src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
+                                        {{ $home->room_width }} ตร.ม.
+                                    </span>
                                 </p>
-                            @endif
+                            </div>
 
-                            @if ($home->rent_sell == 'เช่า')
-                                <span class="rent-sell-primary absolute-rent-sell">
-                                    {{ $home->rent_sell }}
-                                </span>
-                            @elseif ($home->rent_sell == 'ขาย')
-                                <span class="rent-sell-yellow absolute-rent-sell">
-                                    {{ $home->rent_sell }}
-                                </span>
-                            @else
-                                <span class="rent-sell-green absolute-rent-sell">
-                                    {{ $home->rent_sell }}
-                                </span>
-                            @endif
+                            @php
+                                $price = $home->sell_price; // Replace this with your actual price value
+                                $priceString = (string) $price;
 
+                                if (strlen($priceString) >= 6) {
+                                    $firstDigit = substr($priceString, 0, 1);
+                                    $secondDigit = substr($priceString, 1, 1);
+                                    $formattedPrice = $firstDigit . '.' . $secondDigit . ' ล้าน';
+                                    $price_sell = $formattedPrice;
+                                } else {
+                                    $price_sell = number_format($home->sell_price) . ' บาท';
+                                }
+                            @endphp
+
+
+                            <div class="box-price-new">
+                                <p class="price-new price-top  ">
+                                    ฿{{ number_format($home->rental_price) }}/m
+                                </p>
+                                @if ($home->sell_price)
+                                    <p class="price-new ">
+                                        ฿ {{ $price_sell }}
+                                    </p>
+                                @endif
+
+                                @if ($home->rent_sell == 'เช่า')
+                                    <span class="rent-sell-primary absolute-rent-sell">
+                                        {{ $home->rent_sell }}
+                                    </span>
+                                @elseif ($home->rent_sell == 'ขาย')
+                                    <span class="rent-sell-yellow absolute-rent-sell">
+                                        {{ $home->rent_sell }}
+                                    </span>
+                                @else
+                                    <span class="rent-sell-green absolute-rent-sell">
+                                        {{ $home->rent_sell }}
+                                    </span>
+                                @endif
+
+                            </div>
                         </div>
+                    </a>
+                @endforeach
+            </div>
+            <div class="mt-5">
+                {!! $dataHome->links() !!}
+            </div>
+            {{--  <div class="row ">
+                @foreach ($dataHome as $home)
+                    <div class="col-md-6 col-lg-4 ">
+                        <a href="{{ url('get-detall', $home->id) }}">
+                            <div class="card-box">
+                                @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
+                                    <div class="box-new">NEW</div>
+                                @endif
+                                @php
+
+                                    $imgUrl = json_decode(htmlspecialchars_decode($home->image));
+
+                                @endphp
+
+                                <img class="img-0831" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
+                                <div>
+                                    <p class="name-content">{{ $home->building_name }}</p>
+                                    <p class="name-details">
+                                        <img class="img-icon "
+                                            src="{{ URL::asset('/assets/image/home/location_on.png') }}">
+                                        {{ $home->districts_name_th }} {{ $home->amphures_name_th }}
+                                        {{ $home->provinces_name_th }}
+                                    </p>
+                                    <p class="name-details"> <img class="img-icon"
+                                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                        {{ $home->train_name }} </p>
+                                    <p class="number-rooms">
+                                        <span>
+                                            <img class="img-icon img-icon-right"
+                                                src="{{ URL::asset('/assets/image/home/bed.png') }}">
+                                            {{ $home->bedroom }} ห้องนอน
+                                        </span>
+                                        <span class="img-icon-left">
+                                            <img class="img-icon img-icon-right"
+                                                src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
+                                            {{ $home->room_width }} ตร.ม.
+                                        </span>
+                                    </p>
+                                    @if ($home->rent_sell == 'เช่า')
+                                        <span class="rent-sell-primary absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @elseif ($home->rent_sell == 'ขาย')
+                                        <span class="rent-sell-yellow absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @else
+                                        <span class="rent-sell-green absolute-rent-sell">
+                                            {{ $home->rent_sell }}
+                                        </span>
+                                    @endif
+
+                                    <div class="box-price">
+                                        @if ($home->sell_price)
+                                            <p>
+                                                ฿{{ $home->sell_price }} บาท
+                                            </p>
+                                        @endif
+                                        @if ($home->rental_price)
+                                            <p>
+                                                ฿ {{ $home->rental_price }}/m
+                                            </p>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
-
-
-        </div>
-        <div class="mt-5">
-            {!! $dataHome->links() !!}
-
+            <div class="mt-5">
+                {!! $dataHome->links() !!}
+            </div> --}}
         </div>
 
+    </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="modal-title fs-5">
-                            <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title fs-5">
+                        <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <p class="font-size-12-black">ประเภททรัพย์</p>
+                        <div class="flex-direction-row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property_type" value="คอนโด"
+                                    id="property_type1">
+                                <label class="form-check-label check-icon" for="property_type1">
+                                    <img class="property-img" src="{{ URL::asset('/assets/image/home/apartment.png') }}">
+                                    <p class="font-size-12-black text-lr">คอนโด</p>
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
+                                    id="property_type2" checked>
+                                <label class="form-check-label check-icon" for="property_type2">
+                                    <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
+                                    <p class="font-size-12-black text-lr-2">บ้าน</p>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
+                        <div class="flex-direction-row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
+                                    id="rent_sell1" checked>
+                                <label class="form-check-label" for="rent_sell1">
+                                    เช่า
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="ขาย"
+                                    id="rent_sell2">
+                                <label class="form-check-label" for="rent_sell2">
+                                    ขาย
+                                </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rent_sell" value="เช่า/ขาย"
+                                    id="rent_sell3">
+                                <label class="form-check-label" for="rent_sell3">
+                                    เช่า/ขาย
+                                </label>
+                            </div>
+
+                        </div>
+                        <p class="font-size-12-black mt-21">พื้นที่</p>
+                        @include('layouts.address')
+
+
+
+                        <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
+                        <img class="property-img"
+                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
+                        @include('layouts.train_station')
+                        <div class="box-button">
+                            <button class="btn-search">ค้นหา</button>
                         </div>
 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
-                            enctype="multipart/form-data">
-                            @csrf
-                            <p class="font-size-12-black">ประเภททรัพย์</p>
-                            <div class="flex-direction-row">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="property_type" value="คอนโด"
-                                        id="property_type1">
-                                    <label class="form-check-label check-icon" for="property_type1">
-                                        <img class="property-img"
-                                            src="{{ URL::asset('/assets/image/home/apartment.png') }}">
-                                        <p class="font-size-12-black text-lr">คอนโด</p>
-                                    </label>
-                                </div>
-                                &nbsp; &nbsp;
-                                &nbsp; &nbsp;
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
-                                        id="property_type2" checked>
-                                    <label class="form-check-label check-icon" for="property_type2">
-                                        <img class="property-img"
-                                            src="{{ URL::asset('/assets/image/home/cottage.png') }}">
-                                        <p class="font-size-12-black text-lr-2">บ้าน</p>
-                                    </label>
-                                </div>
-                            </div>
-                            <p class="font-size-12-black mt-21">ประเภทสัญญา</p>
-                            <div class="flex-direction-row">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
-                                        id="rent_sell1" checked>
-                                    <label class="form-check-label" for="rent_sell1">
-                                        เช่า
-                                    </label>
-                                </div>
-                                &nbsp; &nbsp;
-                                &nbsp; &nbsp;
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="rent_sell" value="ขาย"
-                                        id="rent_sell2">
-                                    <label class="form-check-label" for="rent_sell2">
-                                        ขาย
-                                    </label>
-                                </div>
-                                &nbsp; &nbsp;
-                                &nbsp; &nbsp;
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="rent_sell" value="เช่า/ขาย"
-                                        id="rent_sell3">
-                                    <label class="form-check-label" for="rent_sell3">
-                                        เช่า/ขาย
-                                    </label>
-                                </div>
-
-                            </div>
-                            <p class="font-size-12-black mt-21">พื้นที่</p>
-                            @include('layouts.address')
-
-
-
-                            <p class="font-size-12-black mt-21">สถานีรถไฟฟ้า</p>
-                            <img class="property-img"
-                                src="{{ URL::asset('/assets/image/home/directions_subway.png') }}"></span>
-                            @include('layouts.train_station')
-                            <div class="box-button">
-                                <button class="btn-search">ค้นหา</button>
-                            </div>
-
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        @include('layouts.home_address')
-    @endsection
+    </div>
+    @include('layouts.home_address')
+@endsection
