@@ -28,15 +28,17 @@
     }
 
 
+    // กำหนด event listener ไว้นอกฟังก์ชัน showMedia
     var saveBtn = document.getElementById('save-image-btn');
-
     saveBtn.addEventListener('click', function() {
-        saveImage(img.src);
+        if (img) {
+            saveImage(img.src);
+        } else {
+            console.error('Image not defined.');
+        }
     });
 
-
     function showMedia(index) {
-
         var mediaItems = {!! json_encode($imgUrl) !!};
 
         var prevBtn = document.getElementById("prev-btn");
@@ -55,18 +57,16 @@
         var popup = document.getElementById('imagePopup');
         var popupImage = document.getElementById('popupImage');
 
-        var popup = document.getElementById('imagePopup');
         popup.style.display = 'flex';
         var popupMediaContainer = document.getElementById('popupMediaContainer');
         popupMediaContainer.innerHTML = '';
 
         var assetUrl = "{{ asset('img/product') }}";
-        var img = document.createElement('img');
+        img = document.createElement('img'); // ตัวแปร img ต้องเป็นตัวแปรที่ถูกสร้างใน scope ที่ถูกต้อง
         img.src = assetUrl + '/' + mediaItems[index];
         popupMediaContainer.appendChild(img);
-
-
     }
+
 
     function saveImage(imageUrl) {
         var downloadLink = document.createElement('a');
