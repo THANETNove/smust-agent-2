@@ -225,7 +225,7 @@
                                         </span>
                                     @enderror
                                 </div>
-
+                                {{-- @include('layouts.address') --}}
                                 <select class="select-address select-address form-select font-size-12-black"
                                     name="provinces" id="provinces-id" aria-label="Default select example">
                                     <option selected disabled>จังหวัด</option>
@@ -250,6 +250,7 @@
                                 </select>
                                 <select class="select-address form-select mt-2 font-size-12-black" name="amphures"
                                     id="amphures" aria-label="Default select example">
+                                    <option selected disabled>แขวง/ อำเภอ</option>
                                     @foreach ($dataDistricts as $dip)
                                         <option value="{{ $dip->id }}" selected>{{ $dip->name_th }}
                                         </option>
@@ -528,6 +529,7 @@
             </div>
         </div>
     </div>
+
     @include('admin.address')
 
 @endsection
