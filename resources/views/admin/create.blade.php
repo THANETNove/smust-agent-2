@@ -106,7 +106,7 @@
                             <label for="exampleFormControlInput1" class="form-label">ความกว้างห้อง (ตร.ม)</label>
                             <input type="number" class="form-control @error('room_width') is-invalid @enderror"
                                 name="room_width" id="exampleFormControlInput1" placeholder="ความกว้างห้อง (ตร.ม)"
-                                step="0.1">
+                                step="any">
                             @error('room_width')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

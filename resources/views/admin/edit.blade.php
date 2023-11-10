@@ -13,7 +13,7 @@
                     <a href="{{ url('get-detall', $id) }}" class="box-call">
                         กลับเดิม
                     </a>
-                
+
                 </div>
             </div>
             <div class="box-content">
@@ -147,7 +147,7 @@
                                 <label for="exampleFormControlInput1" class="form-label">ความกว้างห้อง (ตร.ม)</label>
                                 <input type="number" class="form-control @error('room_width') is-invalid @enderror"
                                     name="room_width" id="exampleFormControlInput1" value="{{ $hod->room_width }}"
-                                    placeholder="ความกว้างห้อง (ตร.ม)" step="0.1">
+                                    placeholder="ความกว้างห้อง (ตร.ม)" step="any">
                                 @error('room_width')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
