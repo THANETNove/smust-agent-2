@@ -16,15 +16,21 @@
 
                 <div class="content-box background-white mp-16">
                     <p class="add_head-content text-center mt-3">เพิ่ม profile</p>
-                    <p>ชื่อ&nbsp; {{ Auth::user()->first_name }}&nbsp; &nbsp; &nbsp; &nbsp; นามสกุล&nbsp;
-                        {{ Auth::user()->last_name }}</p>
-                    <div class="row">
-                        <div class="col-2">
-                            <p>รหัส Admin </p>
-                            <p>email </p>
-                            <p>ลิงค์สมัคร</p>
-                        </div>
-                        <div class="col-10">
+                    <div class="flex-direction-row">
+                        <div class="box-profile ">ชื่อ</div>
+                        <div class="box-profile2">{{ Auth::user()->first_name }}</div>
+                    </div>
+                    <div class="flex-direction-row mt-01">
+                        <div class="box-profile">นามสกุล</div>
+                        <div class="box-profile2">{{ Auth::user()->last_name }}</div>
+                    </div>
+                    <div class="flex-direction-row mt-01">
+                        <div class="box-profile">email</div>
+                        <div class="box-profile2">{{ Auth::user()->email }}</div>
+                    </div>
+                    <div class="flex-direction-row mt-01">
+                        <div class="box-profile">รหัส Admin </div>
+                        <div class="box-profile2">
                             <p>{{ Auth::user()->code }}
                                 <span>
                                     <img class="copy-icon ml-16" id="copy-code"
@@ -32,18 +38,15 @@
                                         onclick="copyCode('{{ Auth::user()->code }}')">
                                 </span>
                             </p>
-                            <p>{{ Auth::user()->email }}</p>
+                        </div>
+                    </div>
+                    <div class="flex-direction-row mt-01">
+                        <div class="box-profile">ลิงค์สมัคร </div>
+                        <div class="box-profile2">
                             <p> link นายหน้า <span> <img class="copy-icon ml-16" id="copy-url"
                                         src="{{ URL::asset('/assets/image/home/link.png') }}"
                                         onclick="copyUrlCode('{{ Auth::user()->code }}')"></span></p>
                         </div>
-
-
-                        {{--  <p>ชื่อ&nbsp; {{ Auth::user()->first_name }}&nbsp; &nbsp; &nbsp; &nbsp; นามสกุล&nbsp;
-                        {{ Auth::user()->last_name }}</p>
-                    <p>รหัส Admin &nbsp; {{ Auth::user()->code }}</p>
-                    <p>email &nbsp; {{ Auth::user()->email }}</p>
-                    <p>ลิงค์สมัคร &nbsp; {{ Auth::user()->email }}</p> --}}
                     </div>
                 </div>
             </div>
