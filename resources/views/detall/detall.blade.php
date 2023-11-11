@@ -115,7 +115,7 @@
 
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                             tabindex="0">
-                            <div class="flex-direction-row margin-bottom-8">
+                            <div class="flex-direction-row margin-bottom-8 mt-27">
                                 <img class="icon-content" src="{{ URL::asset('/assets/image/home/map.png') }}">
                                 <a target="_blank" rel="noopener noreferrer" href="{{ $home->url_gps }}"
                                     class="text-content-dark_100  text-ellipsis">
@@ -255,7 +255,7 @@
                         </div>
                         <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
                             tabindex="0">
-                            <div class="align-items-center">
+                            <div class="align-items-center mt-27 ">
                                 <a href="{{ $home->make_appointment_location }}" class="box-appointment">
                                     <img class="icon-content-3"
                                         src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
