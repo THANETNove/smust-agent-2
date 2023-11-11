@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RentSellHouseController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\RegisterBrokerController;
+use App\Http\Controllers\RentSellHouseController;
+use App\Http\Controllers\UserBrokerController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\RegisterBrokerController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
 
@@ -31,8 +32,8 @@ Route::get('/get-detall/{id}', [HomeController::class, 'show'])->name('get-detal
 Route::post('/search', [HomeController::class, 'index'])->name('search');
 Route::get('/register-broker/{id}', [RegisterBrokerController::class, 'index'])->name('register-broker');
 Route::post('/add-register-broker', [RegisterBrokerController::class, 'store'])->name('add-register-broker');
-
-
+Route::get('/profile-user', [UserBrokerController::class, 'index'])->name('profile-user');
+Route::post('/add-code_admin', [UserBrokerController::class, 'store'])->name('add-code_admin');
 
 //ส่วนของ admin
 Route::group(['middleware' => ['is_admin']], function () {

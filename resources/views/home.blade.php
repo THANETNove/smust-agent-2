@@ -30,6 +30,11 @@
                                     profile
                                 </a>
                             @endif
+                            @if (Auth::user()->status == '0')
+                                <a class="dropdown-item" href="{{ url('profile-user') }}">
+                                    profile
+                                </a>
+                            @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
