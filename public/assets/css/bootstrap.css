@@ -1353,3 +1353,18 @@ input[autofocus]:focus {
 .mt-27 {
     margin-top: 27px;
 }
+
+.ml-r {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.mp-16 {
+    padding-top: 16px;
+}
+
+.message-text {
+    color: var(--white_300);
+    font-size: 14px;
+    font-weight: 400;
+}

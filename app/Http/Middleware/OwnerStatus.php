@@ -3,11 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Auth;
 
-class CheckStatusAdmin
+class OwnerStatus
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,7 @@ class CheckStatusAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-
-        if (Auth::user() &&  Auth::user()->status > 1) {
+        if (Auth::user() &&  Auth::user()->status == 3) {
             return $next($request);
        }
 

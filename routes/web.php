@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentSellHouseController;
+use App\Http\Controllers\OwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,10 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/edit/{id}', [RentSellHouseController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RentSellHouseController::class, 'update'])->name('update');
     Route::get('/destroy/{id}', [RentSellHouseController::class, 'destroy'])->name('destroy');
+});
+//  ส่วนของ owner
+Route::group(['middleware' => ['is_owner']], function () {
+    Route::get('/add-admin', [OwnerController::class, 'index'])->name('add-admin');
+    Route::get('/change-admin', [OwnerController::class, 'changeAdmin'])->name('change-admin');
+
 });

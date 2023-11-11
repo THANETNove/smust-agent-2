@@ -12,6 +12,17 @@
                             <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                            <a id="navbarDropdown" class="nav-link ml-r" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->email }}
+                            </a>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <a class="dropdown-item" href="{{ url('add-admin') }}">
+                                เพิ่ม admin
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -24,53 +35,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10">
-                    <p class="p-login text-center mt-22">ทรัพย์ของฉัน (51) </p>
+                @php
+                    $number = count($dataHome);
+
+                @endphp
+                <div class="col-12">
+                    <p class="p-login text-center mt-22">ทรัพย์ของฉัน ({{ $number }}) </p>
                 </div>
                 <div class="col-12">
                     <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
                     </button>
                 </div>
-            </div>
-            {{-- <div>
-                <div class="box-ellipse ">
-                    <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-email" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
-                    </a>
 
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+            </div>
+        </div>
+        @if (session('message'))
+            <p class="message-text text-center mt-4"> {{ session('message') }}</p>
+        @endif
+
+        <div class="col-12">
+            @if (Auth::user()->status != '0')
+                @if (Auth::user()->status < 3)
+                    {{-- ถ้าไม่ owner  ไม่ได้ ไม่เกิน 100 --}}
+                    @if ($number < 101)
+                        <a href="{{ url('/create-content') }}" class="box-call ml-16">
+                            เพิ่ม
                         </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="p-login text-center mt-wealth">ทรัพย์ของฉัน (51) </p>
-                <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
-                </button>
-                @if (Auth::user()->status != '0')
+                    @endif
+                @else
                     <a href="{{ url('/create-content') }}" class="box-call ml-16">
                         เพิ่ม
                     </a>
                 @endif
-                @if (session('message'))
-                    <p class="span-message"> {{ session('message') }}</p>
-                @endif
-
-            </div> --}}
+            @endif
         </div>
-
 
         <div class="card-content">
             <div class="row">
@@ -162,80 +161,7 @@
             <div class="mt-5">
                 {!! $dataHome->links() !!}
             </div>
-            {{--  <div class="row ">
-                @foreach ($dataHome as $home)
-                    <div class="col-md-6 col-lg-4 ">
-                        <a href="{{ url('get-detall', $home->id) }}">
-                            <div class="card-box">
-                                @if (Carbon\Carbon::parse($home->created_at)->diffInDays(Carbon\Carbon::now()) < 4)
-                                    <div class="box-new">NEW</div>
-                                @endif
-                                @php
 
-                                    $imgUrl = json_decode(htmlspecialchars_decode($home->image));
-
-                                @endphp
-
-                                <img class="img-0831" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}">
-                                <div>
-                                    <p class="name-content">{{ $home->building_name }}</p>
-                                    <p class="name-details">
-                                        <img class="img-icon "
-                                            src="{{ URL::asset('/assets/image/home/location_on.png') }}">
-                                        {{ $home->districts_name_th }} {{ $home->amphures_name_th }}
-                                        {{ $home->provinces_name_th }}
-                                    </p>
-                                    <p class="name-details"> <img class="img-icon"
-                                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                        {{ $home->train_name }} </p>
-                                    <p class="number-rooms">
-                                        <span>
-                                            <img class="img-icon img-icon-right"
-                                                src="{{ URL::asset('/assets/image/home/bed.png') }}">
-                                            {{ $home->bedroom }} ห้องนอน
-                                        </span>
-                                        <span class="img-icon-left">
-                                            <img class="img-icon img-icon-right"
-                                                src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
-                                            {{ $home->room_width }} ตร.ม.
-                                        </span>
-                                    </p>
-                                    @if ($home->rent_sell == 'เช่า')
-                                        <span class="rent-sell-primary absolute-rent-sell">
-                                            {{ $home->rent_sell }}
-                                        </span>
-                                    @elseif ($home->rent_sell == 'ขาย')
-                                        <span class="rent-sell-yellow absolute-rent-sell">
-                                            {{ $home->rent_sell }}
-                                        </span>
-                                    @else
-                                        <span class="rent-sell-green absolute-rent-sell">
-                                            {{ $home->rent_sell }}
-                                        </span>
-                                    @endif
-
-                                    <div class="box-price">
-                                        @if ($home->sell_price)
-                                            <p>
-                                                ฿{{ $home->sell_price }} บาท
-                                            </p>
-                                        @endif
-                                        @if ($home->rental_price)
-                                            <p>
-                                                ฿ {{ $home->rental_price }}/m
-                                            </p>
-                                        @endif
-
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-            <div class="mt-5">
-                {!! $dataHome->links() !!}
-            </div> --}}
         </div>
 
     </div>

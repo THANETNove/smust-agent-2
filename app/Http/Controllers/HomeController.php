@@ -36,7 +36,7 @@ class HomeController extends Controller
 
 
         $dataHome = DB::table('rent_sell_home_details');
-        if( Auth::user()->status < 3){
+        if( Auth::user()->status < 3){ //admin  นายหน้า
 
             if ($searchData > 0) {
 
@@ -92,7 +92,8 @@ class HomeController extends Controller
                 ->paginate(100);
             }
 
-        }else {
+        }else { // owner
+
             if ($searchData > 0) {
                 $dataHome = $dataHome
                 ->where('rent_sell_home_details.status_home', 'on')

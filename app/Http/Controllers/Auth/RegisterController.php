@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -68,6 +69,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $randomText = Str::random(10);
+
+        $code = 'SMUSET-'.$randomText;
+
         return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -76,6 +81,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'id_card_number' => $data['id_card_number'],
             'provinces' => $data['provinces'],
+            'code' => $code,
             'status' => "0",
         ]);
     }
