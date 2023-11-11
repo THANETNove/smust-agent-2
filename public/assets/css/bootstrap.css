@@ -1325,3 +1325,8 @@ input[autofocus]:focus {
 .nav-tabs .nav-link.active {
     width: 195px;
 }
+
+.w-45 {
+    width: 45%;
+}
+
