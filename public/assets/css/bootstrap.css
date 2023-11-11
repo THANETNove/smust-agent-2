@@ -1292,12 +1292,12 @@ input[autofocus]:focus {
 }
 
 
-.row {
+.card-content .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
     flex-wrap: wrap;
     margin-top: 0;
-    margin-right: 0;
+    margin-right: 1.5rem;
     margin-left: 0;
 }
 
@@ -1305,7 +1305,7 @@ input[autofocus]:focus {
     margin-left: 24px;
 }
 
-.row>* {
+.card-content .row>* {
     width: inherit;
 }
 
