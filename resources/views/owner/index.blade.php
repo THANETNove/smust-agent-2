@@ -20,8 +20,11 @@
                         <p class="message-text-color text-center mt-4"> {{ session('message') }}</p>
                     @endif
                     <div class="mt-3 mb-5">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex" role="search" method="POST" action="{{ route('search-user') }}"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input class="form-control me-2" type="search" name="search" placeholder="Search"
+                                aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>

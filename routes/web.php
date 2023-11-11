@@ -43,5 +43,6 @@ Route::group(['middleware' => ['is_owner']], function () {
     Route::get('/add-admin', [OwnerController::class, 'index'])->name('add-admin');
     Route::get('/change-admin/{id}', [OwnerController::class, 'changeAdmin'])->name('change-admin');
     Route::get('/cancel-admin/{id}', [OwnerController::class, 'cancelAdmin'])->name('cancel-admin');
+    Route::post('/search-user', [OwnerController::class, 'index'])->name('search-user');
 
 });

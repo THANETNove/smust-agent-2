@@ -11,11 +11,24 @@ class OwnerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = DB::table('users')
-        ->where('status', '!=', "3")
-        ->get();
+
+        $search = $request['search'];
+        if($search) {
+            $user = DB::table('users')
+            ->where('status', '!=', '3')
+            ->where(function($query) use ($search) {
+                $query->where('email', 'like', "%$search%")
+                    ->orWhere('first_name', 'like', "%$search%");
+            })
+            ->get();
+        }else {
+            $user = DB::table('users')
+            ->where('status', '!=', "3")
+            ->get();
+        }
+
         return view('owner.index', ['user' => $user]);
     }
 
