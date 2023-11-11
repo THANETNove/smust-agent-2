@@ -1142,6 +1142,26 @@ input[autofocus]:focus {
     background-color: var(--white_200);
 }
 
+.save-image-btn-all {
+    z-index: 1;
+    /* ค่า z-index ที่สูง */
+    position: fixed;
+    /* เปลี่ยนจาก absolute เป็น fixed */
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #ccc;
+    padding-right: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: var(--primary);
+}
+
 .icon-save {
     margin-top: -4px;
     margin-left: 8px;
@@ -1329,4 +1349,3 @@ input[autofocus]:focus {
 .w-45 {
     width: 45%;
 }
-

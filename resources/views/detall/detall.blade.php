@@ -14,8 +14,7 @@
                 <div class="image-box">
                     <div class="mr-4">
                         <div class="sava-image">
-                            <img class="save-link ml-16" id="copy-url"
-                                src="{{ URL::asset('/assets/image/home/link.png') }}">
+                            <img class="save-link ml-16" id="copy-url" src="{{ URL::asset('/assets/image/home/link.png') }}">
                             <img class="save-link" id="captureButton" src="{{ URL::asset('/assets/image/home/save.png') }}">
                         </div>
                         <img class="popup-trigger image-detall-1" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}"
@@ -295,6 +294,10 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <span class="save-image-btn" id="save-image-btn">
                 <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}">
+            </span>
+            <span class="save-image-btn-all" id="save-all-images-btn">
+                <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}">
+
             </span>
             <button class="prev-btn" id="prev-btn" onclick="changeMedia(-1)">&#10094;</button>
             <button class="next-btn" id="next-btn" onclick="changeMedia(1)">&#10095;</button>
