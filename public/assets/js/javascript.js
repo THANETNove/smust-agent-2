@@ -35,6 +35,38 @@ $(document).ready(function () {
     });
 
     // ตัวอย่างอื่น ๆ ของโค้ด JavaScript
+
+    /**
+     *  ! copyUrl
+     */
+
+    const copyUrlButton = document.getElementById("copy-url");
+
+    copyUrlButton.addEventListener("click", () => {
+        // Get the URL from the address bar
+        var urlToCopy = window.location.href;
+
+        // Create a temporary input element
+        var tempInput = document.createElement("input");
+
+        // Set the input value to the URL
+        tempInput.value = urlToCopy;
+
+        // Append the input element to the body
+        document.body.appendChild(tempInput);
+
+        // Select the input value
+        tempInput.select();
+
+        // Copy the selected text
+        document.execCommand("copy");
+
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
+
+        // Optional: Provide feedback to the user
+        alert("URL copied to clipboard: " + urlToCopy);
+    });
 });
 
 /* ภาพ */
