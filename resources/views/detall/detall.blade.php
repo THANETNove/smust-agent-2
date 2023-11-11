@@ -188,8 +188,8 @@
 
 
                             <p class="head-content">สิ่งอำนวยความสะดวก</p>
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="flex-direction-break-word">
+                                <div class="w-50">
                                     <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                         @if ($home->kitchen)
                                             <img class="icon-content-2"
@@ -200,22 +200,6 @@
 
                                         ห้องครัว
                                     </p>
-                                </div>
-                                <div class="col-6">
-                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                        @if ($home->bed)
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
-                                        @else
-                                            <span class="icon-null"></span>
-                                        @endif
-
-                                        เตียง
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
                                     <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                         @if ($home->fitness)
                                             <img class="icon-content-2"
@@ -225,22 +209,6 @@
                                         @endif
                                         ฟิตเนส
                                     </p>
-                                </div>
-                                <div class="col-6">
-                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                        @if ($home->wardrobe)
-                                            <img class="icon-content-2"
-                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
-                                        @else
-                                            <span class="icon-null"></span>
-                                        @endif
-
-                                        ตู้เสื้อผ้า
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
                                     <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                         @if ($home->parking)
                                             <img class="icon-content-2"
@@ -252,7 +220,27 @@
                                         ที่จอดรถ
                                     </p>
                                 </div>
-                                <div class="col-6">
+                                <div class="w-50">
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        @if ($home->bed)
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        @else
+                                            <span class="icon-null"></span>
+                                        @endif
+
+                                        เตียง
+                                    </p>
+                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                        @if ($home->wardrobe)
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                        @else
+                                            <span class="icon-null"></span>
+                                        @endif
+
+                                        ตู้เสื้อผ้า
+                                    </p>
                                     <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                         @if ($home->air_conditioner)
                                             <img class="icon-content-2"
@@ -264,7 +252,6 @@
                                     </p>
                                 </div>
                             </div>
-
                         </div>
                         <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
                             tabindex="0">
