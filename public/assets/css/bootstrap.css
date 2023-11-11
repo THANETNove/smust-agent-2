@@ -1375,6 +1375,12 @@ input[autofocus]:focus {
     font-weight: 400;
 }
 
+.error-message {
+    color: var(--attention);
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .copy-icon {
     width: 25px;
     height: 25px;

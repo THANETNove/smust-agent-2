@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentSellHouseController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\RegisterBrokerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/get-districts/{id}', [HomeController::class, 'districts'])->name('g
 Route::get('/get-amphures/{id}', [HomeController::class, 'amphures'])->name('get-amphures');
 Route::get('/get-detall/{id}', [HomeController::class, 'show'])->name('get-detall');
 Route::post('/search', [HomeController::class, 'index'])->name('search');
+Route::get('/register-broker/{id}', [RegisterBrokerController::class, 'index'])->name('register-broker');
+Route::post('/add-register-broker', [RegisterBrokerController::class, 'store'])->name('add-register-broker');
+
 
 
 //ส่วนของ admin

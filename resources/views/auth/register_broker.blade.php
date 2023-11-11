@@ -3,12 +3,15 @@
 @section('content')
     <div class="login-box">
         <p class="p-login">ลงทะเบียน</p>
+        @if (session('error'))
+            <p class="error-message text-center mt-4"> {{ session('error') }}</p>
+        @endif
         <?php
         $data = DB::table('provinces')->get();
         ?>
 
         <div class="form-login">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('add-register-broker') }}">
                 @csrf
 
                 <div class="row mb-3">
@@ -46,7 +49,7 @@
                     </div>
                 </div>
                 <p class="information">ข้อมูลของฉัน</p>
-             
+
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3 input_box">
                         <select class="form-select" name="prefix" aria-label="Default select example">
@@ -95,7 +98,16 @@
                         @enderror
                     </div>
                 </div>
+                @if (isset($id))
+                    <div class="row mb-3" style="display:none">
+                        <label>code-admin</label>
+                        <div class="col-md-12 input_box">
+                            <input id="code-admin" type="text" class="form-control" name="code_admin"
+                                value="{{ $id }}">
 
+                        </div>
+                    </div>
+                @endif
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3 input_box">
                         <input id="id_card_number" type="text"

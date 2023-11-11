@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -51,6 +53,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
+
+
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -60,6 +64,9 @@ class RegisterController extends Controller
             'id_card_number' => ['required', 'string', 'max:255','regex:/^[0-9]+$/'],
             'provinces' => ['required', 'string', 'max:255'],
         ]);
+
+
+
     }
     /**
      * Create a new user instance after a valid registration.
@@ -69,13 +76,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $randomText = Str::random(10);
 
         $code = 'SMUSET-'.$randomText;
 
+
         return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'prefix' => $data['prefix'],
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],

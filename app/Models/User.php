@@ -22,6 +22,7 @@ class User extends Authenticatable
         'code_admin',
         'email',
         'password',
+        'prefix',
         'first_name',
         'last_name',
         'phone',

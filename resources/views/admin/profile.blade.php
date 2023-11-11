@@ -74,7 +74,7 @@
 
         function copyUrlCode(data) {
             // Get the URL from the address bar
-            var urlToCopy = window.location.origin + '/' + 'register/' + data;
+            var urlToCopy = window.location.origin + '/' + 'register-broker/' + data;
 
 
 
