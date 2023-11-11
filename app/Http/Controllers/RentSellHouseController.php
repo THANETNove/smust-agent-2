@@ -25,6 +25,11 @@ class RentSellHouseController extends Controller
     {
 
     }
+    public function profileAdmin()
+    {
+
+        return view('admin.profile');//
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -1374,3 +1374,14 @@ input[autofocus]:focus {
     font-size: 14px;
     font-weight: 400;
 }
+
+.copy-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.copy-icon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

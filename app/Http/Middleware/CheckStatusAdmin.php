@@ -18,7 +18,7 @@ class CheckStatusAdmin
     {
 
 
-        if (Auth::user() &&  Auth::user()->status > 1) {
+        if (Auth::user() &&  Auth::user()->status > 0) {
             return $next($request);
        }
 
