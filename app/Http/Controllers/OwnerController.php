@@ -30,12 +30,32 @@ class OwnerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function changeAdmin(Request $request)
+    public function changeAdmin($id)
     {
-        $member =  RentSellHomeDetails::find($id);
-        $member->building_name = $request['building_name'];
-        $member->save();
-        return redirect('home')->with('message', "เปลี่ยนสำเร็จ" );
+        $user = DB::table('users')
+        ->where('id', $id)
+        ->first(); // ใช้ first() แทน get() เพื่อให้ได้แค่ผลลัพธ์เดียว
+
+    $member = User::find($id);
+
+    if ($user && $user->code_admin == null) {
+        $member->code_admin = $user->code;
+    }
+
+    $member->status = "1";
+    $member->save();
+        return redirect('add-admin')->with('message', "เปลี่ยนสำเร็จ" );
+    }
+
+
+    public function cancelAdmin($id)
+    {
+
+
+    $member = User::find($id);
+    $member->status = "0";
+    $member->save();
+        return redirect('add-admin')->with('message', "ยกเลิกลสำเร็จ" );
     }
 
 

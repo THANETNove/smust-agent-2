@@ -1368,3 +1368,9 @@ input[autofocus]:focus {
     font-size: 14px;
     font-weight: 400;
 }
+
+.message-text-color {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 400;
+}

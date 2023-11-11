@@ -16,6 +16,9 @@
 
                 <div class="content-box background-white mp-16">
                     <p class="add_head-content text-center mt-3">เพิ่ม Admin</p>
+                    @if (session('message'))
+                        <p class="message-text-color text-center mt-4"> {{ session('message') }}</p>
+                    @endif
                     <div class="mt-3 mb-5">
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
