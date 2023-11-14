@@ -175,7 +175,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">เช่าขั้นต่ำ (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label">เช่าขั้นต่ำ (เดือน)(เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('minimum_rent') is-invalid @enderror"
                                 name="minimum_rent" id="minimum_rent" placeholder="เช่าขั้นต่ำ">
                             @error('minimum_rent')
@@ -185,7 +185,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">เงินประกัน (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label">เงินประกัน (เดือน)(เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('deposit') is-invalid @enderror"
                                 name="deposit" id="deposit" placeholder="เงินประกัน">
                             @error('deposit')
@@ -205,7 +205,8 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label">ค่าเช่าล่วงหน้า (เดือน)
+                                (เช่า)</label>
                             <input type="number" class="form-control mt-2 @error('advance_rent') is-invalid @enderror"
                                 name="advance_rent" id="advance_rent" placeholder="ค่าเช่าล่วงหน้า">
                             @error('advance_rent')
@@ -215,7 +216,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"> เงินจอง (เช่า)</label>
+                            <label for="exampleFormControlInput1" class="form-label"> เงินจอง (บาท) (เช่า)</label>
                             <input type="number"
                                 class="form-control mt-2 @error('reservation_money') is-invalid @enderror"
                                 name="reservation_money" id="reservation_money" placeholder="2000">
