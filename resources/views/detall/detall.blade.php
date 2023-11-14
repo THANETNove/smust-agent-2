@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="box-content-icon">
                                     <img class="icon-content-2"
-                                        src="{{ URL::asset('/assets/image/home/screenshot_frame.png') }}">
+                                        src="{{ URL::asset('/assets/image/home/screenshot_frame2.png') }}">
                                     <span>{{ $home->room_width }} ตร.ม.</span>
                                 </div>
                                 @if ($home->studio == 'มี')

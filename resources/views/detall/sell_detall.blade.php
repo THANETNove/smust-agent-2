@@ -1,8 +1,8 @@
   {{-- ขาย  --}}
   <div class="mt-3">
       <p class="text-content-black margin-bottom-8">
-          <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
-          ราคาขาย <span class="ml-8">{{ number_format($home->advance_rent) }}
+          <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+          ราคาขาย <span class="ml-8">{{ number_format($home->sell_price) }}
               บาท</span>
       </p>
       <div class="flex-direction-break-word">
@@ -10,7 +10,7 @@
               <p class="text-content-black margin-bottom-8 space-between">
                   <span>
                       <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                      เงินดาวน์ <span class="ml-8"> {{ number_format($home->sell_price) }}
+                      เงินดาวน์ <span class="ml-8"> {{ number_format($home->down_payment) }}
                           บาท</span>
                   </span>
                   <span>-</span>
