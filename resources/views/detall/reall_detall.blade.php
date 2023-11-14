@@ -9,12 +9,12 @@
      <div class="w-50">
          <p class="text-content-black margin-bottom-8 space-between">
              <span> <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                 เงินประกัน {{ number_format($home->deposit) }} บาท</span>
+                 เงินประกัน {{ number_format($home->deposit) }} เดือน</span>
              <span>-</span>
          </p>
          <p class="text-content-black margin-bottom-8 space-between">
              <span> <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-                 ค่าเช่าล่วงหน้า {{ number_format($home->advance_rent) }} บาท</span>
+                 ค่าเช่าล่วงหน้า {{ number_format($home->advance_rent) }} เดือน</span>
              <span>-</span>
          </p>
      </div>
@@ -25,7 +25,7 @@
          </p>
          <p class="text-content-black margin-bottom-8">
              <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
-             เงินจอง <span class="ml-16">{{ number_format($home->advance_rent) }}
+             เงินจอง <span class="ml-16">{{ number_format($home->reservation_money) }}
                  บาท</span>
          </p>
      </div>
