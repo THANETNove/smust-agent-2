@@ -26,7 +26,12 @@
           </div>
           <div class="w-50">
               <p class="text-content-black margin-bottom-8">
-                  <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
+                  @if ($home->down_payment_installments == 'ได้')
+                      <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/check.png') }}">
+                  @else
+                      <img class="icon-content-close" src="{{ URL::asset('/assets/image/home/close.png') }}">
+                  @endif
+
                   ผ่อนดาวน์ {{ $home->down_payment_installments }}
 
               </p>
