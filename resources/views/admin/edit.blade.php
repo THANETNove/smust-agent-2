@@ -474,7 +474,8 @@
                                 <input type="text"
                                     class="form-control mt-2 @error('make_appointment_location') is-invalid @enderror"
                                     name="make_appointment_location" id="make_appointment_location"
-                                    value="{{ $hod->make_appointment_location }}" placeholder="นัดดูสถานที่">
+                                    value="{{ $hod->make_appointment_location }}" placeholder="นัดดูสถานที่"
+                                    pattern="https?://.+">
                                 @error('make_appointment_location')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -486,7 +487,7 @@
                                 <input type="text"
                                     class="form-control mt-2 @error('send_customers') is-invalid @enderror"
                                     name="send_customers" value="{{ $hod->send_customers }}" id="send_customers"
-                                    placeholder="ส่งลูกค้า">
+                                    placeholder="ส่งลูกค้า" pattern="https?://.+">
                                 @error('send_customers')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -497,7 +498,7 @@
                                 <label for="exampleFormControlInput1" class="form-label">ถามเพิ่มเติม</label>
                                 <input type="text" class="form-control mt-2 @error('ask_more') is-invalid @enderror"
                                     name="ask_more" id="ask_more" value="{{ $hod->ask_more }}"
-                                    placeholder="ถามเพิ่มเติม">
+                                    placeholder="ถามเพิ่มเติม" pattern="https?://.+">
                                 @error('ask_more')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

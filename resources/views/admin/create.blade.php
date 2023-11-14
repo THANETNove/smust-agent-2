@@ -68,7 +68,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">url gps</label>
                             <input type="text" class="form-control @error('url_gps') is-invalid @enderror" name="url_gps"
-                                id="exampleFormControlInput1" placeholder="url gps">
+                                id="exampleFormControlInput1" placeholder="url gps" pattern="https?://.+">
                             @error('url_gps')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">ระยะเวลาถึงสถานีรถไฟ</label>
+                            <label for="exampleFormControlInput1" class="form-label">ระยะเวลาถึงสถานีรถไฟ (นาที)</label>
                             <input type="text" class="form-control @error('time_arrive') is-invalid @enderror"
                                 name="time_arrive" id="exampleFormControlInput1" placeholder="5 mins">
                             @error('time_arrive')
@@ -346,7 +346,7 @@
                             <input type="text"
                                 class="form-control mt-2 @error('make_appointment_location') is-invalid @enderror"
                                 name="make_appointment_location" id="make_appointment_location"
-                                placeholder="นัดดูสถานที่">
+                                placeholder="นัดดูสถานที่" pattern="https?://.+">
                             @error('make_appointment_location')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -356,7 +356,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ส่งลูกค้า</label>
                             <input type="text" class="form-control mt-2 @error('send_customers') is-invalid @enderror"
-                                name="send_customers" id="send_customers" placeholder="ส่งลูกค้า">
+                                name="send_customers" id="send_customers" placeholder="ส่งลูกค้า" pattern="https?://.+">
                             @error('send_customers')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -366,7 +366,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">ถามเพิ่มเติม</label>
                             <input type="text" class="form-control mt-2 @error('ask_more') is-invalid @enderror"
-                                name="ask_more" id="ask_more" placeholder="ถามเพิ่มเติม">
+                                name="ask_more" id="ask_more" placeholder="ถามเพิ่มเติม" pattern="https?://.+">
                             @error('ask_more')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
