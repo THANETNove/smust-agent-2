@@ -70,7 +70,7 @@
                                     @if ($hod->rent_sell == 'เช่า/ขาย')
                                         <option value="เช่า/ขาย" selected>เช่า/ขาย</option>
                                     @else
-                                        <option value="เช่า/ขาย">เช่า</option>
+                                        <option value="เช่า/ขาย">เช่า/ขาย</option>
                                     @endif
 
                                 </select>
