@@ -125,9 +125,10 @@
 
 
                             <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
+                      
                                 <img class="icon-content-2"
                                     src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                {{ $home->time_arrive }} to <span class="text-decoration">{{ $home->train_name }}
+                                {{ $home->time_arrive }} mins to <span class="text-decoration">{{ $home->train_name }}
                                 </span>
                             </p>
 
