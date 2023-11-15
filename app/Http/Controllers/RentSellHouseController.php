@@ -46,7 +46,9 @@ class RentSellHouseController extends Controller
      */
     public function store(Request $request)
     {
-       /*  dd($request->all()); */
+        $maxUrlGpsLength = 255; // Replace with the actual maximum length
+
+        dd(substr($request['url_gps'], 0, $maxUrlGpsLength));
         $validated = $request->validate([
             'image.*' => ['required', 'image', 'image:jpg,png,jpeg,webp']
         ]);

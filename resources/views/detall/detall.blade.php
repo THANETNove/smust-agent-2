@@ -20,15 +20,20 @@
                         <img class="popup-trigger image-detall-1" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}"
                             data-index="0">
                     </div>
-                    <div class="flex-direction-column">
-                        <img class="popup-trigger image-detall-2" src="{{ URL::asset('/img/product/' . $imgUrl[1]) }}"
-                            data-index="1">
-                        <div class="image-opacity">
-                            <img class="popup-trigger image-detall-2" src="{{ URL::asset('/img/product/' . $imgUrl[2]) }}"
-                                data-index="2">
-                            <p class="number-image">+{{ $count - 2 }}</p>
+                    @if ($count > 1)
+                        <div class="flex-direction-column">
+                            <img class="popup-trigger image-detall-2" src="{{ URL::asset('/img/product/' . $imgUrl[1]) }}"
+                                data-index="1">
+                            @if ($count > 2)
+                                <div class="image-opacity">
+                                    <img class="popup-trigger image-detall-2"
+                                        src="{{ URL::asset('/img/product/' . $imgUrl[2]) }}" data-index="2">
+                                    <p class="number-image">+{{ $count - 2 }}</p>
+                                </div>
+                            @endif
                         </div>
-                    </div>
+                    @endif
+
                 </div>
             </div>
 
@@ -280,18 +285,19 @@
                         <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
                             tabindex="0">
                             <div class="align-items-center mt-27 ">
-                                <a href="{{ $home->make_appointment_location }}" class="box-appointment">
+                                <a href="{{ $home->make_appointment_location }}" target="_blank"
+                                    class="box-appointment">
                                     <img class="icon-content-3"
                                         src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
                                     นัดดูสถานที่
                                 </a>
-                                <a href="{{ $home->send_customers }}" class="box-appointment">
+                                <a href="{{ $home->send_customers }}" target="_blank" class="box-appointment">
                                     <img class="icon-content-3"
                                         src="{{ URL::asset('/assets/image/home/person_add.png') }}">
                                     ส่งลูกค้า
                                 </a>
                                 <div class="flex-direction-row mb-5">
-                                    <a href="{{ $home->ask_more }}" class="box-ask-more">
+                                    <a href="{{ $home->ask_more }}" target="_blank" class="box-ask-more">
                                         <img class="icon-content-2"
                                             src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
                                         ถามเพิ่ม

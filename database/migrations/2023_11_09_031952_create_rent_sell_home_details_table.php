@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('rent_sell')->nullable()->comment('เลือก เช่า ขาย เช่า/ขาย');
             $table->string('rental_price')->nullable()->comment('ราคาเช่า');
             $table->string('sell_price')->nullable()->comment('ราคาขาย');
-            $table->string('url_gps')->nullable()->comment('url_gps');
+            $table->text('url_gps')->nullable()->comment('url_gps');
             $table->string('time_arrive')->nullable()->comment('ระยะเวลาถึงสถานีรถไฟ');
             $table->string('train_name')->nullable()->comment('ชื่อสถานีรถไฟ');
             $table->string('bedroom')->nullable()->comment('จำนวนห้องนอน');
@@ -51,9 +51,9 @@ return new class extends Migration
             $table->string('air_conditioner')->nullable()->comment('เครื่องปรับอากาศ');
             $table->json('image')->nullable()->comment('ภาพ');
             $table->json('thereVarious')->nullable()->comment('สิงอำนวนความสะดวกเพิ่มเติม');
-            $table->string('make_appointment_location')->nullable()->comment('นัดดูสถานที่');
-            $table->string('send_customers')->nullable()->comment('ส่งลูกค้า');
-            $table->string('ask_more')->nullable()->comment('ถามเพิ่มเติม');
+            $table->text('make_appointment_location')->nullable()->comment('นัดดูสถานที่');
+            $table->text('send_customers')->nullable()->comment('ส่งลูกค้า');
+            $table->text('ask_more')->nullable()->comment('ถามเพิ่มเติม');
             $table->string('contact_number')->nullable()->comment('เบอร์ติดต่อ');
             $table->string('status_home')->nullable()->comment('on = เปิดขายหรือเช่า / off ปิด ขายหรือเช่า');
             $table->timestamps();

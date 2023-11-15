@@ -44,7 +44,7 @@ $(document).ready(function () {
      *  ! copyUrl
      */
 
-    const copyUrlButton = document.getElementById("copy-url");
+    const copyUrlButton = document.getElementById("link-url");
 
     copyUrlButton.addEventListener("click", () => {
         // Get the URL from the address bar
