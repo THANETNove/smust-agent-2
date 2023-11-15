@@ -123,22 +123,30 @@
 
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                             tabindex="0">
-                            <div class="flex-direction-row margin-bottom-8 mt-27">
-                                <img class="icon-content" src="{{ URL::asset('/assets/image/home/map.png') }}">
-                                <a target="_blank" rel="noopener noreferrer" href="{{ $home->url_gps }}"
-                                    class="text-content-dark_100  text-ellipsis">
-                                    {{ $home->url_gps }}
-                                </a>
-                            </div>
+                            @if ($home->url_gps)
+                                <div class="flex-direction-row margin-bottom-8 mt-27">
+                                    <img class="icon-content" src="{{ URL::asset('/assets/image/home/map.png') }}">
+                                    <a target="_blank" rel="noopener noreferrer" href="{{ $home->url_gps }}"
+                                        class="text-content-dark_100  text-ellipsis">
+                                        {{ $home->url_gps }}
+                                    </a>
+                                </div>
+                            @endif
 
 
-                            <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
+                            @if ($home->train_name)
+                                @if ($home->time_arrive < '61')
+                                    <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
 
-                                <img class="icon-content-2"
-                                    src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                {{ $home->time_arrive }} mins to <span class="text-decoration">{{ $home->train_name }}
-                                </span>
-                            </p>
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                        {{ $home->time_arrive }} mins to <span
+                                            class="text-decoration">{{ $home->train_name }}
+                                        </span>
+                                    </p>
+                                @endif
+                            @endif
+
 
                             <div class="flex-direction-break-word margin-bottom-8 mt-wealth">
                                 <div class="box-content-icon">
@@ -171,14 +179,17 @@
                                     <span>ตกแต่ง{{ $home->decoration }}</span>
                                 </div>
                             </div>
+                            @if ($home->address)
+                                <p class="text-content-dark_100 margin-bottom-8">
+                                    <img class="icon-content-2"
+                                        src="{{ URL::asset('/assets/image/home/location_on.png') }}">
+                                    {{ $home->address }} &nbsp; {{ $home->districts_name_th }}&nbsp;
+                                    {{ $home->amphures_name_th }} &nbsp; {{ $home->provinces_name_th }}
+                                    &nbsp;
+                                    {{ $home->zip_code }}
+                                </p>
+                            @endif
 
-                            <p class="text-content-dark_100 margin-bottom-8">
-                                <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/location_on.png') }}">
-                                {{ $home->address }} &nbsp; {{ $home->districts_name_th }}&nbsp;
-                                {{ $home->amphures_name_th }} &nbsp; {{ $home->provinces_name_th }}
-                                &nbsp;
-                                {{ $home->zip_code }}
-                            </p>
 
                             <p class="head-content">รายละเอียด</p>
 

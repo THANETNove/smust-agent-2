@@ -106,11 +106,13 @@
                                     {{ $home->provinces_name_th }}
                                 </p>
                                 @if ($home->train_name != 'ไม่มี' && $home->train_name)
-                                    <p class="name-details">
-                                        <img class="img-icon"
-                                            src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
-                                        {{ $home->train_name }}
-                                    </p>
+                                    @if ($home->time_arrive < '61')
+                                        <p class="name-details">
+                                            <img class="img-icon"
+                                                src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
+                                            {{ $home->train_name }}
+                                        </p>
+                                    @endif
                                 @endif
 
                                 <p class="number-rooms text-ellipsis">
