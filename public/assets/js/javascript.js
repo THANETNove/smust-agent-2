@@ -9,6 +9,11 @@ $(document).ready(function () {
     const captureSaveLink = document.getElementById("link-url");
     const captureBack = document.getElementById("back-home");
 
+    console.log("Script executed");
+    console.log("captureButton:", captureButton);
+    console.log("captureContainer:", captureContainer);
+    // ... other logs
+
     captureButton.addEventListener("click", () => {
         captureContainer.style.border = "3px solid var(--primary_200)";
         captureContainer.style.padding = "16px";
@@ -17,7 +22,6 @@ $(document).ready(function () {
         captureSaveLink.style.display = "none";
         captureBack.style.visibility = "hidden";
 
-        /*      captureSaveLink.style.padding = "0" */
         html2canvas(document.getElementById("container")).then((canvas) => {
             const dataURL = canvas.toDataURL("image/png");
 

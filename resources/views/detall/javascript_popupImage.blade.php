@@ -108,4 +108,14 @@
         downloadLink.click();
         document.body.removeChild(downloadLink);
     }
+
+
+    function captureContainer(imageUrl) {
+        var downloadLink = document.createElement('a');
+        downloadLink.href = imageUrl;
+        downloadLink.download = 'image.jpg';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
 </script>

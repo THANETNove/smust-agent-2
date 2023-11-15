@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="box-content-background">
+    <div class="box-content-background" id="container">
         @foreach ($dataHome as $home)
             @php
 
@@ -14,7 +14,7 @@
                 <div class="image-box">
                     <div class="mr-4">
                         <div class="sava-image">
-                            <img class="save-link ml-16" id="copy-url" src="{{ URL::asset('/assets/image/home/link.png') }}">
+                            <img class="save-link ml-16" id="link-url" src="{{ URL::asset('/assets/image/home/link.png') }}">
                             <img class="save-link" id="captureButton" src="{{ URL::asset('/assets/image/home/save.png') }}">
                         </div>
                         <img class="popup-trigger image-detall-1" src="{{ URL::asset('/img/product/' . $imgUrl[0]) }}"
