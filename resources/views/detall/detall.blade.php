@@ -125,7 +125,7 @@
 
 
                             <p class="text-content-dark_100 margin-bottom-8  text-ellipsis">
-                      
+
                                 <img class="icon-content-2"
                                     src="{{ URL::asset('/assets/image/home/directions_subway.png') }}">
                                 {{ $home->time_arrive }} mins to <span class="text-decoration">{{ $home->train_name }}
@@ -296,8 +296,8 @@
             <span class="save-image-btn" id="save-image-btn">
                 <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}">
             </span>
-            <span class="save-image-btn-all" id="save-all-images-btn">
-                <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}">
+            {{--   <span class="save-image-btn-all" id="save-all-images-btn">
+                <img class="icon-save" src="{{ URL::asset('/assets/image/home/save_icon_152542.png') }}"> --}}
 
             </span>
             <button class="prev-btn" id="prev-btn" onclick="changeMedia(-1)">&#10094;</button>

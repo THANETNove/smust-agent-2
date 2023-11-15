@@ -1094,7 +1094,18 @@ input[autofocus]:focus {
 }
 
 .prev-btn,
-.next-btn,
+.next-btn {
+    position: fixed;
+    color: #fafafa;
+    background-color: #000000;
+    width: 40px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
 .close-btn {
     position: fixed;
     color: #fafafa;
@@ -1417,4 +1428,13 @@ input[autofocus]:focus {
 .icon-content-close {
     width: 12px;
     height: auto;
+}
+
+#popupMediaContainer img {
+    width: 100%;
+    max-height: 500px;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    /* รักษาสัดส่วนของภาพในกรอบ */
+
 }

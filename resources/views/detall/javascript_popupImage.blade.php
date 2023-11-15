@@ -32,7 +32,7 @@
     var saveBtn = document.getElementById('save-image-btn');
     saveBtn.addEventListener('click', function() {
         if (img) {
-             saveImage(img.src);
+            saveImage(img.src);
 
         } else {
             console.error('Image not defined.');
