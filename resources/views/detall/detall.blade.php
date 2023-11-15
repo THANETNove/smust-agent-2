@@ -58,7 +58,15 @@
             <div class="box-content">
                 <div class="content-box">
                     <p class="head-text-detall ml-24">{{ $home->building_name }}</p>
-                    <p class="period-text ml-24">โพสเมื่อ: {{ $home->created_at }} แล้ว
+                    @php
+                        $createdAt = \Carbon\Carbon::parse($home->created_at);
+                    @endphp
+                    <p class="period-text ml-24">โพสเมื่อ:
+                        @if ($createdAt->isToday())
+                            {{ $createdAt->format('H:i') }}
+                        @else
+                            {{ $createdAt->format('d-m-Y') }}
+                        @endif แล้ว
                     </p>
                     <div class="price-detall flex-justify-content mt-8">
                         @if ($home->rent_sell == 'เช่า')
