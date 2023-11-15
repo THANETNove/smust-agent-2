@@ -46,7 +46,7 @@ class RentSellHouseController extends Controller
      */
     public function store(Request $request)
     {
-/*         dd($request->all()); */
+       /*  dd($request->all()); */
         $validated = $request->validate([
             'image.*' => ['required', 'image', 'image:jpg,png,jpeg,webp']
         ]);
@@ -93,6 +93,8 @@ class RentSellHouseController extends Controller
         $member->ask_more = $request['ask_more'];
         $member->contact_number = $request['contact_number'];
         $member->status_home = "on";
+        $member->thereVarious = is_array($request['thereVarious']) ? json_encode($request['thereVarious']) : NULL;
+
 
         $dateImg = [];
         if($request->hasFile('image')){
@@ -187,6 +189,8 @@ class RentSellHouseController extends Controller
         $member->send_customers = $request['send_customers'];
         $member->ask_more = $request['ask_more'];
         $member->contact_number = $request['contact_number'];
+        $member->thereVarious = is_array($request['thereVarious']) ? json_encode($request['thereVarious']) : NULL;
+
 
         $dateImg = [];
         if($request->hasFile('image')){

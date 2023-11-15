@@ -221,59 +221,81 @@
                                         </p>
                                     @endif
                                 </div>
-                                @if ($home->bed)
-                                    <div class="w-50">
+                                <div class="w-50">
+                                    @if ($home->bed)
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/check.png') }}">
                                             เตียง
                                         </p>
-                                @endif
-                                @if ($home->wardrobe)
-                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                        <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
-                                        ตู้เสื้อผ้า
-                                    </p>
-                                @endif
-                                @if ($home->air_conditioner)
-                                    <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                        <img class="icon-content-2"
-                                            src="{{ URL::asset('/assets/image/home/check.png') }}">
-                                        เครื่องปรับอากาศ
-                                    </p>
-                                @endif
+                                    @endif
+                                    @if ($home->wardrobe)
+                                        <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            ตู้เสื้อผ้า
+                                        </p>
+                                    @endif
+                                    @if ($home->air_conditioner)
+                                        <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            เครื่องปรับอากาศ
+                                        </p>
+                                    @endif
+                                </div>
                             </div>
+                            @if ($home->thereVarious)
+                                @php
+                                    $thereVarious = json_decode($home->thereVarious, true);
+
+                                @endphp
+                                <div class="flex-direction-break-word">
+
+                                    @foreach ($thereVarious as $key => $value)
+                                        <div class="w-50">
+
+                                            <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                                <img class="icon-content-2"
+                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                                {{ $value }}
+                                            </p>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+                            @endif
                         </div>
-                    </div>
-                    <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                        tabindex="0">
-                        <div class="align-items-center mt-27 ">
-                            <a href="{{ $home->make_appointment_location }}" class="box-appointment">
-                                <img class="icon-content-3"
-                                    src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
-                                นัดดูสถานที่
-                            </a>
-                            <a href="{{ $home->send_customers }}" class="box-appointment">
-                                <img class="icon-content-3" src="{{ URL::asset('/assets/image/home/person_add.png') }}">
-                                ส่งลูกค้า
-                            </a>
-                            <div class="flex-direction-row mb-5">
-                                <a href="{{ $home->ask_more }}" class="box-ask-more">
-                                    <img class="icon-content-2"
+                        <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            tabindex="0">
+                            <div class="align-items-center mt-27 ">
+                                <a href="{{ $home->make_appointment_location }}" class="box-appointment">
+                                    <img class="icon-content-3"
                                         src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
-                                    ถามเพิ่ม
+                                    นัดดูสถานที่
                                 </a>
-                                <a href="tel:{{ $home->contact_number }}" class="box-call">
-                                    <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/call.png') }}">
-                                    โทร
+                                <a href="{{ $home->send_customers }}" class="box-appointment">
+                                    <img class="icon-content-3"
+                                        src="{{ URL::asset('/assets/image/home/person_add.png') }}">
+                                    ส่งลูกค้า
                                 </a>
+                                <div class="flex-direction-row mb-5">
+                                    <a href="{{ $home->ask_more }}" class="box-ask-more">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/calendar_add_on.png') }}">
+                                        ถามเพิ่ม
+                                    </a>
+                                    <a href="tel:{{ $home->contact_number }}" class="box-call">
+                                        <img class="icon-content-2"
+                                            src="{{ URL::asset('/assets/image/home/call.png') }}">
+                                        โทร
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
     </div>
     @endforeach
     <div class="popup" id="imagePopup">

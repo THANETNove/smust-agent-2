@@ -51,6 +51,7 @@ class RentSellHomeDetails extends Model
         'send_customers',
         'ask_more',
         'contact_number',
-        'status_home'
+        'status_home',
+        'thereVarious',
     ];
 }

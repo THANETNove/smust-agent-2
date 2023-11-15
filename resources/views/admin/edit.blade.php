@@ -455,7 +455,28 @@
                                     </div>
                                 </div>
                             </div>
+                            @if ($hod->thereVarious)
+                                @php
+                                    $thereVarious = json_decode($hod->thereVarious, true);
+                                    $conntThereVarious = count($thereVarious);
+                                @endphp
+                                <div class="flex-direction-break-word" id="input-container"
+                                    data-counter="{{ $conntThereVarious }}">
 
+                                    @foreach ($thereVarious as $key => $value)
+                                        <input type='text' class='form-control mt-2'
+                                            name='thereVarious[{{ $key }}]' value="{{ $value }}"
+                                            placeholder='เพิ่มเติม สิ่งอำนวยความสะดวก'>
+                                    @endforeach
+
+                                </div>
+                            @endif
+                            <div id="input-container">
+                                <!-- Existing input fields or none -->
+                            </div>
+                            <button type="button" id="add-input" class=" btn btn-primary mt-3 mb-5 btn-user btn-block">
+                                เพิ่มเติ่ม
+                            </button>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1"
                                     class="form-label font-red">ภาพถูกเก็บเเบบเรียงตามตัวอักษร a-z หรือ 0-9</label>
@@ -533,5 +554,21 @@
     </div>
 
     @include('admin.address')
+    <script>
+        $(document).ready(function() {
+            var counter = $("#input-container").data("counter");
 
+            $("#add-input").click(function() {
+                // Increment the counter for a unique name
+                counter++;
+
+                // Create a new input element with a unique name
+                var newInput = $("<input type='text' class='form-control mt-2' name='thereVarious[" +
+                    counter + "]' placeholder='เพิ่มเติม สิ่งอำนวยความสะดวก'>");
+
+                // Append the new input to the container
+                $("#input-container").append(newInput);
+            });
+        });
+    </script>
 @endsection

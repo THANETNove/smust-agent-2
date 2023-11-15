@@ -50,6 +50,7 @@ return new class extends Migration
             $table->string('parking')->nullable()->comment('ที่จอดรถ');
             $table->string('air_conditioner')->nullable()->comment('เครื่องปรับอากาศ');
             $table->json('image')->nullable()->comment('ภาพ');
+            $table->json('thereVarious')->nullable()->comment('สิงอำนวนความสะดวกเพิ่มเติม');
             $table->string('make_appointment_location')->nullable()->comment('นัดดูสถานที่');
             $table->string('send_customers')->nullable()->comment('ส่งลูกค้า');
             $table->string('ask_more')->nullable()->comment('ถามเพิ่มเติม');

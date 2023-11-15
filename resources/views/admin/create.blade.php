@@ -327,6 +327,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="input-container">
+                                <!-- Existing input fields or none -->
+                            </div>
+                            <button type="button" id="add-input" class=" btn btn-primary mt-3 mb-5 btn-user btn-block">
+                                เพิ่มเติ่ม
+                            </button>
                         </div>
 
                         <div class="mb-3">
@@ -398,4 +404,5 @@
         </div>
     </div>
     @include('admin.address')
+    @include('admin.addInputJs')
 @endsection
