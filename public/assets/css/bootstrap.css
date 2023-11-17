@@ -1310,8 +1310,19 @@ input[autofocus]:focus {
 }
 
 .price-top {
-    margin-right: 16px;
+    margin-right: -32px;
+    margin-left: -32px;
     margin-top: 53px;
+}
+
+.price-top-2 {
+    margin-right: -32px;
+    margin-left: -25px;
+    margin-top: 53px;
+}
+
+.price-top-sell2 {
+    margin-left: -16px;
 }
 
 .img-icon-ri {
@@ -1437,4 +1448,10 @@ input[autofocus]:focus {
     background-repeat: no-repeat;
     /* รักษาสัดส่วนของภาพในกรอบ */
 
+}
+
+.price-top-sell {
+    margin-right: 0;
+    margin-left: -16px;
+    margin-top: 53px;
 }

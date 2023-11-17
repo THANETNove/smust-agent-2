@@ -5,26 +5,24 @@
           ราคาขาย <span class="ml-8">{{ number_format($home->sell_price) }}
               บาท</span>
       </p>
-      <div class="flex-direction-break-word">
-          <div class="w-50">
-              <p class="text-content-black margin-bottom-8 space-between">
+      <div class="">
+          <div class="w-100">
+              <p class="text-content-black margin-bottom-8 ">
                   <span>
                       <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
                       เงินดาวน์ <span class="ml-8"> {{ number_format($home->down_payment) }}
                           บาท</span>
                   </span>
-                  <span>-</span>
               </p>
               @if ($home->down_payment_installments == 'ได้')
-                  <p class="text-content-black margin-bottom-8 space-between">
+                  <p class="text-content-black margin-bottom-8 ">
                       <span><img class="icon-content-2"
                               src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">
                           ผ่อนได้ <span class="ml-16">{{ $home->installments }} งวด</span></span>
-                      <span>-</span>
                   </p>
               @endif
           </div>
-          <div class="w-50">
+          <div class="w-100">
               <p class="text-content-black margin-bottom-8">
                   @if ($home->down_payment_installments == 'ได้')
                       <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/check.png') }}">

@@ -71,7 +71,7 @@
                             {{ $createdAt->format('H:i') }}
                         @else
                             {{ $createdAt->format('d-m-Y') }}
-                        @endif แล้ว
+                        @endif
                     </p>
                     <div class="price-detall flex-justify-content mt-8">
                         @if ($home->rent_sell == 'เช่า')

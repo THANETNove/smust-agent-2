@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-12">
                     <button class="box-filter_alt" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอก
+                        <img class="filter_alt-img" src="{{ URL::asset('/assets/image/home/filter_alt.png') }}">กรอง
                     </button>
                 </div>
 
@@ -145,11 +145,22 @@
 
 
                             <div class="box-price-new">
-                                <p class="price-new price-top  ">
-                                    ฿{{ number_format($home->rental_price) }}/m
-                                </p>
-                                @if ($home->sell_price)
-                                    <p class="price-new ">
+                                @if ($home->rental_price && $home->rent_sell == 'เช่า')
+                                    <p class="price-new price-top  ">
+                                        ฿ {{ number_format($home->rental_price) }}/m
+                                    </p>
+                                @endif
+                                @if ($home->sell_price && $home->rent_sell == 'ขาย')
+                                    <p class="price-new price-top-sell">
+                                        ฿ {{ $price_sell }}
+                                    </p>
+                                @endif
+
+                                @if ($home->sell_price && $home->rent_sell == 'เช่า/ขาย')
+                                    <p class="price-new price-top-2 ">
+                                        ฿ {{ number_format($home->rental_price) }}/m
+                                    </p>
+                                    <p class="price-new price-top-sell2">
                                         ฿ {{ $price_sell }}
                                     </p>
                                 @endif
