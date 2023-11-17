@@ -16,6 +16,9 @@
 
                 <div class="content-box background-white mp-16">
                     <p class="add_head-content text-center mt-3">เพิ่ม profile</p>
+                    @if (session('message'))
+                        <p class="message-text-color text-center mt-4"> {{ session('message') }}</p>
+                    @endif
                     <div class="flex-direction-row">
                         <div class="box-profile ">ชื่อ</div>
                         <div class="box-profile2">{{ Auth::user()->first_name }}</div>
@@ -47,7 +50,48 @@
                                         src="{{ URL::asset('/assets/image/home/link.png') }}"
                                         onclick="copyUrlCode('{{ Auth::user()->code }}')"></span></p>
                         </div>
+
                     </div>
+                    @php
+                        $countUser = count($user);
+                    @endphp
+                    <div class="flex-direction-row mt-01">
+                        <div class="box-profile2">ตอนนี้คุณมีนายหน้าเเล้ว &nbsp;{{ $countUser }}/10&nbsp; คน </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">ชื่อ นามสกุล</th>
+                                    <th scope="col">เบอร์โทร</th>
+                                    <th scope="col">จังหวัด</th>
+                                    <th scope="col">delete</th>
+                                </tr>
+                            </thead>
+                            @php
+                                $i = 1;
+                            @endphp
+                            <tbody>
+                                @foreach ($user as $us)
+                                    <tr>
+                                        <th scope="row">{{ $i++ }}</th>
+                                        <td>{{ $us->email }}</td>
+                                        <td>{{ $us->prefix }} {{ $us->first_name }} {{ $us->last_name }}</td>
+                                        <td>{{ $us->phone }}</td>
+                                        <td>{{ $us->provinces }}</td>
+                                        <td><a href="{{ url('delete-code', $us->id) }}" class="btn btn-danger">delete</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -66,11 +110,13 @@
                 // Execute the copy command
                 document.execCommand('copy');
                 console.log('Data copied to clipboard:', data);
+                alert(" copied to Code: " + data);
             } catch (err) {
                 console.error('Unable to copy data to clipboard', err);
             }
             // Remove the temporary textarea from the document
             document.body.removeChild(textarea);
+
 
 
         }

@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Support\Str;
 use App\Models\HasFactory;
 use App\Models\RentSellHomeDetails;
+use App\Models\User;
 
 class RentSellHouseController extends Controller
 {
@@ -28,7 +29,12 @@ class RentSellHouseController extends Controller
     public function profileAdmin()
     {
 
-        return view('admin.profile');//
+        $user = DB::table('users')
+        ->where('code', '!=', Auth::user()->code)
+        ->where('code_admin',Auth::user()->code)
+        ->get();
+
+        return view('admin.profile',['user' =>  $user ]);//
     }
 
     /**
@@ -46,9 +52,7 @@ class RentSellHouseController extends Controller
      */
     public function store(Request $request)
     {
-        $maxUrlGpsLength = 255; // Replace with the actual maximum length
 
-        dd(substr($request['url_gps'], 0, $maxUrlGpsLength));
         $validated = $request->validate([
             'image.*' => ['required', 'image', 'image:jpg,png,jpeg,webp']
         ]);
@@ -227,5 +231,12 @@ class RentSellHouseController extends Controller
         $member->status_home = 'off';
         $member->save();
         return redirect('home')->with('message', "ยกเลิกสำเร็จ" );
+    }
+    public function destroyCode(string $id)
+    {
+        $member =  User::find($id);
+        $member->code_admin = NULL;
+        $member->save();
+        return redirect('profile-admin')->with('message', " ลบสำเร็จ" );
     }
 }

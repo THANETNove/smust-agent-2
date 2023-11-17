@@ -43,6 +43,7 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::put('/update/{id}', [RentSellHouseController::class, 'update'])->name('update');
     Route::get('/destroy/{id}', [RentSellHouseController::class, 'destroy'])->name('destroy');
     Route::get('/profile-admin', [RentSellHouseController::class, 'profileAdmin'])->name('profile-admin');
+    Route::get('/delete-code/{id}', [RentSellHouseController::class, 'destroyCode'])->name('delete-code');
 });
 //  ส่วนของ owner
 Route::group(['middleware' => ['is_owner']], function () {
