@@ -206,7 +206,10 @@ class RentSellHouseController extends Controller
 
             foreach( $img as $image) {
                 $image_path = public_path().'/img/product/'.$image;
-                unlink($image_path);
+                if (file_exists($image_path)) {
+                    // ถ้ามีไฟล์อยู่จริง จึงลบ
+                    unlink($image_path);
+                }
             }
 
             $imagefile = $request->file('image');
