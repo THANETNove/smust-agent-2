@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-1">
                     <div class="box-ellipse ">
-                        <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
+                        <img class="ellipse" src="{{ URL::asset('/assets/image/home/3868_n.jpg') }}">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-email" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <img class="ellipse" src="{{ URL::asset('/assets/image/home/ellipse.png') }}">
+                            <img class="ellipse" src="{{ URL::asset('/assets/image/home/3868_n.jpg') }}">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 

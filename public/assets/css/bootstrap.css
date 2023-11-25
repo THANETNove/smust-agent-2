@@ -348,6 +348,7 @@ input[autofocus]:focus {
     position: absolute;
     width: 40px;
     height: auto;
+    border-radius: 100px;
 }
 
 .box-ellipse {
