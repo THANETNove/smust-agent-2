@@ -167,7 +167,7 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">รายละเอียด</label>
-                            <textarea class="form-control" name="details" rows="3"></textarea>
+                            <textarea class="form-control" name="details" id="editor" rows="5"></textarea>
                             @error('details')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -405,6 +405,14 @@
     </div>
 
 
+    <script>
+        // Initialize CKEditor
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
     @include('admin.address')
     @include('admin.addInputJs')

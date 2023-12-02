@@ -271,7 +271,7 @@
                                 <label for="exampleFormControlInput1" class="form-label">รายละเอียด</label>
 
 
-                                <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3">{{ $hod->details }}</textarea>
+                                <textarea class="form-control" name="details" id="editor" rows="5">{{ $hod->details }}</textarea>
                                 @error('details')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -557,6 +557,13 @@
 
     @include('admin.address')
     <script>
+        // Initialize CKEditor
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+
         $(document).ready(function() {
             var counter = $("#input-container").data("counter");
 

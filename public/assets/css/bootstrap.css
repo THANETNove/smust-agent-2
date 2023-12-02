@@ -1457,6 +1457,11 @@ input[autofocus]:focus {
     margin-top: 53px;
 }
 
-.details {
-    white-space: pre-line;
+
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable,
+.ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+    border-radius: var(--ck-border-radius);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    min-height: 200px;
 }

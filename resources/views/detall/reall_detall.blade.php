@@ -1,4 +1,5 @@
-<p class="text-content" style="white-space: pre;">{!! $home->details !!}</p>
+<p class="text-content">{!! $home->details !!}</p>
+
 <p class="text-content-black margin-bottom-8">
     <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">
     เช่าขั้นต่ำ <span class="ml-16">{{ number_format($home->minimum_rent) }}
