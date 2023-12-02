@@ -25,7 +25,7 @@
                                     เพิ่ม admin
                                 </a>
                             @endif
-                            @if (Auth::user()->status == '1')
+                            @if (Auth::user()->status > '0')
                                 <a class="dropdown-item" href="{{ url('profile-admin') }}">
                                     profile
                                 </a>

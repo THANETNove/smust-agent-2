@@ -167,7 +167,7 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">รายละเอียด</label>
-                            <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="details" rows="3"></textarea>
                             @error('details')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -403,6 +403,9 @@
             </div>
         </div>
     </div>
+
+
+
     @include('admin.address')
     @include('admin.addInputJs')
 @endsection

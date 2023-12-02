@@ -97,6 +97,7 @@ class HomeController extends Controller
             if ($searchData > 0) {
                 $dataHome = $dataHome
                 ->where('rent_sell_home_details.status_home', 'on')
+                ->where('code_admin', Auth::user()->code_admin)
                 ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
                 ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id')
                 ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id');
@@ -133,6 +134,7 @@ class HomeController extends Controller
             }else{
                 $dataHome =  $dataHome
                 ->where('rent_sell_home_details.status_home', 'on')
+                ->where('code_admin', Auth::user()->code_admin)
                 ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
                 ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
                 ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
@@ -141,7 +143,6 @@ class HomeController extends Controller
                  ->orderBy('rent_sell_home_details.id','DESC')
                 ->paginate(100);
             }
-
 
 
         }

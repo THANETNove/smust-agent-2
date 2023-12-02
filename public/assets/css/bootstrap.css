@@ -1456,3 +1456,7 @@ input[autofocus]:focus {
     margin-left: -16px;
     margin-top: 53px;
 }
+
+.details {
+    white-space: pre-line;
+}

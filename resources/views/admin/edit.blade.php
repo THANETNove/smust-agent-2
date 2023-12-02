@@ -269,6 +269,8 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">รายละเอียด</label>
+
+
                                 <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3">{{ $hod->details }}</textarea>
                                 @error('details')
                                     <span class="invalid-feedback" role="alert">
