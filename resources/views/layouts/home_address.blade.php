@@ -37,7 +37,7 @@
             }
         });
 
-        // เมื่อเลือก "เขต/ตำบล"
+        // เมื่อเลือก "แขวง/ อำเภอ"
         $("#districts").change(function() {
             var selectedDistrictId = $(this).val();
             // ตรวจสอบว่าเลือก "แขวง/อำเภอ" ให้ค่าไม่ใช่ค่าเริ่มต้น
@@ -46,11 +46,11 @@
                     url: "get-amphures/" + selectedDistrictId,
                     type: "GET",
                     success: function(res) {
-                        // อัปเดตตัวเลือก "เขต/ตำบล"
+                        // อัปเดตตัวเลือก "แขวง/ อำเภอ"
                         var amphuresSelect = $("#amphures");
                         amphuresSelect.find("option").remove();
                         amphuresSelect.append(
-                            $("<option selected disabled>เขต/ตำบล</option>")
+                            $("<option selected disabled>แขวง/ อำเภอ</option>")
                         );
 
                         $.each(res, function(index, data) {

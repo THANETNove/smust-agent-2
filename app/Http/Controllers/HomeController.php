@@ -85,7 +85,7 @@ class HomeController extends Controller
                 ->where('rent_sell_home_details.status_home', 'on')
                 ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
                 ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
-                ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+                ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //เขต/ อำเภอ
                 ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
                 'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
                 ->orderBy('rent_sell_home_details.id','DESC')
@@ -137,7 +137,7 @@ class HomeController extends Controller
                 ->where('code_admin', Auth::user()->code_admin)
                 ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
                 ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
-                ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+                ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //เขต/ อำเภอ
                 ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
                  'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
                  ->orderBy('rent_sell_home_details.id','DESC')
@@ -183,7 +183,7 @@ class HomeController extends Controller
         ->where('rent_sell_home_details.id', $id)
         ->leftJoin('provinces', 'rent_sell_home_details.provinces', '=', 'provinces.id')
         ->leftJoin('amphures', 'rent_sell_home_details.districts', '=', 'amphures.id') //เขต/ ตำบล
-        ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //แขวง/ อำเภอ
+        ->leftJoin('districts', 'rent_sell_home_details.amphures', '=', 'districts.id') //เขต/ อำเภอ
         ->select('rent_sell_home_details.*', 'provinces.name_th AS provinces_name_th',
         'districts.name_th AS districts_name_th' ,'amphures.name_th AS amphures_name_th')
         ->orderBy('rent_sell_home_details.id','DESC')

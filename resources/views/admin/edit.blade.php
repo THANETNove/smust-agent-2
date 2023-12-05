@@ -240,7 +240,7 @@
                                 </select>
                                 <select class="select-address form-select mt-2 font-size-12-black" name="districts"
                                     id="districts" aria-label="Default select example">
-                                    <option selected disabled>แขวง/ อำเภอ</option>
+                                    <option selected disabled>เขต/อำเภอ</option>
                                     @foreach ($dataAmphures as $amp)
                                         <option value="{{ $amp->id }}" selected>{{ $amp->name_th }}
                                         </option>
@@ -249,7 +249,7 @@
                                 </select>
                                 <select class="select-address form-select mt-2 font-size-12-black" name="amphures"
                                     id="amphures" aria-label="Default select example">
-                                    <option selected disabled>เขต/ตำบล</option>
+                                    <option selected disabled>แขวง/อำเภอ</option>
                                     @foreach ($dataDistricts as $dip)
                                         <option value="{{ $dip->id }}" selected>{{ $dip->name_th }}
                                         </option>

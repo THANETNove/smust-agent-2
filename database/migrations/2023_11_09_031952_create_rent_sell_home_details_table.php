@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('decoration')->nullable()->comment('ของตกเเต่ง');
             $table->text('address')->nullable()->comment('ที่อยู่');
             $table->string('provinces')->nullable()->comment('จังหวัด');
-            $table->string('districts')->nullable()->comment('แขวง/ อำเภอ');
+            $table->string('districts')->nullable()->comment('เขต/ อำเภอ');
             $table->string('amphures')->nullable()->comment('เขต/ ตำบล');
             $table->string('zip_code')->nullable()->comment('รหัสไปรษณีย์');
             $table->text('details')->nullable()->comment('รายละเอียด');
