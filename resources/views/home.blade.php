@@ -133,7 +133,7 @@
                                 $price = $home->sell_price; // Replace this with your actual price value
                                 $priceString = (string) $price;
 
-                                if (strlen($priceString) >= 6) {
+                                if (strlen($priceString) > 6) {
                                     $firstDigit = substr($priceString, 0, 1);
                                     $secondDigit = substr($priceString, 1, 1);
                                     $formattedPrice = $firstDigit . '.' . $secondDigit . ' ล้าน';

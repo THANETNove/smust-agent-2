@@ -441,7 +441,7 @@ input[autofocus]:focus {
 }
 
 .name-details {
-    width: 75%;
+    width: auto;
     font-size: 12px;
     font-weight: 400;
     color: var(--dark_100);
@@ -1290,7 +1290,7 @@ input[autofocus]:focus {
 
 .box-price-new {
     position: relative;
-    width: 89px;
+    width: 170px;
     padding-right: 16px;
     display: flex;
     flex-direction: column;
