@@ -56,7 +56,13 @@
                         $countUser = count($user);
                     @endphp
                     <div class="flex-direction-row mt-01">
-                        <div class="box-profile2">ตอนนี้คุณมีนายหน้าเเล้ว &nbsp;{{ $countUser }}/10&nbsp; คน </div>
+
+                        @if (Auth::user()->status == '3')
+                            <div class="box-profile2">ตอนนี้คุณมีนายหน้าเเล้ว &nbsp;{{ $countUser }}&nbsp; คน </div>
+                        @else
+                            <div class="box-profile2">ตอนนี้คุณมีนายหน้าเเล้ว &nbsp;{{ $countUser }}/10&nbsp; คน </div>
+                        @endif
+
 
                     </div>
                     <div class="table-responsive">

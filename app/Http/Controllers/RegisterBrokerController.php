@@ -38,9 +38,13 @@ class RegisterBrokerController extends Controller
                 ->where('code', '!=', $request['code_admin'])
                 ->where('code_admin', $request['code_admin'])
                 ->get(); // ใช้ exists() เพื่อตรวจสอบว่ามีข้อมูลหรือไม่
-            if (count($number) > 10) {
-                return redirect()->back()->with('error', "สมัครไม่สำเร็จ จำนวนที่เป็นสมาชิกของ Admin เเล้ว");
-            }
+            $owner = DB::table('users')
+                ->where('code', $request['code_admin'])
+                ->get(); // ใช้ exists() เพื่อตรวจสอบว่ามีข้อมูลหรือไม่
+
+                if (count($number) > 10 && $owner[0]->status != "3") {
+                    return redirect()->back()->with('error', "สมัครไม่สำเร็จ จำนวนที่เป็นสมาชิกของ Admin เเล้ว");
+                }
 
         }
 
