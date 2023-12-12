@@ -1,4 +1,5 @@
   {{-- ขาย  --}}
+{{--   <p class="text-content">{!! $home->details !!}</p> --}}
   <div class="mt-3">
       <p class="text-content-black margin-bottom-8">
           <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/pajamas_sort-lowest.png') }}">

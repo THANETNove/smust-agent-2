@@ -1,4 +1,4 @@
-<p class="text-content">{!! $home->details !!}</p>
+{{-- <p class="text-content">{!! $home->details !!}</p> --}}
 
 <p class="text-content-black margin-bottom-8">
     <img class="icon-content-2" src="{{ URL::asset('/assets/image/home/Vector.png') }}">

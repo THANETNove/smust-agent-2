@@ -198,7 +198,7 @@
 
                             <p class="head-content">รายละเอียด</p>
 
-
+                            <p class="text-content">{!! $home->details !!}</p>
 
                             @if ($home->rent_sell == 'เช่า')
                                 @include('detall.reall_detall')
@@ -214,30 +214,62 @@
 
                             <p class="head-content">สิ่งอำนวยความสะดวก</p>
                             <div class="flex-direction-break-word">
-                                <div class="w-50">
-                                    @if ($home->kitchen)
+                                @if ($home->kitchen)
+                                    <div class="w-50">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/check.png') }}">
                                             ห้องครัว
                                         </p>
-                                    @endif
-                                    @if ($home->fitness)
+                                    </div>
+                                @endif
+                                @if ($home->fitness)
+                                    <div class="w-50">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/check.png') }}">
                                             ฟิตเนส
                                         </p>
-                                    @endif
-                                    @if ($home->parking)
+                                    </div>
+                                @endif
+                                @if ($home->parking)
+                                    <div class="w-50">
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                             <img class="icon-content-2"
                                                 src="{{ URL::asset('/assets/image/home/check.png') }}">
                                             ที่จอดรถ
                                         </p>
-                                    @endif
-                                </div>
-                                <div class="w-50">
+                                    </div>
+                                @endif
+                                @if ($home->bed)
+                                    <div class="w-50">
+                                        <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            เตียง
+                                        </p>
+                                    </div>
+                                @endif
+                                @if ($home->wardrobe)
+                                    <div class="w-50">
+                                        <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            ตู้เสื้อผ้า
+                                        </p>
+                                    </div>
+                                @endif
+                                @if ($home->air_conditioner)
+                                    <div class="w-50">
+                                        <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
+                                            <img class="icon-content-2"
+                                                src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                            เครื่องปรับอากาศ
+                                        </p>
+                                    </div>
+                                @endif
+
+                                {{-- <div class="w-50">
                                     @if ($home->bed)
                                         <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
                                             <img class="icon-content-2"
@@ -259,7 +291,7 @@
                                             เครื่องปรับอากาศ
                                         </p>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                             @if ($home->thereVarious)
                                 @php
@@ -269,14 +301,16 @@
                                 <div class="flex-direction-break-word">
 
                                     @foreach ($thereVarious as $key => $value)
-                                        <div class="w-50">
-
-                                            <p rel="noopener noreferrer" class="text-content-dark_100 margin-bottom-8">
-                                                <img class="icon-content-2"
-                                                    src="{{ URL::asset('/assets/image/home/check.png') }}">
-                                                {{ $value }}
-                                            </p>
-                                        </div>
+                                        @if (strlen($value) > 1)
+                                            <div class="w-50">
+                                                <p rel="noopener noreferrer"
+                                                    class="text-content-dark_100 margin-bottom-8">
+                                                    <img class="icon-content-2"
+                                                        src="{{ URL::asset('/assets/image/home/check.png') }}">
+                                                    {{ $value }}
+                                                </p>
+                                            </div>
+                                        @endif
                                     @endforeach
 
                                 </div>
