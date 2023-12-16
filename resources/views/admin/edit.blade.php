@@ -272,6 +272,7 @@
 
 
                                 <textarea class="form-control" name="details" id="editor" rows="5">{{ $hod->details }}</textarea>
+
                                 @error('details')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -557,27 +558,46 @@
 
     @include('admin.address')
     <script>
-        // Initialize CKEditor
         ClassicEditor
             .create(document.querySelector('#editor'))
             .catch(error => {
                 console.error(error);
             });
 
+
         $(document).ready(function() {
-            var counter = $("#input-container").data("counter");
+            var counter = 0;
 
             $("#add-input").click(function() {
-                // Increment the counter for a unique name
-                counter++;
+                // Display a confirmation dialog
+                var userConfirmation = confirm("เพิ่มเติมช่องสิ่งอำนวยความสะดวก");
 
-                // Create a new input element with a unique name
-                var newInput = $("<input type='text' class='form-control mt-2' name='thereVarious[" +
-                    counter + "]' placeholder='เพิ่มเติม สิ่งอำนวยความสะดวก'>");
+                // Check if the user clicked "OK"
+                if (userConfirmation) {
+                    // Increment the counter for a unique name
+                    counter++;
 
-                // Append the new input to the container
-                $("#input-container").append(newInput);
+                    // Create a new input element with a unique name
+                    var newInput = $("<div class='input-group mt-2'>" +
+                        "<input type='text' class='form-control' name='thereVarious[" +
+                        counter + "]' placeholder='เพิ่มเติม สิ่งอำนวยความสะดวก'>" +
+                        "<div class='input-group-append'>" +
+                        "<button class='btn btn-danger remove-input ml-3' type='button'>Remove</button>" +
+                        "</div>" +
+                        "</div>");
+
+                    // Append the new input to the container
+                    $("#input-container").append(newInput);
+
+                    // Add click event for the remove button
+                    $(".remove-input").click(function() {
+                        $(this).closest('.input-group').remove();
+                    });
+                }
+                // If the user clicked "Cancel," do nothing
             });
         });
     </script>
+
+
 @endsection
