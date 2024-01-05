@@ -134,9 +134,10 @@
                                 $priceString = (string) $price;
 
                                 if (strlen($priceString) > 6) {
-                                    $firstDigit = substr($priceString, 0, 1);
-                                    $secondDigit = substr($priceString, 1, 1);
-                                    $formattedPrice = $firstDigit . '.' . $secondDigit . ' ล้าน';
+                                    $priceString = str_replace(',', '', $priceString);
+
+                                    // Convert the numeric string to a float and format it
+                                    $formattedPrice = number_format($priceString / 1000000, 1) . ' ล้าน';
                                     $price_sell = $formattedPrice;
                                 } else {
                                     $price_sell = number_format($home->sell_price) . ' บาท';
