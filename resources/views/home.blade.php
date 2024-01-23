@@ -206,7 +206,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="user" id="myForm" method="POST" action="{{ route('search') }}"
+                    <form class="user" id="myForm" method="POST" action="{{ route('home') }}"
                         enctype="multipart/form-data">
                         @csrf
                         <p class="font-size-12-black">ประเภททรัพย์</p>
@@ -223,7 +223,7 @@
                             &nbsp; &nbsp;
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="property_type" value="บ้าน"
-                                    id="property_type2" checked>
+                                    id="property_type2">
                                 <label class="form-check-label check-icon" for="property_type2">
                                     <img class="property-img" src="{{ URL::asset('/assets/image/home/cottage.png') }}">
                                     <p class="font-size-12-black text-lr-2">บ้าน</p>
@@ -234,7 +234,7 @@
                         <div class="flex-direction-row">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="rent_sell" value="เช่า"
-                                    id="rent_sell1" checked>
+                                    id="rent_sell1">
                                 <label class="form-check-label" for="rent_sell1">
                                     เช่า
                                 </label>

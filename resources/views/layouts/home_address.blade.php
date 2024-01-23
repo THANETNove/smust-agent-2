@@ -16,7 +16,7 @@
                         var districtsSelect = $("#districts");
                         districtsSelect.find("option").remove();
                         districtsSelect.append(
-                            $("<option selected disabled>แขวง/อำเภอ</option>")
+                            $("<option selected disabled>เขต/อำเภอ</option>")
                         );
 
                         $.each(res, function(index, district) {
