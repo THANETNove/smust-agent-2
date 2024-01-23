@@ -148,9 +148,10 @@ class HomeController extends Controller
         }
 
 
-        $data = DB::table('provinces')->get();
+        $data = DB::table('provinces')->orderBy('name_th','ASC')->get();
 
-        $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')->get();
+        $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')
+        ->orderBy('station_name_th','ASC')->get();
 
 
         return view('home',['train_station' => $train_station, "data" =>  $data , 'dataHome' => $dataHome]);
@@ -161,6 +162,7 @@ class HomeController extends Controller
 
         $data = DB::table('amphures')
         ->where('amphures.province_id',$id)
+        ->orderBy('name_th','ASC')
         ->get();
 
         return response()->json($data);
@@ -172,6 +174,7 @@ class HomeController extends Controller
 
         $data = DB::table('districts')
         ->where('amphure_id', $id)
+        ->orderBy('name_th','ASC')
         ->get();
 
         return response()->json($data);

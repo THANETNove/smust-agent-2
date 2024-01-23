@@ -7,7 +7,9 @@
             <p class="error-message text-center mt-4"> {{ session('error') }}</p>
         @endif
         <?php
-        $data = DB::table('provinces')->get();
+        $data = DB::table('provinces')
+            ->orderBy('name_th', 'ASC')
+            ->get();
         ?>
 
         <div class="form-login">

@@ -42,7 +42,7 @@ class RentSellHouseController extends Controller
      */
     public function create()
     {
-        $data = DB::table('provinces')->get();
+        $data = DB::table('provinces')->orderBy('name_th','ASC')->get();
         $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')->get();
         return view('admin.create',['train_station' => $train_station,'data' => $data]);//
     }
@@ -137,9 +137,13 @@ class RentSellHouseController extends Controller
         ->where('id', $id)->get();
 
 
-        $data = DB::table('provinces')->get();
-        $dataAmphures= DB::table('amphures')->where('id',$dataProduct[0]->districts)->get();
-        $dataDistricts= DB::table('districts')->where('id',$dataProduct[0]->amphures)->get();
+        $data = DB::table('provinces')
+        ->orderBy('name_th','ASC')->get();
+        $dataAmphures= DB::table('amphures')->where('id',$dataProduct[0]->districts)
+        ->orderBy('name_th','ASC')
+        ->get();
+        $dataDistricts= DB::table('districts')->where('id',$dataProduct[0]->amphures)
+        ->orderBy('name_th','ASC')->get();
 
         $train_station = DB::table('train_station')->select('train_station.id', 'train_station.station_name_th')->get();
         return view('admin.edit',['data' => $data,'train_station'=>$train_station ,'id'=>$id ,
