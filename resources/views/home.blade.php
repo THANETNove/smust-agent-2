@@ -185,13 +185,12 @@
                     </a>
                 @endforeach
             </div>
-            <div class="mt-5">
-                {!! $dataHome->links() !!}
-            </div>
-
         </div>
-
+        <div class="mt-5">
+            {!! $dataHome->links() !!}
+        </div>
     </div>
+
 
 
     <!-- Modal -->
